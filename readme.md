@@ -3,6 +3,8 @@
 A cyberpunk-inspired Hugo theme with neon aesthetics, glowing elements, and retro-futuristic styling.
 
 Theme Preview
+![Uploading screenshot.png…]()
+
 
 ## Features
 
