@@ -1,0 +1,49 @@
+{{ define "main" }}
+<section class="relative max-w-4xl mx-auto mt-16 mb-20 px-4 py-10
+                bg-gray-900/95 border-2 border-cyan-400 rounded-2xl
+                shadow-[0_0_40px_#00ffe7_inset,0_0_80px_#ff00cc44]
+                before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none">
+  <div class="absolute -inset-2 rounded-3xl pointer-events-none z-0 shadow-[0_0_32px_#00ffe7,0_0_64px_#ff00cc44]"></div>
+
+  <h1 class="relative z-10 font-vt323 text-3xl md:text-4xl text-center uppercase tracking-widest mb-8 text-cyan-300 drop-shadow-[0_0_16px_#00ffe7]">
+    Archive
+  </h1>
+
+  <div class="relative z-10">
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ $grouped := $pages.GroupByDate "2006" }}
+    {{ range $grouped }}
+      <div class="mb-10">
+        <h2 class="font-vt323 text-2xl text-fuchsia-400 mb-4 border-b-2 border-fuchsia-400 pb-1 drop-shadow-[0_0_8px_#ff00cc]">
+          {{ .Key }}
+        </h2>
+        <ul class="space-y-4">
+          {{ range .Pages }}
+            <li class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 bg-gray-800/80 border-l-4 border-cyan-400 rounded-md px-4 py-2 shadow-[0_0_8px_#00ffe7_inset] hover:border-fuchsia-500 hover:shadow-[0_0_16px_#ff00cc44] transition-all">
+              <span class="font-mono text-xs text-cyan-400 opacity-80 min-w-[90px]">
+                {{ .Date.Format "2006-01-02" }}
+              </span>
+              <a href="{{ .Permalink }}"
+                 class="font-vt323 text-lg text-cyan-200 hover:text-fuchsia-400 transition-colors tracking-wide">
+                {{ .Title }}
+              </a>
+              {{ with .Params.tags }}
+                <span class="flex flex-wrap gap-2 ml-auto">
+                  {{ range . }}
+                    <a href="{{ printf "/tags/%s/" (. | urlize) | relURL }}" 
+                       class="px-2 py-1 text-xs text-cyan-300 hover:text-fuchsia-400 border border-cyan-500 rounded-md hover:border-fuchsia-500 hover:shadow-[0_0_6px_#ff00cc] transition-colors">
+                      #{{ . }}
+                    </a>
+                  {{ end }}
+                </span>
+              {{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ else }}
+      <div class="text-center text-cyan-400">No posts found in archive.</div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

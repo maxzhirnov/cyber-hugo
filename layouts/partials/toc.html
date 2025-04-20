@@ -1,0 +1,163 @@
+{{ $showToc := .Site.Params.showToc | default false }}
+{{ if isset .Params "showToc" }}
+  {{ $showToc = .Params.showToc }}
+{{ end }}
+
+{{ $tocOpen := .Site.Params.tocOpen | default false }}
+{{ if isset .Params "tocOpen" }}
+  {{ $tocOpen = .Params.tocOpen }}
+{{ end }}
+
+<!-- Only render if showToc is true and TOC is not empty -->
+{{ if $showToc }}
+  {{ $tocContent := .TableOfContents }}
+  {{ if ne $tocContent "<nav id=\"TableOfContents\"></nav>" }}
+    <div class="toc-container relative max-w-full mx-auto mb-8 p-4
+                bg-gray-900/90 border-2 border-cyan-400 rounded-lg
+                shadow-[0_0_12px_#00ffe7_inset]">
+      <button id="toc-toggle-{{ .File.UniqueID }}" class="flex items-center justify-between w-full font-vt323 text-xl text-cyan-300 mb-3 uppercase tracking-widest">
+        <span>Table of Contents</span>
+        <svg id="toc-chevron-{{ .File.UniqueID }}" class="w-5 h-5 transition-transform {{ if not $tocOpen }}rotate-180{{ end }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="toc-content-{{ .File.UniqueID }}" 
+           class="toc-content font-mono text-cyan-200 overflow-hidden transition-all duration-300"
+           style="{{ if not $tocOpen }}max-height: 0px;{{ else }}max-height: 800px;{{ end }}">
+        {{ $tocContent }}
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleId = 'toc-toggle-{{ .File.UniqueID }}';
+        const contentId = 'toc-content-{{ .File.UniqueID }}';
+        const chevronId = 'toc-chevron-{{ .File.UniqueID }}';
+        
+        const toggle = document.getElementById(toggleId);
+        const content = document.getElementById(contentId);
+        const chevron = document.getElementById(chevronId);
+        
+        if (toggle && content && chevron) {
+          toggle.addEventListener('click', function() {
+            // Check current state
+            const isOpen = content.style.maxHeight !== '0px';
+            
+            // Toggle state
+            if (isOpen) {
+              // Close the TOC
+              content.style.maxHeight = '0px';
+              chevron.classList.add('rotate-180');
+            } else {
+              // Open the TOC
+              content.style.maxHeight = '800px';
+              chevron.classList.remove('rotate-180');
+            }
+          });
+        }
+      });
+    </script>
+  {{ end }}
+{{ end }}
+
+
+<style>
+  /* TOC styling */
+  .toc-container .toc-content ul {
+    list-style-type: none;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .toc-container .toc-content > nav > ul {
+    padding-left: 0;
+    /* Responsive columns for desktop */
+    @media (min-width: 768px) {
+      columns: 2 auto;
+      column-gap: 2rem;
+    }
+    @media (min-width: 1024px) {
+      columns: auto;
+    }
+  }
+  
+  /* For very long TOCs, enable scrolling */
+  .toc-content {
+    max-height: 800px;
+    overflow-y: auto;
+    /* Cyberpunk scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #00ffe7 rgba(0, 0, 0, 0.2);
+  }
+  
+  .toc-content::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .toc-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+  
+  .toc-content::-webkit-scrollbar-thumb {
+    background: #00ffe7;
+    border-radius: 3px;
+    box-shadow: 0 0 8px rgba(0, 255, 231, 0.8);
+  }
+  
+  .toc-content::-webkit-scrollbar-thumb:hover {
+    background: #ff00cc;
+    box-shadow: 0 0 8px rgba(255, 0, 204, 0.8);
+  }
+  
+  .toc-container .toc-content a {
+    color: #00ffe7;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+    padding: 0.2rem 0;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    word-break: break-word; /* Prevent overflow on mobile */
+  }
+  
+  .toc-container .toc-content a:hover {
+    color: #ff00cc;
+    transform: translateX(4px);
+  }
+  
+  /* Add a cyberpunk marker to list items */
+  .toc-container .toc-content li {
+    position: relative;
+    margin-bottom: 0.25rem;
+  }
+  
+  .toc-container .toc-content li::before {
+    content: ">";
+    color: #ff00cc;
+    position: absolute;
+    left: -1rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .toc-container .toc-content li:hover::before {
+    opacity: 1;
+  }
+  
+  /* Nested levels styling */
+  .toc-container .toc-content ul ul {
+    margin-top: 0.25rem;
+    padding-left: 0.75rem;
+    border-left: 1px solid rgba(0, 255, 231, 0.2);
+  }
+  
+  .toc-container .toc-content ul ul li {
+    font-size: 0.9rem;
+  }
+  
+  .toc-container .toc-content ul ul ul li {
+    font-size: 0.85rem;
+  }
+</style>

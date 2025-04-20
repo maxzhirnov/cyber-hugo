@@ -1,0 +1,16 @@
+<!-- Quick Access Widget -->
+<div class="bg-gray-800 border-2 border-cyan-600 rounded-lg p-5 flex flex-col shadow-[inset_0_0_16px_#00ffe7]">
+    <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3">
+      <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase">
+        {{ .Site.Params.widgets.quick_links | default "QUICK ACCESS" }}
+      </h2>
+      <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_4px_#00ffe7]"></span>
+    </div>
+    <div class="grid grid-cols-2 gap-3 mt-3">
+      {{ range .Site.Menus.quicklinks }}
+      <a href="{{ .URL }}" class="flex items-center justify-center bg-gray-900 border-2 border-cyan-500 rounded-md py-2 px-3 font-vt323 text-cyan-300 uppercase tracking-widest hover:bg-fuchsia-800 hover:text-yellow-200 transition-all duration-150 shadow-[0_0_8px_#00ffe7_inset]">
+        {{ .Name }}
+      </a>
+      {{ end }}
+    </div>
+  </div>

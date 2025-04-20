@@ -1,0 +1,95 @@
+{{ $type := .Get "type" | default "info" }}
+{{ $title := .Get "title" | default (humanize $type) }}
+{{ $dismissible := .Get "dismissible" | default false }}
+{{ $id := printf "notice-%s" (md5 .Inner) }}
+
+{{ $colorMap := dict 
+  "info" "border-cyan-400 text-cyan-300 bg-cyan-900/10 shadow-[0_0_12px_#00ffe7_inset]" 
+  "warning" "border-yellow-400 text-yellow-300 bg-yellow-900/10 shadow-[0_0_12px_#fff600_inset]" 
+  "danger" "border-fuchsia-400 text-fuchsia-300 bg-fuchsia-900/10 shadow-[0_0_12px_#ff00cc_inset]" 
+  "success" "border-lime-400 text-lime-300 bg-lime-900/10 shadow-[0_0_12px_#39ff14_inset]"
+}}
+
+{{ $iconMap := dict
+  "info" "<path d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>"
+  "warning" "<path d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'></path>"
+  "danger" "<path d='M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z'></path>"
+  "success" "<path d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>"
+}}
+
+{{ $colorClasses := index $colorMap $type | default (index $colorMap "info") }}
+{{ $icon := index $iconMap $type | default (index $iconMap "info") }}
+
+<div id="{{ $id }}" class="notice-container group my-4 relative rounded-lg overflow-hidden transition-all duration-300">
+  <!-- Border frame -->
+  <div class="absolute inset-0 border-l-4 {{ $colorClasses }} rounded-lg pointer-events-none"></div>
+  
+  <!-- Main content -->
+  <div class="relative p-4 bg-gray-800/80 rounded-lg z-10">
+    <!-- Content with icon -->
+    <div class="flex items-start">
+      <!-- Icon -->
+      <div class="flex-shrink-0 mr-3">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          {{ $icon | safeHTML }}
+        </svg>
+      </div>
+      
+      <!-- Content -->
+      <div class="notice-content font-mono w-full">
+        {{ if $title }}
+        <p class="font-vt323 text-base mb-1 leading-tight">{{ $title }}</p>
+        {{ end }}
+        {{ .Inner | safeHTML }}
+      </div>
+      
+      <!-- Dismissible button -->
+      {{ if $dismissible }}
+      <button onclick="document.getElementById('{{ $id }}').classList.add('hidden')" 
+              class="ml-2 p-1 rounded-full hover:bg-gray-700 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Notice content styling for nested elements */
+  .notice-content h1, .notice-content h2, .notice-content h3, 
+  .notice-content h4, .notice-content h5, .notice-content h6 {
+    font-family: 'VT323', monospace;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .notice-content a {
+    text-decoration: underline;
+    transition: all 0.2s;
+  }
+  .notice-content a:hover {
+    text-decoration: none;
+  }
+  
+  .notice-content p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-content ul, .notice-content ol {
+    margin-left: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-content ul {
+    list-style-type: square;
+  }
+  
+  .notice-content pre, .notice-content code {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.3rem;
+  }
+</style>

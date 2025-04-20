@@ -1,0 +1,24 @@
+<!-- Recent Posts Widget -->
+<div class="bg-gray-800 border-2 border-cyan-600 rounded-lg p-5 flex flex-col shadow-[inset_0_0_16px_#00ffe7]">
+    <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3">
+      <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase">
+        {{ .Site.Params.widgets.recent_posts | default "RECENT ENTRIES" }}
+      </h2>
+      <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_4px_#00ffe7]"></span>
+    </div>
+    <div class="flex-1 overflow-y-auto">
+      {{ range first 5 (where .Site.RegularPages "Type" "in" site.Params.mainSections) }}
+        <div class="flex items-center mb-2">
+          <span class="font-share-tech text-lime-400 text-xs w-14 text-right mr-2 opacity-80">
+            {{ .Date.Format "15:04" }}
+          </span>
+          <a href="{{ .RelPermalink }}"
+             class="flex-1 font-share-tech text-cyan-200 hover:text-fuchsia-400 bg-gray-900/70 rounded px-2 py-1 transition-colors duration-150 hover:shadow-[0_0_8px_#ff00cc]">
+            {{ .Title }}
+          </a>
+        </div>
+      {{ else }}
+        <div class="text-gray-400 text-center py-4">No entries found.</div>
+      {{ end }}
+    </div>
+  </div>

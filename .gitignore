@@ -1,0 +1,46 @@
+/node_modules
+/exampleSite/public
+/exampleSite/hugo_stats.json
+todo
+# Hugo generated files
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node modules (if using npm/yarn for asset pipeline)
+/node_modules/
+/dist/
+
+# Temporary files
+tmp/
+.hugo_build.lock
+
+# Executable binaries
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Testing and coverage files
+*.test
+*.prof
+cover.out
+*.bench
+*.debug
+coverage*.out
+
+# Environment variables
+.env
+.env.*

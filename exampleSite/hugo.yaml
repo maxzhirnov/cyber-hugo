@@ -1,0 +1,83 @@
+theme: cyber-hugo
+languageCode: en-us
+baseurl: http://example.com/
+title: Cyber Theme
+author: Dirk Olbrich
+copyright: Copyright © 2019-2024, Dirk Olbrich, all rights reserved.
+pagination:
+  pagerSize: 10
+  
+markup:
+  highlight:
+    style: dracula
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+    ordered: false
+
+menus:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Blog
+      url: /posts/
+      weight: 2
+    - name: Tags
+      url: /tags/
+      weight: 3
+    - name: About
+      url: /about/
+      weight: 4
+    - name: Search
+      url: /search/
+      weight: 5
+  quicklinks:
+    - name: Archive
+      url: /archive/
+      weight: 1
+    - name: Contact
+      url: /contact/
+      weight: 2
+    - name: About
+      url: /about/
+      weight: 4
+    - name: Portfolio
+      url: /portfolio/
+    - name: FAQ
+      url: /faq/
+
+# Available prose color themes for single_prose_color:
+#   prose-cyan
+#   prose-fuchsia
+#   prose-lime
+#   prose-blue
+#   prose-yellow
+#   prose-orange
+#   prose-rose
+#   prose-violet
+#   prose-emerald
+params:
+  name: Hugo Tailwindcss Starter
+  description: A simple bootstraped theme for Hugo, build with Tailwindcss.
+  showToc: true
+  tocOpen: false
+  mainSections:
+    - posts
+  github_user: maxzhirnov
+  github_repo: https://github.com/dirkolbrich/hugo-tailwindcss-starter-theme
+  github_banner: true
+  favicon: favicon.ico
+  single_title_color: "text-cyan-400"
+  single_prose_color: "prose-emerald"
+  dashboard:
+    title: SYSTEM CONSOLE
+    subtitle: MAIN ACCESS POINT
+    status:
+      cpu: 42
+      memory: 78
+  widgets:
+    quick_links: QUICK ACCESS
+  rss_post_footer: "Read more cyberpunk content at <a href='https://yoursite.com'>YourSite</a>"
+  images:
+    - "/images/site-logo.png"  # First image used in RSS feed

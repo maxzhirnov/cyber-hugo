@@ -1,0 +1,13 @@
+<script>
+window.store = {
+  {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
+  {{- range $index, $page := $pages }}
+    "{{ $page.Permalink }}": {
+      "title": {{ $page.Title | jsonify }},
+      "content": {{ $page.Plain | jsonify }},
+      "tags": [{{ range $i, $tag := $page.Params.tags }}{{ if $i }}, {{ end }}{{ $tag | jsonify }}{{ end }}],
+      "url": "{{ $page.Permalink }}"
+    }{{ if ne (add $index 1) (len $pages) }},{{ end }}
+  {{- end }}
+};
+</script>

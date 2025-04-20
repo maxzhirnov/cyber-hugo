@@ -1,0 +1,71 @@
+{{ define "main" }}
+{{ $textColor := .Params.single_title_color | default .Site.Params.single_title_color | default "text-cyan-300" }}
+{{ $proseColor := .Params.single_prose_color | default .Site.Params.single_prose_color | default "prose-cyan" }}
+<article class="relative max-w-5xl mx-auto mt-12 mb-20 px-12 py-8
+                bg-gray-900/90 border-2 border-cyan-400 rounded-2xl
+                shadow-[0_0_40px_#00ffe7_inset,0_0_80px_#ff00cc44]
+                backdrop-blur-md
+                before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none
+                ">
+  <div class="absolute -inset-2 rounded-3xl pointer-events-none z-0
+              shadow-[0_0_32px_#00ffe7,0_0_64px_#ff00cc44]"></div>
+
+  <!-- Back Button & Title -->
+  <div class="relative z-10 grid grid-cols-[auto_1fr_auto] items-center mb-8 min-h-[48px] gap-2 px-2 sm:px-0">
+    <a href="javascript:history.back()"
+       class="flex items-center gap-2 font-vt323 text-cyan-300 hover:text-fuchsia-400 transition-colors
+              px-2 py-2 border-2 border-cyan-400 rounded-lg bg-gray-900/80
+              hover:bg-fuchsia-700/40 hover:border-fuchsia-500 shadow-[0_0_8px_#00ffe7_inset] text-base sm:px-4 sm:py-2">
+      <svg class="w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+      </svg>
+      <span class="hidden sm:inline uppercase tracking-widest">Back</span>
+    </a>
+    <h1 class="mx-auto font-vt323 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center uppercase tracking-widest drop-shadow-[0_0_16px_#00ffe7] {{ $textColor }} break-words whitespace-normal px-2">
+      {{ .Title }}
+    </h1>
+    <span class="invisible flex items-center gap-2 px-2 py-2 font-vt323 text-base sm:px-4 sm:py-2">Back</span>
+  </div>
+
+  <!-- Enhanced Date & Tags Section -->
+  <div class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-3 mb-8 text-sm font-mono opacity-80 {{ $textColor }}">
+    <!-- Timestamp with geeky display -->
+    <div class="flex flex-wrap items-center gap-2 bg-gray-800/70 px-3 py-1 rounded-md border border-cyan-500 min-w-[0]">
+      <span class="text-fuchsia-400">UNIX:</span>
+      <span class="font-bold text-cyan-300 break-all">{{ .Date.Unix }}</span>
+      <span class="text-cyan-500 hidden sm:inline">|</span>
+      <span class="text-cyan-200 break-all">{{ .Date.Format "2006-01-02 15:04:05 MST" }}</span>
+    </div>
+
+    <!-- Clickable Tags -->
+    {{ with .Params.tags }}
+    <div class="flex flex-wrap items-center gap-2 mt-2 sm:mt-0">
+      <svg class="w-4 h-4 text-fuchsia-400" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M5 3a2 2 0 0 0-2 2v2a2 2 0 0 0 .586 1.414l7 7a2 2 0 0 0 2.828 0l2-2a2 2 0 0 0 0-2.828l-7-7A2 2 0 0 0 7 3H5zm0 2h2l7 7-2 2-7-7V5z"/>
+      </svg>
+      <div class="flex flex-wrap gap-2">
+        {{ range . }}
+        <a href="{{ printf "/tags/%s/" (. | urlize) | relURL }}" 
+          class="px-2 py-1 text-xs sm:text-sm text-cyan-300 hover:text-fuchsia-400 transition-colors
+                  border border-cyan-500 rounded-md hover:border-fuchsia-500 hover:shadow-[0_0_6px_#ff00cc]">
+          #{{ . }}
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ partial "toc.html" . }}
+  <!-- Content -->
+  <section class="relative z-10 prose prose-base md:prose-lg lg:prose-xl {{ $proseColor }}
+                prose-headings:font-vt323
+                prose-a:text-fuchsia-400 hover:prose-a:text-cyan-300
+                prose-blockquote:border-l-cyan-400
+                prose-code:text-lime-400
+                prose-pre:shadow-[0_0_12px_#00ffe7_inset]
+                prose-img:rounded-lg
+                mx-auto px-2 sm:px-0">
+    {{ .Content }}
+  </section>
+</article>
+{{ end }}

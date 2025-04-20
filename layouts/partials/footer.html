@@ -1,0 +1,30 @@
+<footer class="relative w-full mt-12 px-4 py-8 bg-gray-900/90 border-t-2 border-cyan-400 shadow-[0_0_32px_#00ffe7_inset]">
+  <!-- Neon stripes background -->
+  <div class="absolute inset-0 pointer-events-none opacity-70"></div>
+  <div class="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto">
+    <div class="flex items-center gap-3 mb-4 md:mb-0">
+      <span class="font-vt323 text-lg text-cyan-300 tracking-widest drop-shadow-[0_0_8px_#00ffe7]">© {{ now.Format "2006" }} {{ .Site.Title }}</span>
+      <span class="hidden md:inline text-cyan-700">|</span>
+      <span class="font-mono text-xs text-cyan-400 opacity-80">All Rights Reserved</span>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="https://gohugo.io" target="_blank" rel="noopener" class="flex items-center gap-1 font-vt323 text-cyan-200 hover:text-fuchsia-400 transition-colors underline underline-offset-2">
+        <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke-width="2" />
+          <path d="M8 12l2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Hugo
+      </a>
+      <a href="https://tailwindcss.com" target="_blank" rel="noopener" class="flex items-center gap-1 font-vt323 text-cyan-200 hover:text-fuchsia-400 transition-colors underline underline-offset-2">
+        <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M3 12a9 9 0 0118 0 9 9 0 01-18 0zm9-4v8m0 0l3-3m-3 3l-3-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        TailwindCSS
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>

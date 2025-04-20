@@ -1,0 +1,159 @@
+{{ $language := .Get "language" | default "" }}
+{{ $title := .Get "title" | default "" }}
+{{ $id := printf "code-%s" (md5 .Inner) }}
+{{ $theme := .Get "theme" | default "cyberpunk" }}
+
+<div class="my-8 code-block-container group">
+  <!-- Terminal Header -->
+  <div class="flex items-center justify-between px-4 py-2 bg-gray-800/90 border-t-2 border-x-2 border-cyan-400 rounded-t-lg relative overflow-hidden">
+    <!-- Title with blinking cursor -->
+    <div class="flex items-center">
+      <span class="text-cyan-300 font-vt323 tracking-wide">{{ with $title }}{{ . }}{{ else }}{{ $language | default "code" }}{{ end }}</span>
+      <span class="hidden sm:ml-1 sm:h-4 sm:w-2 sm:bg-cyan-400 sm:animate-pulse sm:block"></span>
+    </div>
+    
+    <!-- Terminal Controls -->
+    <div class="flex items-center gap-2">
+      <div class="terminal-dot bg-red-500 shadow-[0_0_8px_#ff0000] hover:animate-pulse"></div>
+      <div class="terminal-dot bg-yellow-500 shadow-[0_0_8px_#fff600] hover:animate-pulse"></div>
+      <div class="terminal-dot bg-green-500 shadow-[0_0_8px_#00ff00] hover:animate-pulse"></div>
+    </div>
+    
+  </div>
+  
+  <!-- Code Container -->
+  <div class="relative rounded-b-lg overflow-hidden border-2 border-cyan-400 shadow-[0_0_12px_#00ffe7_inset] group-hover:shadow-[0_0_20px_#00ffe7_inset] transition-all duration-300">
+    <!-- Copy Button -->
+    <button onclick="copyCode('{{ $id }}')" 
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10 opacity-0 group-hover:opacity-100 backdrop-blur-sm">
+      <svg id="{{ $id }}-copy-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+      </svg>
+      <svg id="{{ $id }}-check-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+    </button>
+    
+    <!-- Code Block with Syntax Highlighting -->
+    <pre class="language-{{ $language }} bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="{{ $id }}" class="language-{{ $language }} font-mono">{{ trim .Inner "\n " }}</code></pre>
+    
+    <!-- Language Badge -->
+    <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+      {{ with $language }}{{ . }}{{ else }}txt{{ end }}
+    </div>
+  </div>
+</div>
+
+<!-- Styles for the code block -->
+<style>
+  /* Terminal dots */
+  .terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: all 0.3s;
+  }
+  .terminal-dot:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Custom scrollbar */
+  .cyberpunk-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .cyberpunk-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .cyberpunk-scrollbar::-webkit-scrollbar-thumb {
+    background: #00ffe7;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 255, 231, 0.8);
+  }
+  .cyberpunk-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #ff00cc;
+    box-shadow: 0 0 8px rgba(255, 0, 204, 0.8);
+  }
+  
+  /* Override Prism styles */
+  pre[class*="language-"] {
+    background: #1a1a1a !important;
+    border-radius: 0 !important;
+    border: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    font-size: .85em;
+    min-height: 100px;
+    padding-top: 1em;
+  }
+  
+  code[class*="language-"] {
+    background: transparent !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5) !important;
+    padding: 0 !important;
+  }
+  
+  /* Token colors */
+  .token.comment {
+    color: #777 !important;
+  }
+  
+  .token.string, .token.char, .token.attr-value {
+    color: #00ffe7 !important;
+  }
+  
+  .token.keyword, .token.property {
+    color: #ff00cc !important;
+  }
+  
+  .token.function, .token.class-name {
+    color: #ffcc00 !important;
+  }
+  
+  .token.operator, .token.entity, .token.url {
+    color: #00ffaa !important;
+  }
+  
+  .token.number, .token.boolean {
+    color: #ff9900 !important;
+  }
+  
+  .token.selector, .token.important, .token.atrule {
+    color: #cc00ff !important;
+  }
+  
+</style>
+
+<!-- Syntax highlighting and copy functionality -->
+<script>
+  // Copy functionality
+  function copyCode(id) {
+    const codeElement = document.getElementById(id);
+    const copyIcon = document.getElementById(id + '-copy-icon');
+    const checkIcon = document.getElementById(id + '-check-icon');
+    
+    navigator.clipboard.writeText(codeElement.textContent).then(() => {
+      // Show success state
+      copyIcon.classList.add('hidden');
+      checkIcon.classList.remove('hidden');
+      
+      // Add glitch animation to code block
+      codeElement.classList.add('copied');
+      
+      // Reset after 2 seconds
+      setTimeout(() => {
+        copyIcon.classList.remove('hidden');
+        checkIcon.classList.add('hidden');
+        codeElement.classList.remove('copied');
+      }, 2000);
+    });
+  }
+  
+  // Initialize syntax highlighting if Prism is available
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Prism !== 'undefined') {
+      Prism.highlightAll();
+    }
+  });
+  </script>
+  

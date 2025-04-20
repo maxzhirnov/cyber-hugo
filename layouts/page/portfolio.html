@@ -1,0 +1,159 @@
+{{ define "main" }}
+<section class="relative max-w-6xl mx-auto mt-16 mb-20 px-4 py-10
+                bg-gray-900/95 border-2 border-cyan-400 rounded-2xl
+                shadow-[0_0_40px_#00ffe7_inset,0_0_80px_#ff00cc44]
+                before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none">
+  <div class="absolute -inset-2 rounded-3xl pointer-events-none z-0 shadow-[0_0_32px_#00ffe7,0_0_64px_#ff00cc44]"></div>
+
+  <div class="relative z-10">
+    <!-- Portfolio Header -->
+    <div class="text-center mb-12">
+      <h1 class="font-vt323 text-4xl md:text-5xl uppercase tracking-widest mb-4 text-cyan-300 drop-shadow-[0_0_16px_#00ffe7]">
+        {{ .Title | default "Portfolio" }}
+      </h1>
+      {{ with .Content }}
+        <div class="max-w-3xl mx-auto text-cyan-200 font-mono">
+          {{ . }}
+        </div>
+      {{ end }}
+    </div>
+
+    <!-- Filter Tabs (if using categories or types) -->
+    {{ $categories := slice }}
+    {{ range .Params.portfolio_categories }}
+      {{ $categories = $categories | append . }}
+    {{ end }}
+
+    {{ if $categories }}
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <button class="filter-btn active px-4 py-2 font-vt323 text-cyan-200 border-2 border-cyan-400 rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset] uppercase tracking-widest" data-filter="all">
+        All
+      </button>
+      {{ range $categories }}
+      <button class="filter-btn px-4 py-2 font-vt323 text-cyan-200 border-2 border-cyan-400 rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset] uppercase tracking-widest" data-filter="{{ . | urlize }}">
+        {{ . }}
+      </button>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- Featured Project (if exists) -->
+    {{ $featured := .Params.featured_project }}
+    {{ if $featured }}
+    <div class="mb-12">
+      <div class="bg-gray-800/90 border-2 border-fuchsia-500 rounded-xl shadow-[inset_0_0_24px_#ff00cc] p-6 md:p-8">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="order-2 md:order-1">
+            <h2 class="font-vt323 text-3xl text-fuchsia-400 uppercase tracking-wide mb-3 drop-shadow-[0_0_8px_#ff00cc]">
+              {{ $featured.title }}
+            </h2>
+            <div class="flex flex-wrap gap-2 mb-4">
+              {{ range $featured.tags }}
+              <span class="px-2 py-1 text-xs border border-fuchsia-500 rounded-full text-fuchsia-300 bg-gray-900/80">#{{ . }}</span>
+              {{ end }}
+            </div>
+            <p class="text-cyan-200 font-mono mb-6">{{ $featured.description }}</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="{{ $featured.url }}"
+                 class="font-vt323 px-5 py-2 border-2 border-fuchsia-400 rounded-lg text-fuchsia-200 bg-gray-900/80 hover:bg-cyan-700/40 hover:text-cyan-200 hover:border-cyan-500 transition-all shadow-[0_0_8px_#ff00cc_inset] uppercase tracking-widest">
+                View Project
+              </a>
+              {{ range $featured.links }}
+              <a href="{{ .url }}" target="_blank" rel="noopener"
+                 class="font-vt323 px-5 py-2 border-2 border-fuchsia-400 rounded-lg text-fuchsia-200 bg-gray-900/80 hover:bg-cyan-700/40 hover:text-cyan-200 hover:border-cyan-500 transition-all shadow-[0_0_8px_#ff00cc_inset] uppercase tracking-widest">
+                {{ .label }}
+              </a>
+              {{ end }}
+            </div>
+          </div>
+          <div class="order-1 md:order-2">
+            {{ if $featured.image }}
+                <img src="{{ $featured.image }}" alt="{{ $featured.title }}" class="rounded-xl w-full h-64 md:h-80 object-cover border-2 border-fuchsia-500 shadow-[0_0_24px_#ff00cc]">
+            {{ else }}
+            <div class="rounded-t-xl w-full h-48 border-b-2 border-cyan-600 overflow-hidden">
+                <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="100%" fill="#00ffe7" opacity="0.1" />
+                <rect x="20%" y="20%" width="60%" height="60%" fill="#ff00cc" opacity="0.1" stroke="#00ffe7" stroke-width="2" />
+                <text x="50%" y="50%" font-family="vt323, monospace" font-size="24" fill="#00ffe7" text-anchor="middle">{{ $featured.title }}</text>
+                </svg>
+            </div>
+            {{ end }}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+
+    <!-- Project Grid -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 portfolio-grid">
+      {{ range .Params.projects }}
+      <article class="portfolio-item flex flex-col bg-gray-800/90 border-2 border-cyan-600 rounded-xl shadow-[inset_0_0_16px_#00ffe7]">
+        {{ if .image }}
+          <img src="{{ .image }}" alt="{{ .title }}" class="rounded-t-xl w-full h-48 object-cover border-b-2 border-cyan-600">
+        {{ else }}
+          <div class="rounded-t-xl w-full h-48 border-b-2 border-cyan-600 overflow-hidden">
+            <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="#00ffe7" opacity="0.1" />
+              <rect x="20%" y="20%" width="60%" height="60%" fill="#ff00cc" opacity="0.1" stroke="#00ffe7" stroke-width="2" />
+              <text x="50%" y="50%" font-family="vt323, monospace" font-size="24" fill="#00ffe7" text-anchor="middle">{{ .title }}</text>
+            </svg>
+          </div>
+        {{ end }}
+        <div class="flex-1 flex flex-col p-6">
+          <h3 class="font-vt323 text-xl text-cyan-200 uppercase tracking-wide mb-2 drop-shadow-[0_0_8px_#00ffe7]">
+            {{ .title }}
+          </h3>
+          {{ with .tags }}
+          <div class="flex flex-wrap gap-2 mb-3">
+            {{ range . }}
+            <span class="px-2 py-1 text-xs border border-cyan-500 rounded-full text-cyan-300 bg-gray-900/80">#{{ . }}</span>
+            {{ end }}
+          </div>
+          {{ end }}
+          <p class="text-cyan-200 font-mono mb-4">{{ .description }}</p>
+          <div class="flex flex-wrap gap-3 mt-auto">
+            <a href="{{ .url }}"
+               class="font-vt323 px-4 py-2 border-2 border-cyan-400 rounded-lg text-cyan-200 bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset] uppercase tracking-widest text-sm">
+              Details
+            </a>
+            {{ range .links }}
+            <a href="{{ .url }}" target="_blank" rel="noopener"
+               class="font-vt323 px-4 py-2 border-2 border-cyan-400 rounded-lg text-cyan-200 bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset] uppercase tracking-widest text-sm">
+              {{ .label }}
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Simple filtering script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter items
+      const filter = this.getAttribute('data-filter');
+      portfolioItems.forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+</script>
+{{ end }}

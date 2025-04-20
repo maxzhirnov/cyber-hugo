@@ -1,0 +1,150 @@
+{{ define "main" }}
+{{ $textColor := .Params.single_title_color | default .Site.Params.single_title_color | default "text-cyan-300" }}
+{{ $proseColor := .Params.single_prose_color | default .Site.Params.single_prose_color | default "prose-cyan" }}
+
+<div class="relative max-w-5xl mx-auto mt-12 mb-20 px-4 py-8
+            bg-gray-900/90 border-2 border-cyan-400 rounded-2xl
+            shadow-[0_0_40px_#00ffe7_inset,0_0_80px_#ff00cc44]
+            backdrop-blur-md
+            before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none">
+
+  <div class="absolute -inset-2 rounded-3xl pointer-events-none z-0 shadow-[0_0_32px_#00ffe7,0_0_64px_#ff00cc44]"></div>
+
+  <h1 class="relative z-10 font-vt323 text-4xl md:text-5xl text-center uppercase tracking-widest mb-10 drop-shadow-[0_0_16px_#00ffe7] {{ $textColor }}">
+    {{ .Title | default "Posts" }}
+  </h1>
+
+  <div class="relative z-10 grid gap-10">
+    {{ $paginator := .Paginate .Pages }}
+    {{ range $paginator.Pages }}
+    {{ $postTextColor := .Params.single_title_color | default $textColor }}
+    {{ $postProseColor := .Params.single_prose_color | default $proseColor }}
+    <article class="bg-gray-800/90 border-2 border-cyan-600 rounded-xl p-6 shadow-[inset_0_0_16px_#00ffe7] transition-transform hover:scale-[1.02] hover:shadow-[0_0_32px_#ff00cc44]">
+      <h2 class="font-vt323 text-2xl uppercase tracking-wide mb-2 drop-shadow-[0_0_8px_#00ffe7] {{ $postTextColor }}">
+        <a href="{{ .Permalink }}" class="hover:text-fuchsia-400 transition-colors">{{ .Title }}</a>
+      </h2>
+      <div class="flex items-center gap-4 text-xs font-mono opacity-80 {{ $postTextColor }}">
+        <span>{{ .Date.Format "2006-01-02" }}</span>
+        {{ with .Params.tags }}
+          <span>
+            <svg class="inline w-4 h-4 mr-1 text-fuchsia-400" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 0 0-2 2v2a2 2 0 0 0 .586 1.414l7 7a2 2 0 0 0 2.828 0l2-2a2 2 0 0 0 0-2.828l-7-7A2 2 0 0 0 7 3H5zm0 2h2l7 7-2 2-7-7V5z"></path></svg>
+            {{ delimit . ", " }}
+          </span>
+        {{ end }}
+      </div>
+      <div class="prose {{ $postProseColor }} dark:prose-invert prose-headings:font-vt323 prose-headings:text-cyan-300 prose-a:text-fuchsia-400 hover:prose-a:text-cyan-300 prose-img:rounded-lg max-w-none">
+        {{ .Summary }}
+      </div>
+      <div class="mt-4">
+        <a href="{{ .Permalink }}" class="inline-block font-vt323 text-cyan-300 uppercase tracking-widest px-4 py-2 border-2 border-cyan-400 rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-fuchsia-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset]">
+          Read More →
+        </a>
+      </div>
+    </article>
+    {{ else }}
+    <div class="text-center text-cyan-400">No posts found.</div>
+    {{ end }}
+  </div>
+
+  <!-- Pagination -->
+  {{ if gt $paginator.TotalPages 1 }}
+  <nav aria-label="Page navigation" class="relative z-10 mt-10">
+    <ul class="flex flex-wrap justify-center items-center -space-x-px">
+      <!-- Previous page -->
+      {{ if $paginator.HasPrev }}
+      <li>
+        <a href="{{ $paginator.Prev.URL }}" 
+           class="flex items-center justify-center px-3 h-10 ms-0 leading-tight text-cyan-300 bg-gray-900/80 border-2 border-e-0 border-cyan-400 rounded-s-lg hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset] font-vt323">
+          <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+          </svg>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      {{ else }}
+      <li>
+        <span class="flex items-center justify-center px-3 h-10 ms-0 leading-tight text-gray-500 bg-gray-800/60 border-2 border-e-0 border-gray-700 rounded-s-lg cursor-not-allowed font-vt323">
+          <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </li>
+      {{ end }}
+
+      <!-- Page numbers -->
+      {{ $adjacent_links := 2 }}
+      {{ $max_links := (add (mul $adjacent_links 2) 1) }}
+      {{ $lower_limit := (add $paginator.PageNumber (mul $adjacent_links -1)) }}
+      {{ $upper_limit := (add $paginator.PageNumber $adjacent_links) }}
+      
+      <!-- First page and ellipsis -->
+      {{ if gt $paginator.TotalPages $max_links }}
+        {{ if gt $lower_limit 1 }}
+        <li>
+          <a href="{{ $paginator.First.URL }}" 
+             class="flex items-center justify-center px-3 h-10 leading-tight text-cyan-300 bg-gray-900/80 border-2 border-cyan-400 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset] font-vt323">1</a>
+        </li>
+        {{ if gt $lower_limit 2 }}
+        <li>
+          <span class="flex items-center justify-center px-3 h-10 leading-tight text-cyan-300 bg-gray-900/80 border-2 border-cyan-400 font-vt323">...</span>
+        </li>
+        {{ end }}
+        {{ end }}
+      {{ end }}
+
+      <!-- Page numbers -->
+      {{ range $paginator.Pagers }}
+        {{ if and (ge .PageNumber $lower_limit) (le .PageNumber $upper_limit) }}
+        <li>
+          <a href="{{ .URL }}" 
+             class="flex items-center justify-center px-3 h-10 leading-tight {{ if eq . $paginator }}text-fuchsia-400 bg-gray-900/80 border-2 border-fuchsia-500 shadow-[0_0_12px_#ff00cc_inset]{{ else }}text-cyan-300 bg-gray-900/80 border-2 border-cyan-400 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset]{{ end }} font-vt323">
+            {{ .PageNumber }}
+          </a>
+        </li>
+        {{ end }}
+      {{ end }}
+
+      <!-- Ellipsis and last page -->
+      {{ if gt $paginator.TotalPages $max_links }}
+        {{ if lt $upper_limit (sub $paginator.TotalPages 1) }}
+        <li>
+          <span class="flex items-center justify-center px-3 h-10 leading-tight text-cyan-300 bg-gray-900/80 border-2 border-cyan-400 font-vt323">...</span>
+        </li>
+        {{ end }}
+        {{ if lt $upper_limit $paginator.TotalPages }}
+        <li>
+          <a href="{{ $paginator.Last.URL }}" 
+             class="flex items-center justify-center px-3 h-10 leading-tight text-cyan-300 bg-gray-900/80 border-2 border-cyan-400 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset] font-vt323">
+            {{ $paginator.TotalPages }}
+          </a>
+        </li>
+        {{ end }}
+      {{ end }}
+
+      <!-- Next page -->
+      {{ if $paginator.HasNext }}
+      <li>
+        <a href="{{ $paginator.Next.URL }}" 
+           class="flex items-center justify-center px-3 h-10 leading-tight text-cyan-300 bg-gray-900/80 border-2 border-cyan-400 rounded-e-lg hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset] font-vt323">
+          <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+      {{ else }}
+      <li>
+        <span class="flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-gray-800/60 border-2 border-gray-700 rounded-e-lg cursor-not-allowed font-vt323">
+          <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,62 @@
+/* TailwindCSS base styles */
+/* see https://tailwindcss.com/docs/functions-and-directives#tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+/* Site Specific */
+/* put site specific css styles here using the @layer directive */
+/* see https://tailwindcss.com/docs/functions-and-directives#layer */
+@layer components {
+    .welcome-headline {
+        @apply text-sky-600;
+    }
+}
+
+.geek-stripes-bg {
+    background-image: repeating-linear-gradient(
+      180deg,
+      rgba(0,255,231,0.07) 0px,
+      rgba(0,255,231,0.07) 2px,
+      transparent 2px,
+      transparent 14px
+    );
+  }
+
+:root {
+    --h-bg: #1a1a1a;
+    --h-text: #00ffe7;
+    --h-comment: hsl(0, 0%, 55%);
+    --h-punctuation: hsl(0, 0%, 45%);
+    --h-keyword: #ff00cc;
+    --h-function: #00ffe7;
+    /* Add more token colors as needed */
+  }
+  
+  pre[class*="language-"] {
+    background-color: var(--h-bg) !important;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 20px #00ffe7cc inset;
+  }
+  
+  code[class*="language-"] {
+    color: var(--h-text);
+  }
+  
+  .token.comment {
+    color: var(--h-comment);
+  }
+  
+  .token.punctuation {
+    color: var(--h-punctuation);
+  }
+  
+  .token.keyword {
+    color: var(--h-keyword);
+  }
+  
+  .token.function {
+    color: var(--h-function);
+  }
+  

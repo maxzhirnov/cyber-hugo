@@ -1,0 +1,106 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "" }}
+{{ $caption := .Get "caption" }}
+{{ $credit := .Get "credit" }}
+{{ $class := .Get "class" | default "" }}
+{{ $effect := .Get "effect" | default "glitch" }}
+{{ $id := printf "img-%s" (md5 $src) }}
+
+<figure class="my-8 group">
+  <div class="relative border-2 border-cyan-400 rounded-lg overflow-hidden shadow-[0_0_16px_#00ffe7] hover:shadow-[0_0_24px_#00ffe7] transition-all duration-300">
+    <!-- Cyberpunk frame elements -->
+    <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-fuchsia-500 z-10"></div>
+    <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-fuchsia-500 z-10"></div>
+    <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-fuchsia-500 z-10"></div>
+    <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-fuchsia-500 z-10"></div>
+    
+    <!-- Scan line effect -->
+    <div class="absolute inset-0 bg-scan-lines opacity-20 mix-blend-overlay pointer-events-none z-20"></div>
+    
+    <!-- Glitch effect overlay -->
+    {{ if eq $effect "glitch" }}
+    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
+      <div class="absolute inset-0 glitch-overlay"></div>
+    </div>
+    {{ end }}
+    
+    <!-- Image with all margins/padding removed -->
+    <div class="font-size-0 leading-none">
+      <img id="{{ $id }}" src="{{ $src }}" alt="{{ $alt }}" class="w-full h-full object-cover block {{ $class }}" style="margin:0; padding:0; display:block; vertical-align:top;">
+    </div>
+    
+    <!-- Image info overlay (bottom) -->
+    {{ if or $caption $credit }}
+    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 to-transparent p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 backdrop-blur-sm">
+      {{ with $caption }}<div class="text-cyan-300 font-vt323 text-lg">{{ . }}</div>{{ end }}
+      {{ with $credit }}<div class="text-xs text-fuchsia-400 font-mono mt-1">{{ . }}</div>{{ end }}
+    </div>
+    {{ end }}
+    
+    <!-- Zoom button that opens image in new tab -->
+    <a href="{{ $src }}" target="_blank" rel="noopener" 
+       class="absolute top-3 right-3 bg-gray-900/70 rounded-full p-1.5 border border-cyan-400 text-cyan-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6"/>
+      </svg>
+    </a>
+  </div>
+  
+  <!-- Optional external caption -->
+  {{ if and (or $caption $credit) (eq (.Get "caption_position" | default "overlay") "below") }}
+  <figcaption class="mt-2 text-center">
+    {{ with $caption }}<span class="text-cyan-300 font-vt323">{{ . }}</span>{{ end }}
+    {{ with $credit }}<span class="text-xs text-fuchsia-400 font-mono block mt-1">{{ . }}</span>{{ end }}
+  </figcaption>
+  {{ end }}
+</figure>
+
+<style>
+  /* Scan lines effect */
+  .bg-scan-lines {
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 255, 231, 0.1),
+      rgba(0, 255, 231, 0.1) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  }
+  
+  /* Glitch overlay */
+  .glitch-overlay {
+    animation: glitch 2s infinite;
+    background: linear-gradient(45deg, 
+      rgba(255, 0, 204, 0.2) 0%, 
+      rgba(0, 255, 231, 0.2) 100%
+    );
+    mix-blend-mode: color-dodge;
+  }
+  
+  @keyframes glitch {
+    0% {
+      opacity: 0;
+      transform: translate(0);
+    }
+    20% {
+      opacity: 0.3;
+      transform: translate(-5px, 5px);
+    }
+    40% {
+      opacity: 0;
+      transform: translate(0);
+    }
+    60% {
+      opacity: 0.3;
+      transform: translate(5px, -5px);
+    }
+    80% {
+      opacity: 0;
+      transform: translate(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(0);
+    }
+  }
+</style>
