@@ -1,20 +1,29 @@
 module.exports = {
   safelist: [
-    'prose-cyan',
-    'prose-fuchsia',
-    'prose-lime',
-    'prose-blue',
-    'prose-yellow',
-    'prose-orange',
-    'prose-rose',
-    'prose-violet',
-    'prose-emerald',
+    'geek-stripes-bg',
+    // Typography classes
+    'prose-cyan', 'prose-fuchsia', 'prose-lime', 'prose-blue', 
+    'prose-yellow', 'prose-orange', 'prose-rose', 'prose-violet', 'prose-emerald',
+    
+    // Border colors
+    'border-cyan-400', 'border-fuchsia-400', 'border-lime-400', 'border-yellow-400',
+    
+    // Text colors
+    'text-cyan-300', 'text-fuchsia-300', 'text-lime-300', 'text-yellow-300',
+    
+    // Shadow classes
+    'shadow-[0_0_8px_#00ffe7_inset]', 'shadow-[0_0_8px_#ff00cc_inset]',
+    'shadow-[0_0_12px_#00ffe7_inset]', 'shadow-[0_0_16px_#00ffe7_inset]',
+    'shadow-[0_0_20px_#00ffe7_inset]', 'shadow-[0_0_40px_#00ffe7_inset]',
+    
+    // Background classes
+    'bg-gray-900/90', 'bg-gray-800/90', 'bg-gray-900/80', 'bg-gray-800/80'
   ],
   content: [
     "./themes/**/layouts/**/*.html",
-    "./content/**/layouts/**/*.html",
     "./layouts/**/*.html",
-    "./content/**/*.md"
+    "./content/**/*.md",
+    "./content/**/*.html"
   ],
   theme: {
     extend: {

@@ -28,16 +28,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
       - name: Install Node.js dependencies
-        run: |
-          cd exampleSite
-          npm install
+        run: npm install
 
       - name: Build exampleSite
         run: |
           cd exampleSite
-          hugo --minify --themesDir=../.. --theme=cyber-hugo --baseURL="https://maxzhirnov.github.io/cyber-hugo/"
+          HUGO_ENVIRONMENT=production hugo --minify --themesDir=../.. --theme=cyber-hugo --baseURL="https://maxzhirnov.github.io/cyber-hugo/"
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

@@ -1,17 +1,16 @@
 {
-    "name": "hugo-theme-tailwindcss-starter",
-    "version": "0.4.0",
-    "description": "Starter files for a Hugo theme with Tailwindcss",
+    "name": "cyber-hugo",
+    "version": "0.0.1",
+    "description": "Cyberpunk inspired theme for hugo",
     "main": "index.js",
-    "repository": "https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter",
-    "author": "dirkolbrich <github@dirkolbrich.de>",
+    "repository": "https://github.com/maxzhirnov/cyber-hugo",
+    "author": "maxzhirnov <maximz2009@gmail.com>",
     "license": "MIT",
-    "browserslist": [
-        "last 1 version",
-        "> 1%",
-        "maintained node versions",
-        "not dead"
-    ],
+    "scripts": {
+        "dev": "hugo server -s exampleSite --themesDir=../.. --disableFastRender",
+        "build": "HUGO_ENVIRONMENT=production hugo -s exampleSite --themesDir=../..",
+        "clean": "rm -rf exampleSite/public exampleSite/resources"
+    },
     "dependencies": {
         "@tailwindcss/aspect-ratio": "^0.x",
         "@tailwindcss/forms": "^0.x",
@@ -20,5 +19,8 @@
         "postcss": "^8.x",
         "postcss-cli": "^11.x",
         "tailwindcss": "^3.x"
+    },
+    "devDependencies": {
+        "@fullhuman/postcss-purgecss": "^7.0.2"
     }
 }

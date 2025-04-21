@@ -1,13 +1,41 @@
-{{- $prismTheme := resources.Get "css/vendor/prism-tomorrow.min.css" -}}
-{{- $prismLineNumbers := resources.Get "css/vendor/prism-line-numbers.min.css" -}}
-{{- $mainStyles := resources.Get "css/styles.css" -}}
+{{- /* Initialize an empty slice for CSS resources */ -}}
+{{- $css := slice -}}
 
-{{- $styles := slice $prismTheme $prismLineNumbers $mainStyles | resources.Concat "css/bundle.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
+{{- /* Add each CSS resource to the slice only if it exists */ -}}
+{{- with resources.Get "css/vendor/prism-tomorrow.min.css" -}}
+  {{- $css = $css | append . -}}
+{{- end -}}
 
-{{- if hugo.IsServer }}
-  {{ $styles = $styles | resources.ExecuteAsTemplate (printf "css/styles.dev.%v.css" now.UnixMilli) .}}
-{{ else }}
-  {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
-{{ end -}}
+{{- with resources.Get "css/vendor/prism-line-numbers.min.css" -}}
+  {{- $css = $css | append . -}}
+{{- end -}}
 
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}"{{ if not hugo.IsServer }} integrity="{{ $styles.Data.Integrity }}"{{ end }}>
+{{- with resources.Get "css/styles.css" -}}
+  {{- $css = $css | append . -}}
+{{- end -}}
+
+{{- /* Only process CSS if we have resources to process */ -}}
+{{- if gt (len $css) 0 -}}
+  {{- /* Concatenate and process with PostCSS */ -}}
+  {{- $cssOpts := dict "config" "./assets/css/postcss.config.js" "noMap" true -}}
+  {{- $styles := $css | resources.Concat "css/bundle.css" | postCSS $cssOpts -}}
+  
+  {{- /* Apply different processing based on environment */ -}}
+  {{- if hugo.IsServer -}}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+  {{- else -}}
+    {{- $styles = $styles | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+  {{- end -}}
+{{- else -}}
+  {{- /* Error handling if no CSS resources are found */ -}}
+  {{- warnf "No CSS resources found to process in css.html partial" -}}
+  <!-- Fallback CSS for development -->
+  {{- if hugo.IsServer -}}
+  <style>
+    body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #e6e6e6; }
+    .warning { color: #ff6b6b; padding: 1rem; border: 1px solid currentColor; }
+  </style>
+  <div class="warning">Warning: CSS resources not found. Check your asset paths.</div>
+  {{- end -}}
+{{- end -}}
