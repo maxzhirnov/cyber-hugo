@@ -25,7 +25,7 @@
 <!-- Include search index and scripts -->
 {{ partial "search-index.html" . }}
 
-{{ $lunrJS := resources.Get "js/lunr.min.js" | fingerprint }}
+{{ $lunrJS := resources.Get "js/vendor/lunr.min.js" | fingerprint }}
 <script src="{{ $lunrJS.RelPermalink }}"></script>
 
 {{ $searchJS := resources.Get "js/search.js" | js.Build | minify | fingerprint }}

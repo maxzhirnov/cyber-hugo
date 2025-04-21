@@ -9,7 +9,11 @@ pagination:
   
 markup:
   highlight:
-    style: dracula
+    codeFences: true
+    guessSyntax: false
+    lineNos: false
+    noClasses: false
+    style: monokai
   tableOfContents:
     startLevel: 2
     endLevel: 4

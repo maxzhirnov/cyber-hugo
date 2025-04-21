@@ -36,14 +36,25 @@ The theme is built on a dark foundation with carefully chosen contrast ratios to
 
 Code snippets aren't just functional - they're part of the aesthetic. Our theme includes custom-styled code blocks with syntax highlighting, line numbers, and a copy button.
 
+```javascript
+function connectToMainframe() {
+    console.log("Establishing secure connection...");
+    return new Promise((resolve) => {
+        setTimeout(() => {
+        resolve("ACCESS GRANTED");
+        }, 1000);
+    });
+}
+```
+
 {{< code language="javascript" title="Neural Interface Connection" >}}
 function connectToMainframe() {
-console.log("Establishing secure connection...");
-return new Promise((resolve) => {
-setTimeout(() => {
-resolve("ACCESS GRANTED");
-}, 1000);
-});
+    console.log("Establishing secure connection...");
+    return new Promise((resolve) => {
+        setTimeout(() => {
+        resolve("ACCESS GRANTED");
+        }, 1000);
+    });
 }
 {{< /code >}}
 
@@ -136,7 +147,7 @@ The theme uses Tailwind CSS with optimized builds that only include the classes 
 
 ### Fast Search
 
-The client-side search is built with performance in mind, using Fuse.js v7.0.0 for lightning-fast results even on large sites.
+The client-side search is built with performance in mind, using Lunr.js v2.3.9 for lightning-fast results.
 
 ## Getting Started
 

@@ -1,7 +1,13 @@
-{{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
+{{- $prismTheme := resources.Get "css/vendor/prism-tomorrow.min.css" -}}
+{{- $prismLineNumbers := resources.Get "css/vendor/prism-line-numbers.min.css" -}}
+{{- $mainStyles := resources.Get "css/styles.css" -}}
+
+{{- $styles := slice $prismTheme $prismLineNumbers $mainStyles | resources.Concat "css/bundle.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
+
 {{- if hugo.IsServer }}
-{{ $styles = $styles | resources.ExecuteAsTemplate (printf "css/styles.dev.%v.css" now.UnixMilli) .}}
+  {{ $styles = $styles | resources.ExecuteAsTemplate (printf "css/styles.dev.%v.css" now.UnixMilli) .}}
 {{ else }}
-{{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
+  {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
 {{ end -}}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}"{{ if not hugo.IsServer }} integrity="{{ $styles.Data.Integrity }}"{{ end }}>

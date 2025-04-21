@@ -1,0 +1,8 @@
+{{ $prismConfig := resources.Get "js/prism-config.js" }}
+{{ $prismCore := resources.Get "js/vendor/prism-core.min.js" }}
+{{ $prismAutoloader := resources.Get "js/vendor/prism-autoloader.min.js" }}
+{{ $prismLineNumbers := resources.Get "js/vendor/prism-line-numbers.min.js" }}
+{{ $codeHighlight := resources.Get "js/code-highlight.js" }}
+
+{{ $allScripts := slice $prismConfig $prismCore $prismAutoloader $prismLineNumbers $codeHighlight | resources.Concat "js/code-bundle.js" | minify | fingerprint }}
+<script src="{{ $allScripts.RelPermalink }}" integrity="{{ $allScripts.Data.Integrity }}" defer></script>
