@@ -4,6 +4,7 @@ module.exports = {
     { pattern: /bg-\[#0f1021\]/ },
     { pattern: /text-(cyan|fuchsia|lime)-300/ },
     'geek-stripes-bg', 'bg-[#0f1021]',
+    'max-w-5xl', 'mx-auto', 'px-4', 'py-8', 'grid', 'md:grid-cols-3', 'gap-6',
     // Typography classes
     'prose-cyan', 'prose-fuchsia', 'prose-lime', 'prose-blue', 
     'prose-yellow', 'prose-orange', 'prose-rose', 'prose-violet', 'prose-emerald',
