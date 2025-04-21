@@ -1,6 +1,8 @@
 theme: cyber-hugo
 languageCode: en-us
-baseurl: https://yourusername.github.io/
+baseurl: https://maxzhirnov.github.io/cyber-hugo/
+relativeURLs: true
+canonifyURLs: true
 title: Cyber Theme
 author: Dirk Olbrich
 copyright: Copyright © 2019-2024, Dirk Olbrich, all rights reserved.
