@@ -1,7 +1,7 @@
 theme: cyber-hugo
 languageCode: en-us
-baseurl: https://maxzhirnov.github.io/
-relativeURLs: true
+baseURL: "https://maxzhirnov.github.io/cyber-hugo/"
+relativeURLs: false
 canonifyURLs: true
 title: Cyber Theme
 pagination:
