@@ -41,9 +41,7 @@ jobs:
         run: npm install
 
       - name: Build ExampleSite with Hugo Native Tailwind
-        run: |
-          cd exampleSite
-          HUGO_ENVIRONMENT=production hugo --minify --themesDir=../.. --theme=cyber-hugo --baseURL="https://maxzhirnov.github.io/cyber-hugo/"
+        run: HUGO_ENVIRONMENT=production hugo -s exampleSite --themesDir=../.. --baseURL="https://maxzhirnov.github.io/cyber-hugo/"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

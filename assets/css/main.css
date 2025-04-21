@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@source "./exampleSite/hugo_stats.json";
+@source "/exampleSite/hugo_stats.json";
 
 .geek-stripes-bg {
     background-image: repeating-linear-gradient(
