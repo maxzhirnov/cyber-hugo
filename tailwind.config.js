@@ -1,7 +1,5 @@
 module.exports = {
   safelist: [
-    { pattern: /grid-cols-\d+/ },
-    { pattern: /md:grid-cols-\d+/ },
     'geek-stripes-bg', 'bg-[#0f1021]',
     'max-w-5xl', 'mx-auto', 'px-4', 'py-8', 'grid', 'md:grid-cols-3', 'gap-6',
     // Typography classes
