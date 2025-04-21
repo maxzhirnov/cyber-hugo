@@ -23,13 +23,19 @@ module.exports = {
     'bg-gray-900/90', 'bg-gray-800/90', 'bg-gray-900/80', 'bg-gray-800/80'
   ],
   content: [
-    "./layouts/**/*.html",
-    "./themes/**/layouts/**/*.html",
-    "./content/**/*.{html,md}",
-    "./exampleSite/content/**/*.{html,md}",
-    "./exampleSite/layouts/**/*.html",
-    "./assets/js/**/*.js",
-    "./static/**/*.js"
+    './layouts/**/*.html',
+    './layouts/**/*.js',
+    './layouts/**/*.md',
+    './layouts/partials/**/*.html',
+    './layouts/shortcodes/**/*.html',
+    './layouts/partials/widgets/**/*.html',
+    './exampleSite/content/**/*.{md,html}',
+    './exampleSite/layouts/**/*.html',
+    './content/**/*.{md,html}',
+    './assets/js/**/*.js',
+    './static/**/*.js',
+    './static/**/*.html',
+    './archetypes/**/*.md'
   ],
   theme: {
     extend: {
