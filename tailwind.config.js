@@ -12,7 +12,7 @@ module.exports = {
     'border-cyan-400', 'border-fuchsia-400', 'border-lime-400', 'border-yellow-400',
     
     // Text colors
-    'text-cyan-300', 'text-fuchsia-300', 'text-lime-300', 'text-yellow-300',
+    'text-cyan-300', 'text-cyan-400',  'text-fuchsia-300', 'text-lime-300', 'text-yellow-300',
     
     // Shadow classes
     'shadow-[0_0_8px_#00ffe7_inset]', 'shadow-[0_0_8px_#ff00cc_inset]',
