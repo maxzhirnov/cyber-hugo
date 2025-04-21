@@ -1,5 +1,8 @@
 module.exports = {
   safelist: [
+    { pattern: /bg-(red|blue|green)-(100|200|300)/ },
+    { pattern: /bg-\[#0f1021\]/ },
+    { pattern: /text-(cyan|fuchsia|lime)-300/ },
     'geek-stripes-bg', 'bg-[#0f1021]',
     // Typography classes
     'prose-cyan', 'prose-fuchsia', 'prose-lime', 'prose-blue', 
