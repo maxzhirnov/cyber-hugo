@@ -22,7 +22,18 @@ jobs:
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: '0.145.0'
-          extended: true  # Most themes require the extended version
+          extended: true  # Required for SCSS/PostCSS
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Node.js dependencies
+        run: |
+          cd exampleSite
+          npm init -y
+          npm install postcss postcss-cli autoprefixer
 
       - name: Build exampleSite
         run: |
@@ -35,11 +46,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./exampleSite/public
           force_orphan: true
-
-      - name: Debug Build Output
-        run: |
-          echo "Contents of exampleSite/public folder:"
-          ls -R exampleSite/public
-          
-      - name: Check Hugo Version
-        run: hugo version
