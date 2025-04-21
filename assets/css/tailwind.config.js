@@ -20,10 +20,13 @@ module.exports = {
     'bg-gray-900/90', 'bg-gray-800/90', 'bg-gray-900/80', 'bg-gray-800/80'
   ],
   content: [
-    "./themes/**/layouts/**/*.html",
     "./layouts/**/*.html",
-    "./content/**/*.md",
-    "./content/**/*.html"
+    "./themes/**/layouts/**/*.html",
+    "./content/**/*.{html,md}",
+    "./exampleSite/content/**/*.{html,md}",
+    "./exampleSite/layouts/**/*.html",
+    "./assets/js/**/*.js",
+    "./static/**/*.js"
   ],
   theme: {
     extend: {
