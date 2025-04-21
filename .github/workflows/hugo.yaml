@@ -43,7 +43,7 @@ jobs:
       - name: Build exampleSite
         run: |
           cd exampleSite
-          HUGO_ENVIRONMENT=production hugo --minify --themesDir=../.. --theme=cyber-hugo --baseURL="https://maxzhirnov.github.io/"
+          HUGO_ENVIRONMENT=production hugo --minify --themesDir=../.. --theme=cyber-hugo --baseURL="https://maxzhirnov.github.io/cyber-hugo/"
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
