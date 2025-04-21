@@ -1,6 +1,6 @@
 module.exports = {
   safelist: [
-    'geek-stripes-bg',
+    'geek-stripes-bg', 'bg-[#0f1021]',
     // Typography classes
     'prose-cyan', 'prose-fuchsia', 'prose-lime', 'prose-blue', 
     'prose-yellow', 'prose-orange', 'prose-rose', 'prose-violet', 'prose-emerald',
