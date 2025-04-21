@@ -3,8 +3,10 @@ module.exports = {
     { pattern: /bg-(red|blue|green)-(100|200|300)/ },
     { pattern: /bg-\[#0f1021\]/ },
     { pattern: /text-(cyan|fuchsia|lime)-300/ },
-    'geek-stripes-bg', 'bg-[#0f1021]',
-    'max-w-5xl', 'mx-auto', 'px-4', 'py-8', 'grid', 'md:grid-cols-3', 'gap-6',
+    { pattern: /md:grid-cols-+/ },
+    { pattern: /lg:grid-cols-+/ },
+    { pattern: /text-(xl|2xl|3xl|4xl|5xl)/ },
+    'geek-stripes-bg', 
     // Typography classes
     'prose-cyan', 'prose-fuchsia', 'prose-lime', 'prose-blue', 
     'prose-yellow', 'prose-orange', 'prose-rose', 'prose-violet', 'prose-emerald',
