@@ -1,41 +1,17 @@
-{{- /* Initialize an empty slice for CSS resources */ -}}
-{{- $css := slice -}}
-
-{{- /* Add each CSS resource to the slice only if it exists */ -}}
-{{- with resources.Get "css/vendor/prism-tomorrow.min.css" -}}
-  {{- $css = $css | append . -}}
-{{- end -}}
-
-{{- with resources.Get "css/vendor/prism-line-numbers.min.css" -}}
-  {{- $css = $css | append . -}}
-{{- end -}}
-
-{{- with resources.Get "css/styles.css" -}}
-  {{- $css = $css | append . -}}
-{{- end -}}
-
-{{- /* Only process CSS if we have resources to process */ -}}
-{{- if gt (len $css) 0 -}}
-  {{- /* Concatenate and process with PostCSS */ -}}
-  {{- $cssOpts := dict "config" "postcss.config.js" "noMap" true -}}
-  {{- $styles := $css | resources.Concat "css/bundle.css" | postCSS $cssOpts -}}
-  
-  {{- /* Apply different processing based on environment */ -}}
-  {{- if hugo.IsServer -}}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
-  {{- else -}}
-    {{- $styles = $styles | minify | fingerprint -}}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
-  {{- end -}}
-{{- else -}}
-  {{- /* Error handling if no CSS resources are found */ -}}
-  {{- warnf "No CSS resources found to process in css.html partial" -}}
-  <!-- Fallback CSS for development -->
-  {{- if hugo.IsServer -}}
-  <style>
-    body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #e6e6e6; }
-    .warning { color: #ff6b6b; padding: 1rem; border: 1px solid currentColor; }
-  </style>
-  <div class="warning">Warning: CSS resources not found. Check your asset paths.</div>
-  {{- end -}}
-{{- end -}}
+{{ with (templates.Defer (dict "key" "global")) }}
+  {{ with resources.Get "css/main.css" }}
+    {{ $opts := dict
+      "minify" hugo.IsProduction
+      "inlineImports" true
+    }}
+    {{ with . | css.TailwindCSS $opts }}
+      {{ if hugo.IsProduction }}
+        {{ with . | fingerprint }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        {{ end }}
+      {{ else }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}

@@ -38,27 +38,13 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Install Node.js dependencies
-        run: |
-          npm install
-          # Also install dependencies in exampleSite if it has its own package.json
-          if [ -f "exampleSite/package.json" ]; then
-            cd exampleSite
-            npm install
-            cd ..
-          fi
+        run: npm install
 
-      - name: Process Tailwind CSS
-        run: |
-          # Create the required directories if they don't exist
-          mkdir -p assets/css/
-          # Run Tailwind build
-          npx tailwindcss -i assets/css/styles.css -o assets/css/styles.processed.css
-
-      - name: Build exampleSite
+      - name: Build ExampleSite with Hugo Native Tailwind
         run: |
           cd exampleSite
           HUGO_ENVIRONMENT=production hugo --minify --themesDir=../.. --theme=cyber-hugo --baseURL="https://maxzhirnov.github.io/cyber-hugo/"
-        
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
