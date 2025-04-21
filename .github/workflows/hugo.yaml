@@ -38,7 +38,21 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Install Node.js dependencies
-        run: npm install
+        run: |
+          npm install
+          # Also install dependencies in exampleSite if it has its own package.json
+          if [ -f "exampleSite/package.json" ]; then
+            cd exampleSite
+            npm install
+            cd ..
+          fi
+
+      - name: Process Tailwind CSS
+        run: |
+          # Create the required directories if they don't exist
+          mkdir -p assets/css/
+          # Run Tailwind build
+          npx tailwindcss -i assets/css/styles.css -o assets/css/styles.processed.css
 
       - name: Build exampleSite
         run: |

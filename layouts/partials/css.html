@@ -17,9 +17,8 @@
 {{- /* Only process CSS if we have resources to process */ -}}
 {{- if gt (len $css) 0 -}}
   {{- /* Concatenate and process with PostCSS */ -}}
-  {{/*  {{- $cssOpts := dict "config" "postcss.config.js" "noMap" true -}}  */}}
-  {{/*  {{- $styles := $css | resources.Concat "css/bundle.css" | postCSS $cssOpts -}}  */}}
-  {{- $styles := $css | resources.Concat "css/bundle.css" | postCSS -}}
+  {{- $cssOpts := dict "config" "postcss.config.js" "noMap" true -}}
+  {{- $styles := $css | resources.Concat "css/bundle.css" | postCSS $cssOpts -}}
   
   {{- /* Apply different processing based on environment */ -}}
   {{- if hugo.IsServer -}}
