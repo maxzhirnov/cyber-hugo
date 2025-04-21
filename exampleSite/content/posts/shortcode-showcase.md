@@ -2,8 +2,8 @@
 title: "Cyberpunk Theme Shortcodes Showcase"
 date: 2025-04-19T10:00:00+00:00
 tags: ["theme", "shortcodes", "demo", "cyberpunk"]
-single_title_color: "text-fuchsia-400"
-single_prose_color: "prose-cyan"
+single_title_color: "text-cyber-fuchsia"
+single_prose_color: "text-cyber-rose"
 ---
 
 Welcome to the showcase of custom shortcodes available in the Cyber Hugo theme. These shortcodes extend markdown capabilities and help maintain a consistent cyberpunk aesthetic throughout your site.

@@ -89,7 +89,7 @@ params:
   github_banner: true
   favicon: favicon.ico
   single_title_color: "text-cyan-400"
-  single_prose_color: "prose-emerald"
+  single_prose_color: "text-cyber-emerald"
   dashboard:
     title: SYSTEM CONSOLE
     subtitle: MAIN ACCESS POINT

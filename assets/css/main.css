@@ -1,5 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
 @import "tailwindcss";
 @source "/exampleSite/hugo_stats.json";
+
+@theme {
+    --font-vt323: "VT323", monospace;
+    --font-share-tech: "Share Tech Mono", monospace;
+
+    --color-cyber-cyan: #00ffe7;
+    --color-cyber-fuchsia: #ff00cc;
+    --color-cyber-lime: #39ff14;
+    --color-cyber-blue: #00bfff;
+    --color-cyber-yellow: #fff600;
+    --color-cyber-orange: #ff8800;
+    --color-cyber-rose: #ff007a;
+    --color-cyber-violet: #a259ff;
+    --color-cyber-emerald: #00ffae;
+
+    --color-cyber-cyan-100: #e0fffa;
+    --color-cyber-cyan-500: #00ffe7;
+    --color-cyber-cyan-900: #009e8e;
+  }
 
 .geek-stripes-bg {
     background-image: repeating-linear-gradient(
