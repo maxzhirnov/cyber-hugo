@@ -67,16 +67,18 @@ menus:
     - name: FAQ
       url: /faq/
 
-# Available prose color themes for single_prose_color:
-#   prose-cyan
-#   prose-fuchsia
-#   prose-lime
-#   prose-blue
-#   prose-yellow
-#   prose-orange
-#   prose-rose
-#   prose-violet
-#   prose-emerald
+# Available  colors:
+  # --color-cyber-cyan:    #00ffe7;
+  # --color-cyber-fuchsia: #ff00cc;
+  # --color-cyber-lime:    #39ff14;
+  # --color-cyber-blue:    #00bfff;
+  # --color-cyber-yellow:  #fff600;
+  # --color-cyber-orange:  #ff8800;
+  # --color-cyber-rose:    #ff007a;
+  # --color-cyber-violet:  #a259ff;
+  # --color-cyber-emerald: #00ffae;
+  # --color-terminal-black: #0f1021;
+  # --color-deep-gray: #1a1a2e;
 params:
   name: Hugo Tailwindcss Starter
   description: A simple bootstraped theme for Hugo, build with Tailwindcss.
@@ -88,7 +90,7 @@ params:
   github_repo: https://github.com/dirkolbrich/hugo-tailwindcss-starter-theme
   github_banner: true
   favicon: favicon.ico
-  single_title_color: "text-cyan-400"
+  single_title_color: "text-cyber-fuchsia"
   single_prose_color: "text-cyber-emerald"
   dashboard:
     title: SYSTEM CONSOLE

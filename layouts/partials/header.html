@@ -1,9 +1,7 @@
 <header class="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-8 py-6">
-    <!-- Geek stripes background -->
-    <div class="absolute inset-0 pointer-events-none rounded-xl"></div>
 
-    <nav class="relative z-10 flex items-center justify-between">
-      <!-- Лого/Title -->
+    <nav class="relative z-100 flex items-center justify-between">
+      <!-- Logo/Title -->
       <a href="{{ .Site.Home.Permalink }}"
          class="font-vt323 text-2xl sm:text-3xl text-cyan-400 tracking-widest uppercase drop-shadow-[0_0_8px_#00ffe7] hover:text-fuchsia-400 transition-colors duration-150">
         {{ .Site.Title }}
@@ -14,10 +12,7 @@
       <label for="nav-toggle"
         class="sm:hidden flex items-center text-cyan-400 hover:text-fuchsia-400 cursor-pointer ml-2 z-20">
         <!-- Burger icon -->
-        <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+        {{ partial "icons/ui" (dict "icon" "burger" "class" "h-7 w-7") }}
       </label>
   
       <!-- Desktop/Tablet menu -->
@@ -25,30 +20,14 @@
         {{ range .Site.Menus.main }}
         <li>
           <a href="{{ .URL }}"
-             class="relative flex items-center px-5 py-2 font-vt323 text-lg uppercase tracking-widest
-                    border-2 border-cyan-400 rounded-md
-                    bg-gray-900/80
-                    text-cyan-200
-                    shadow-[0_0_8px_#00ffe7_inset]
-                    transition-all duration-150
-                    hover:bg-fuchsia-700/40 hover:text-fuchsia-200 hover:border-fuchsia-500
-                    {{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}!bg-cyan-900/80 !text-lime-300 !border-lime-400{{ end }}">
+             class="btn-main {{ if eq $.RelPermalink .URL }} !bg-cyan-900/80 !text-lime-300 !border-lime-400{{ end }}">
             {{ .Name }}
           </a>
         </li>
-        
         {{ end }}
-        <!-- Theme toggle button (оставим твой SVG-код) -->
-        <li>
-          <button type="button" id="theme-toogle" onclick="changeTheme()"
-                  class="ml-2 text-cyan-400 hover:text-fuchsia-400 transition-colors">
-            <!-- SVGs как у тебя -->
-            <!-- ... -->
-          </button>
-        </li>
       </ul>
   
-      <!-- Мобильное меню (slide-down) -->
+      <!-- Mobile menu (slide-down) -->
       <ul id="nav-menu"
           class="fixed top-0 left-0 w-full h-screen bg-gray-950/95 border-b-2 border-cyan-400 z-10
                  flex flex-col items-center gap-6 pt-24 transition-all duration-300
@@ -56,28 +35,12 @@
         {{ range .Site.Menus.main }}
         <li>
           <a href="{{ .URL }}"
-             class="relative flex items-center px-8 py-3 font-vt323 text-xl uppercase tracking-widest
-                    border-2 border-cyan-400 rounded-md
-                    bg-gray-900/80
-                    text-cyan-200
-                    shadow-[0_0_8px_#00ffe7_inset]
-                    transition-all duration-150
-                    hover:bg-fuchsia-700/40 hover:text-fuchsia-200 hover:border-fuchsia-500
-                    {{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}!bg-cyan-900/80 !text-lime-300 !border-lime-400{{ end }}">
+             class="btn-main {{ if eq $.RelPermalink .URL }} !bg-cyan-900/80 !text-lime-300 !border-lime-400{{ end }}">
             {{ .Name }}
           </a>
         </li>
         {{ end }}
-        <li>
-          <button type="button" id="theme-toogle-mobile" onclick="changeTheme()"
-                  class="mt-4 text-cyan-400 hover:text-fuchsia-400 transition-colors">
-            <!-- SVGs как у тебя -->
-            <!-- ... -->
-          </button>
-        </li>
       </ul>
     </nav>
-  
-
   </header>
   

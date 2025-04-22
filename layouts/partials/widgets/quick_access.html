@@ -8,7 +8,7 @@
     </div>
     <div class="grid grid-cols-2 gap-3 mt-3">
       {{ range .Site.Menus.quicklinks }}
-      <a href="{{ .URL }}" class="flex items-center justify-center bg-gray-900 border-2 border-cyan-500 rounded-md py-2 px-3 font-vt323 text-cyan-300 uppercase tracking-widest hover:bg-fuchsia-800 hover:text-yellow-200 transition-all duration-150 shadow-[0_0_8px_#00ffe7_inset]">
+      <a href="{{ .URL }}" class="btn-main">
         {{ .Name }}
       </a>
       {{ end }}

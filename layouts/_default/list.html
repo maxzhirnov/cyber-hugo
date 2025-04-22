@@ -1,48 +1,33 @@
 {{ define "main" }}
-{{ $textColor := .Params.single_title_color | default .Site.Params.single_title_color | default "text-cyan-300" }}
-{{ $proseColor := .Params.single_prose_color | default .Site.Params.single_prose_color | default "prose-cyan" }}
+
 
 <div class="relative max-w-5xl mx-auto mt-12 mb-20 px-4 py-8
             bg-gray-900/90 border-2 border-cyan-400 rounded-2xl
             shadow-[0_0_40px_#00ffe7_inset,0_0_80px_#ff00cc44]
             backdrop-blur-md
             before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none">
-
+  
+  {{/*  Outer glow  */}}
   <div class="absolute -inset-2 rounded-3xl pointer-events-none z-0 shadow-[0_0_32px_#00ffe7,0_0_64px_#ff00cc44]"></div>
 
-  <h1 class="relative z-10 font-vt323 text-4xl md:text-5xl text-center uppercase tracking-widest mb-10 drop-shadow-[0_0_16px_#00ffe7] {{ $textColor }}">
+  {{/*  Page title  */}}
+  <h1 class="relative z-10 font-vt323 text-4xl md:text-5xl text-center uppercase tracking-widest mb-10 drop-shadow-[0_0_16px_#00ffe7]">
     {{ .Title | default "Posts" }}
   </h1>
 
-  <div class="relative z-10 grid gap-10">
+  <div class="relative z-10 flex flex-col gap-10 justify-center">
     {{ $paginator := .Paginate .Pages }}
     {{ range $paginator.Pages }}
-    {{ $postTextColor := .Params.single_title_color | default $textColor }}
-    {{ $postProseColor := .Params.single_prose_color | default $proseColor }}
-    <article class="bg-gray-800/90 border-2 border-cyan-600 rounded-xl p-6 shadow-[inset_0_0_16px_#00ffe7] transition-transform hover:scale-[1.02] hover:shadow-[0_0_32px_#ff00cc44]">
-      <h2 class="font-vt323 text-2xl uppercase tracking-wide mb-2 drop-shadow-[0_0_8px_#00ffe7] {{ $postTextColor }}">
-        <a href="{{ .Permalink }}" class="hover:text-fuchsia-400 transition-colors">{{ .Title }}</a>
-      </h2>
-      <div class="flex items-center gap-4 text-xs font-mono opacity-80 {{ $postTextColor }}">
-        <span>{{ .Date.Format "2006-01-02" }}</span>
-        {{ with .Params.tags }}
-          <span>
-            <svg class="inline w-4 h-4 mr-1 text-fuchsia-400" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 0 0-2 2v2a2 2 0 0 0 .586 1.414l7 7a2 2 0 0 0 2.828 0l2-2a2 2 0 0 0 0-2.828l-7-7A2 2 0 0 0 7 3H5zm0 2h2l7 7-2 2-7-7V5z"></path></svg>
-            {{ delimit . ", " }}
-          </span>
-        {{ end }}
-      </div>
-      <div class="prose {{ $postProseColor }} dark:prose-invert prose-headings:font-vt323 prose-headings:text-cyan-300 prose-a:text-fuchsia-400 hover:prose-a:text-cyan-300 prose-img:rounded-lg max-w-none">
-        {{ .Summary }}
-      </div>
-      <div class="mt-4">
-        <a href="{{ .Permalink }}" class="inline-block font-vt323 text-cyan-300 uppercase tracking-widest px-4 py-2 border-2 border-cyan-400 rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-fuchsia-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset]">
-          Read More →
-        </a>
-      </div>
-    </article>
+      <article class="w-full max-w-full sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto
+        bg-gray-800/90 border-2 border-cyan-600 rounded-xl p-6
+        shadow-[inset_0_0_16px_#00ffe7]
+        transition-transform hover:scale-[1.005] hover:shadow-[0_0_32px_#ff00cc44]">
+        <div class="prose prose-headings:font-vt323 max-w-prose mx-auto prose-img:max-w-full prose-pre:overflow-x-auto">
+          {{ .Render "summary" }}
+        </div>
+      </article>
     {{ else }}
-    <div class="text-center text-cyan-400">No posts found.</div>
+      <div class="text-center text-cyan-400">No posts found.</div>
     {{ end }}
   </div>
 

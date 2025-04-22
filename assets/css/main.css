@@ -6,19 +6,41 @@
     --font-vt323: "VT323", monospace;
     --font-share-tech: "Share Tech Mono", monospace;
 
-    --color-cyber-cyan: #00ffe7;
+    --color-cyber-cyan:    #00ffe7;
     --color-cyber-fuchsia: #ff00cc;
-    --color-cyber-lime: #39ff14;
-    --color-cyber-blue: #00bfff;
-    --color-cyber-yellow: #fff600;
-    --color-cyber-orange: #ff8800;
-    --color-cyber-rose: #ff007a;
-    --color-cyber-violet: #a259ff;
+    --color-cyber-lime:    #39ff14;
+    --color-cyber-blue:    #00bfff;
+    --color-cyber-yellow:  #fff600;
+    --color-cyber-orange:  #ff8800;
+    --color-cyber-rose:    #ff007a;
+    --color-cyber-violet:  #a259ff;
     --color-cyber-emerald: #00ffae;
+    --color-terminal-black: #0f1021;
+    --color-deep-gray: #1a1a2e;
+  }
 
-    --color-cyber-cyan-100: #e0fffa;
-    --color-cyber-cyan-500: #00ffe7;
-    --color-cyber-cyan-900: #009e8e;
+  @layer base {
+    h1 { @apply text-4xl font-bold my-2; }
+    h2 { @apply text-3xl font-bold my-2; }
+    h3 { @apply text-2xl font-semibold my-2 underline; }
+    h4 { @apply text-xl font-semibold my-2; }
+    h5 { @apply text-lg font-semibold my-2; }
+    h6 { @apply text-base font-semibold my-2; }
+  }
+
+  @layer components {
+    .card-glow {
+      @apply bg-gray-900/80 border-2 border-cyber-cyan shadow-[0_0_5px_#00ffe7_inset] p-2 group-hover:shadow-[0_0_10px_#00ffe7_inset] transition-all duration-300;
+      
+    }
+
+    .btn-main {
+        @apply relative flex items-center justify-center px-5 py-2 font-vt323 text-lg uppercase tracking-widest
+          border-2 border-cyan-400 rounded-md
+          bg-gray-900/80 text-cyan-200
+          shadow-[0_0_8px_#00ffe7_inset]
+          transition-all duration-150
+    }    
   }
 
 .geek-stripes-bg {
