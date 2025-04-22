@@ -52,3 +52,12 @@ close:
 
 no_entries_found:
   other: 'No entries found'
+
+page_not_found:
+  other: 'PAGE NOT FOUND'
+
+404_long_text:
+  other: '<span class="inline-block mb-2">You seem to have wandered off the grid.</span><br><span class="inline-block">Return to the neon city or try searching for another signal.</span>'
+
+back_to_home:
+  other: 'Back to Home'

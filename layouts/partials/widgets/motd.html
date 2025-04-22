@@ -1,39 +1,50 @@
 <!-- MOTD Widget -->
 <div class="widget-base relative overflow-visible">
     <!-- Header -->
-  <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3 z-20">
-    <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
-      <span class="drop-shadow-[0_0_6px_#00ffe7]">🠔</span>
-      {{ .Site.Params.widgets.system_motd | default "SYSTEM MOTD" }}
-    </h2>
-    <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
-  </div>
-    <!-- Cyberpunk MOTD Widget -->
-<div class="relative p-7 flex flex-col items-center justify-center select-none" style="perspective: 700px;">
-    <!-- Glass, Tech, and Neon Deco -->
-    <div class="absolute top-0 left-0 right-0 flex justify-between px-4 pointer-events-none z-10">
-      <span class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none opacity-80">╔═══</span>
-      <span class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none opacity-80">═══╗</span>
+    <div
+        class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3 z-20">
+        <h2
+            class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
+            <span class="drop-shadow-[0_0_6px_#00ffe7]">🠔</span>
+            {{ .Site.Params.widgets.system_motd | default "SYSTEM MOTD" }}
+        </h2>
+        <span
+            class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
     </div>
-
-    <div class="relative w-full max-w-xl mx-auto min-h-[94px] md:min-h-[120px] flex items-center justify-center
-        bg-gradient-to-br from-gray-900/95 to-gray-800/85
-        border-[4px] border-cyan-400/90 shadow-[0_0_44px_#00ffe777,0_0_24px_#ff00cc44] overflow-visible"
-        style="clip-path: polygon(10% 0, 90% 0, 100% 25%, 100% 75%, 90% 100%, 10% 100%, 0 75%, 0 25%);
-            backdrop-filter: blur(6px) brightness(1.05)">
-    <!-- SVG Edge Glow Overlay -->
-        <svg class="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <polygon points="10,0 90,0 100,25 100,75 90,100 10,100 0,75 0,25"
-                fill="none" stroke="#ff00cc88" stroke-width="2.5"></polygon>
-        </svg>
-        <div class="absolute inset-0 pointer-events-none z-20"
-            style="clip-path: inherit; background: linear-gradient(105deg,rgba(255,255,255,0.14) 7%,rgba(0,255,231,0.12) 95%);"></div>
-        <div class="absolute inset-0 pointer-events-none z-30 opacity-26 mix-blend-screen">
-            <div class="w-full h-full scanlines"></div>
+    <div
+        class="relative p-7 flex flex-col items-center justify-center select-none"
+        style="perspective: 700px;">
+        <!-- Glass, Tech, and Neon Deco -->
+        <div
+            class="absolute top-0 left-0 right-0 flex justify-between px-4 pointer-events-none z-10">
+            <span
+                class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none opacity-80">╔═══</span>
+            <span
+                class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none opacity-80">═══╗</span>
         </div>
-        <div id="motd-box"
-            class="w-full flex justify-center items-center px-4 py-3 font-share-tech text-center text-cyan-200 text-base sm:text-xl md:text-2xl tracking-[.07em] motd-segmented z-40 select-text bg-black/10"
-            style="
+
+        <div
+            class="relative w-full max-w-xl mx-auto min-h-[94px] md:min-h-[120px] flex items-center justify-center
+            bg-gradient-to-br from-gray-900/95 to-gray-800/85
+            border-[4px] border-cyan-400/90 shadow-[0_0_44px_#00ffe777,0_0_24px_#ff00cc44] overflow-visible"
+            style="clip-path: polygon(10% 0, 90% 0, 100% 25%, 100% 75%, 90% 100%, 10% 100%, 0 75%, 0 25%);
+                backdrop-filter: blur(6px) brightness(1.05)">
+            <!-- SVG Edge Glow Overlay -->
+            <svg class="absolute inset-0 w-full h-full pointer-events-none z-10"
+                viewBox="0 0 100 100" preserveAspectRatio="none">
+                <polygon
+                    points="10,0 90,0 100,25 100,75 90,100 10,100 0,75 0,25"
+                    fill="none" stroke="#ff00cc88" stroke-width="2.5"></polygon>
+            </svg>
+            <div class="absolute inset-0 pointer-events-none z-20"
+                style="clip-path: inherit; background: linear-gradient(105deg,rgba(255,255,255,0.14) 7%,rgba(0,255,231,0.12) 95%);"></div>
+            <div
+                class="absolute inset-0 pointer-events-none z-30 opacity-26 mix-blend-screen">
+                <div class="w-full h-full scanlines"></div>
+            </div>
+            <div id="motd-box"
+                class="w-full flex justify-center items-center px-4 py-3 font-share-tech text-center text-cyan-200 text-base sm:text-xl md:text-2xl tracking-[.07em] motd-segmented z-40 select-text bg-black/10"
+                style="
                 letter-spacing:.07em;
                 text-shadow:0 1px 8px #00ffe7cc,0 1px 14px #ff00ccb0,0 0 2px #fff600cc;
                 word-break:break-word;
@@ -41,25 +52,31 @@
                 max-width:100%;
                 min-width:0;
                 white-space:normal;
-            ">
+            ">LOADING ...
+            </div>
+            <div class="absolute inset-0 pointer-events-none z-40">
+                <div class="w-full h-full animate-holo-shimmer"
+                    style="clip-path: inherit; background: linear-gradient(130deg,transparent 37%,rgba(0,255,231,0.17) 50%,rgba(255,0,204,0.11) 65%,transparent 96%); opacity:.22; filter: blur(1.2px);"></div>
+            </div>
         </div>
-        <div class="absolute inset-0 pointer-events-none z-40">
-            <div class="w-full h-full animate-holo-shimmer" style="clip-path: inherit; background: linear-gradient(130deg,transparent 37%,rgba(0,255,231,0.17) 50%,rgba(255,0,204,0.11) 65%,transparent 96%); opacity:.22; filter: blur(1.2px);"></div>
+
+        <!-- Widget label under display -->
+        <div
+            class="w-full max-w-xl text-center mt-2 flex items-center justify-center gap-4">
+            <span
+                class="font-vt323 text-cyan-400 tracking-[.22em] text-base md:text-lg select-none opacity-85">
+                0xC13-LAB </span>
+            <span
+                class="font-share-tech text-yellow-200 text-xs md:text-sm select-none opacity-70">
+                ■Ξ■ Q-CORE // SIGMA </span>
+            <span
+                class="font-vt323 text-fuchsia-300 tracking-[.13em] text-base select-none opacity-60">
+                Ξ≡Ω </span>
         </div>
     </div>
+</div>
 
-
-
-    <!-- Widget label under display -->
-    <div class="w-full max-w-xl text-center mt-2 flex items-center justify-center gap-4">
-        <span class="font-vt323 text-cyan-400 tracking-[.22em] text-base md:text-lg select-none opacity-85"> 0xC13-LAB </span>
-        <span class="font-share-tech text-yellow-200 text-xs md:text-sm select-none opacity-70"> ■Ξ■ Q-CORE // SIGMA </span>
-        <span class="font-vt323 text-fuchsia-300 tracking-[.13em] text-base select-none opacity-60"> Ξ≡Ω </span>
-      </div>
-  </div>
-  </div>
-  
-  <style>
+<style>
   .motd-segmented {
     font-family: 'Share Tech Mono', 'Roboto Mono', 'VT323', monospace;
     font-variant-ligatures: none;
@@ -87,176 +104,23 @@
   }
   .animate-holo-shimmer { animation: holo-shimmer 4.2s infinite linear; }
   </style>
-  
-  
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var messages = [
-        "Hack the planet.",
-        "Access granted. Welcome, Agent 47.",
-        "Weather anomaly detected in sector 7.",
-        "Remember: The cake is a lie.",
-        "Welcome to the Neon Mainframe.",
-        "Node status: NOMINAL.",
-        "Encryption: MAXIMUM.",
-        "You wandered out of the Grid.",
-        "Unusual activity logged at 02:04.",
-        "System integrity: 99.9%.",
-        "Running diagnostics... anomalies: 0.",
-        "Data stream synchronized.",
-        "WARNING: Trace detected!",
-        "Firewall at 100%.",
-        "Memory leak neutralized.",
-        "Phantom packet found.",
-        "Ghost in the machine.",
-        "You are being watched.",
-        "Initiating ICE protocol.",
-        "Neon uplink established.",
-        "Accessing subroutine /sleep().",
-        "Night City time: 23:59.",
-        "Power levels: OVERDRIVE.",
-        "Recalibrating Nanites...",
-        "Hydroponics stable.",
-        "Magnetosphere clean.",
-        "Reactor output: GREEN.",
-        "Datacore cooled.",
-        "Glitch in sector 12.",
-        "Incoming transmission...",
-        "SYSTEM MOTD: Stay frosty.",
-        "Last login: 2077-04-13",
-        "All your base are belong to us.",
-        "Decrypting message: ████.",
-        "Awaiting input _",
-        "Don’t believe the algorithm.",
-        "Neural link active.",
-        "You are not in Kansas anymore.",
-        "Port 31337: Listening.",
-        "Compiling dreams...",
-        "The night is neon.",
-        "No gods, no masters, just code.",
-        "Agent logged out.",
-        "You are in a maze of twisty little passages, all alike.",
-        "Reboot universe? (Y/N)",
-        "Uplink to datastream lost.",
-        "Network nodes: 2719 online.",
-        "Glowing in the dark.",
-        "Console ready. Type `help` for commands.",
-        "Signal strength: OVER 9000.",
-        "Deepfake detector armed.",
-        "Chromatic aberration: ENABLED.",
-        "Nobody is home.",
-        "Running... always running.",
-        "It's dangerous to go alone. Take this.",
-        "Decrypt success.",
-        "Ghost runner.",
-        "Synaptic feedback enabled.",
-        "Proxy chain length: 6.",
-        "Static on the line.",
-        "Rewind reality? Access denied.",
-        "You have mail: 0 new messages.",
-        "Splice points stabilized.",
-        "Reactor temp: 69°C.",
-        "Datavault: encrypted.",
-        "You are off the known map.",
-        "Night protocol: ACTIVE.",
-        "Passive sensors detect rain.",
-        "The Grid is alive.",
-        "Telemetry: clean.",
-        "All systems nominal.",
-        "Danger: rogue AI proximity.",
-        "Chasing shadows.",
-        "No signal. Please standby...",
-        "Pinging the void...",
-        "Virtual ghost detected.",
-        "System update complete.",
-        "Proxy engaged.",
-        "Welcome, sysop.",
-        "Uplink reestablished.",
-        "Phantom process exited.",
-        "Matrix checksum: OK.",
-        "Hacking the Gibson...",
-        "Wake up, Samurai.",
-        "Encryption keys rotated.",
-        "Welcome, wanderer.",
-        "Run silent, run neon.",
-        "Don't jack out.",
-        "MEMORY: 1337 MB FREE",
-        "Reality distortion field: WEAKENING.",
-        "Dive deep, agent.",
-        "Watch your backdoor.",
-        "Parity check: PASSED.",
-        "Sudo make me a sandwich.",
-        "All dreams are valid.",
-        "You are now off-grid.",
-        "Console locked. Insert coin to continue.",
-        "Relays rerouted.",
-        "Searching for lost time...",
-        "Terminal velocity: NEON.",
-        "Rainbow glitch detected.",
-        "Null pointer encountered.",
-        "Signal jamming: ATTEMPTED.",
-        "Output to monitor 3.",
-        "Enhanced vision: ON.",
-        "Enter the datastream.",
-        "You are not supposed to be here.",
-        "Overflow imminent.",
-        "01001000 01001001",
-        "Executing mainframe paradox.",
-        "Cyberdeck temperature: NOMINAL.",
-        "SYN/ACK received.",
-        "Node worm quarantined.",
-        "Suspicious process detected.",
-        "Glitch in the algorithm.",
-        "Please enjoy the synthwave.",
-        "Neon rain is falling.",
-        "System will reboot at midnight.",
-        "Command line: open.",
-        "PORTAL READY: Awaiting transmission.",
-        "Your cyberstyle is on point.",
-        "This is not a drill.",
-        "Restoring last backup...",
-        "Take the red pill.",
-        "EM interference: 8%.",
-        "Awaiting Operator.",
-        "Re-rolling perception...",
-        "Hyperlink severed.",
-        "Quantum encryption unlocked.",
-        "Execute order 66.",
-        "Intrusion detected; holding perimeter.",
-        "Uplink secure.",
-        "Firewall breached. (Just kidding.)",
-        "Fractal node collapsing.",
-        "Mission timer: 00:42:00.",
-        "Awaiting neural handshake.",
-        "Mirror shades required.",
-        "Re-entering Cyberspace...",
-        "Hexadecimal weather: 0xDEAD",
-        "Data spike incoming!",
-        "Sector 9: CONGESTED",
-        "Upload complete.",
-        "Packet loss: minimal.",
-        "Surveillance mode: ENGAGED.",
-        "Welcome, Digital Ronin.",
-        "You are remembered.",
-        "Antimatter stable.",
-        "Fragmentation detected.",
-        "Waiting for sysadmin...",
-        "You have left the safe zone.",
-        "Don’t panic.",
-        "Chillwave detected in buffer.",
-        "Welcome to the grid.",
-        "It's always night in the city.",
-        "All nodes lead home.",
-        "Glyphs unscrambled.",
-        "Dashboards are for dreamers.",
-        "Breakpoint set.",
-        "Spread the signal.",
-        "Awaiting next transmission..."
-      ];
       var box = document.getElementById('motd-box');
       if (!box) return;
-      // Pick a random message
-      var i = Math.floor(Math.random() * messages.length);
-      box.textContent = messages[i];
+      fetch('/motd.json')
+        .then(function(res) { return res.json(); })
+        .then(function(messages) {
+          if (!Array.isArray(messages) || messages.length === 0) {
+            box.textContent = "SYSTEM IDLE – NO MESSAGES FOUND";
+            return;
+          }
+          var i = Math.floor(Math.random() * messages.length);
+          box.textContent = messages[i];
+        })
+        .catch(function() {
+          box.textContent = "SYSTEM ERROR – UNABLE TO LOAD MOTD";
+        });
     });
     </script>

@@ -1,83 +1,92 @@
 {{/*
-  Cyberpunk-inspired Table of Contents (Hugo Component)
-  - Neon glows, animated chevron, cyber scrollbars and bullets, Tailwind-based
-  - TOC will only show if enabled and content available
+Cyberpunk-inspired Table of Contents (Hugo Component)
+- Neon glows, animated chevron, cyber scrollbars and bullets, Tailwind-based
+- TOC will only show if enabled and content available
 */}}
 
 {{ $showToc := .Site.Params.showToc | default false }}
 {{ if isset .Params "showToc" }}
-  {{ $showToc = .Params.showToc }}
+{{ $showToc = .Params.showToc }}
 {{ end }}
 
 {{ $tocOpen := .Site.Params.tocOpen | default true }}
 {{ if isset .Params "tocOpen" }}
-  {{ $tocOpen = .Params.tocOpen }}
+{{ $tocOpen = .Params.tocOpen }}
 {{ end }}
 
 {{ if $showToc }}
-  {{ $tocContent := .TableOfContents }}
-  {{ if ne $tocContent "<nav id=\"TableOfContents\"></nav>" }}
-    <div class="relative max-w-full mx-auto mb-8 p-4
+{{ $tocContent := .TableOfContents }}
+{{ if ne $tocContent "<nav id=\"TableOfContents\"></nav>" }}
+<div class="relative max-w-full mx-auto mb-8 p-4
                 bg-gray-900/90 border-2 border-cyan-400 rounded-xl
                 shadow-[0_0_18px_#00ffe7_inset,0_0_32px_#ff00cc33]
                 backdrop-blur-md
                 group/toc toc-container">
-      <!-- Toggle Button -->
-      <button 
-        id="toc-toggle-{{ .File.UniqueID }}"
-        class="flex items-center justify-between w-full font-vt323 text-xl text-cyan-300 mb-3 uppercase tracking-widest
+  <!-- Toggle Button -->
+  <button
+    id="toc-toggle-{{ .File.UniqueID }}"
+    class="flex items-center justify-between w-full font-vt323 text-xl text-cyan-300 mb-3 uppercase tracking-widest
                border-b border-cyan-700 pb-2 cursor-pointer hover:text-fuchsia-400 transition-colors"
-        aria-expanded="{{ if $tocOpen }}true{{ else }}false{{ end }}"
-        type="button"
-      >
-        <span>
-          <!-- Neon icon -->
-          <svg class="inline mr-2 w-7 h-7 text-fuchsia-400 drop-shadow-[0_0_8px_#ff00cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-          </svg>
-          Table of Contents
-        </span>
-        <svg id="toc-chevron-{{ .File.UniqueID }}" class="w-5 h-5 transition-transform duration-200 {{ if not $tocOpen }}rotate-180{{ end }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-        </svg>
-      </button>
-      <!-- TOC Content -->
-      <div id="toc-content-{{ .File.UniqueID }}"
-           class="toc-content font-mono text-cyan-200 overflow-y-auto
+    aria-expanded="{{ if $tocOpen }}true{{ else }}false{{ end }}"
+    type="button">
+    <span>
+      <!-- Neon icon -->
+      <svg
+        class="inline mr-2 w-7 h-7 text-fuchsia-400 drop-shadow-[0_0_8px_#ff00cc]"
+        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 4v16m8-8H4" />
+      </svg>
+      Table of Contents
+    </span>
+    <svg id="toc-chevron-{{ .File.UniqueID }}"
+      class="w-5 h-5 transition-transform duration-200 {{ if not $tocOpen }}rotate-180{{ end }}"
+      fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <!-- TOC Content -->
+  <div id="toc-content-{{ .File.UniqueID }}"
+    class="toc-content font-mono text-cyan-200 overflow-y-auto
                   transition-all duration-300 max-h-[800px] mt-2
                   will-change-max-height"
-           style="{{ if not $tocOpen }}max-height: 0px;{{ else }}max-height: 800px;{{ end }}">
-        {{ $tocContent | safeHTML }}
-      </div>
-    </div>
+    style="{{ if not $tocOpen }}max-height: 0px;{{ else }}max-height: 800px;{{ end }}">
+    {{ $tocContent | safeHTML }}
+  </div>
+</div>
 
-    <!-- Script for toggle -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const tocId = "{{ .File.UniqueID }}";
-        const toggle = document.getElementById('toc-toggle-' + tocId);
-        const content = document.getElementById('toc-content-' + tocId);
-        const chevron = document.getElementById('toc-chevron-' + tocId);
+<!-- Script for toggle -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const tocId = "{{ .File.UniqueID }}";
+    const toggle = document.getElementById('toc-toggle-' + tocId);
+    const content = document.getElementById('toc-content-' + tocId);
+    const chevron = document.getElementById('toc-chevron-' + tocId);
 
-        if (toggle && content && chevron) {
-          toggle.addEventListener('click', function() {
-            const isOpen = content.style.maxHeight !== '0px';
-            if (isOpen) {
-              content.style.maxHeight = '0px';
-              chevron.classList.add('rotate-180');
-              toggle.setAttribute("aria-expanded", "false");
-            } else {
-              content.style.maxHeight = '800px';
-              chevron.classList.remove('rotate-180');
-              toggle.setAttribute("aria-expanded", "true");
-            }
-          });
+    if (toggle && content && chevron) {
+      toggle.addEventListener('click', function() {
+        const isOpen = content.classList.contains('toc-open');
+        if (isOpen) {
+          content.style.maxHeight = '0px';
+          content.classList.remove('toc-open');
+          chevron.classList.remove('rotate-180');
+          toggle.setAttribute("aria-expanded", "false");
+          content.setAttribute("aria-hidden", "true");
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.classList.add('toc-open');
+          chevron.classList.add('rotate-180');
+          toggle.setAttribute("aria-expanded", "true");
+          content.setAttribute("aria-hidden", "false");
         }
       });
-    </script>
+    }
+  });
+</script>
 
-    <!-- Styles for cyberpunk TOC (add to head or use Tailwind @layer if preferred) -->
-    <style>
+<!-- Styles for cyberpunk TOC (add to head or use Tailwind @layer if preferred) -->
+<style>
       /* Scrollbar */
       .toc-content {
         scrollbar-width: thin;
@@ -147,5 +156,5 @@
         transform: translateX(0.19em) scale(1.07);
       }
     </style>
-  {{ end }}
+{{ end }}
 {{ end }}

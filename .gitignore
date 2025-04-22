@@ -44,3 +44,4 @@ coverage*.out
 # Environment variables
 .env
 .env.*
+.qodo

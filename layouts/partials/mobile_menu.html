@@ -1,14 +1,14 @@
 
 <ul id="nav-menu"
-    class="fixed top-0 left-0 w-full h-screen
+  class="fixed top-0 left-0 w-full h-screen
            bg-gray-950/95 border-b-2 border-cyan-400 z-50 backdrop-blur-lg
            flex flex-col items-center gap-6 pt-24 transition-all duration-300
            -translate-y-full peer-checked:translate-y-0 sm:hidden group/nav-menu">
-  
+
   <!-- Animated Cyberpunk Glow BG Layer (optional, looks great!) -->
   <div class="absolute inset-0 pointer-events-none z-0">
     <div class="w-full h-full opacity-80"
-         style="
+      style="
            background:
              radial-gradient(circle at 20% 40%, #00ffe7cc 0%, transparent 60%),
              radial-gradient(circle at 80% 70%, #ff00ccbb 0%, transparent 65%);
@@ -19,16 +19,17 @@
 
   <!-- Close Button (top right) -->
   <button onclick="document.getElementById('nav-toggle').checked=false"
-     class="absolute top-5 right-6 text-cyan-300 hover:text-fuchsia-400 z-10 transition-colors flex items-center gap-2 group cursor-pointer"
-     tabindex="0" aria-label="Close menu">
-     {{ partial "icons/ui" (dict "icon" "close" "class" "w-5 h-5 text-cyan-400") }}  
+    class="absolute top-5 right-6 text-cyan-300 hover:text-fuchsia-400 z-10 transition-colors flex items-center gap-2 group cursor-pointer"
+    tabindex="0" aria-label="Close menu">
+    {{ partial "icons/ui" (dict "icon" "close" "class" "w-5 h-5 text-cyan-400")
+    }}
     <span class="font-mono text-sm uppercase">{{ i18n "close" }}</span>
   </button>
 
   {{ range .Site.Menus.main }}
-    <li class="relative z-10">
-      <a href="{{ .URL }}"
-         class="btn-main block text-center w-[13.5rem] text-2xl py-3
+  <li class="relative z-10">
+    <a href="{{ .URL }}"
+      class="btn-main block text-center w-[13.5rem] text-2xl py-3
                 font-vt323 uppercase tracking-widest
                 border-2 border-cyan-400 rounded-xl bg-gray-900/80 text-cyan-200
                 shadow-[0_0_10px_#00ffe7_inset,0_0_28px_#ff00cc66]
@@ -36,13 +37,12 @@
                 hover:bg-gradient-to-r hover:from-cyan-900/80 hover:to-fuchsia-900/80
                 hover:text-white hover:border-fuchsia-400 hover:shadow-[0_0_24px_#ff00cc99,0_0_34px_#00ffe7bb]
                 focus:outline-none focus:ring-2 focus:ring-fuchsia-400
-                {{ if eq $.RelPermalink .URL }}!bg-cyan-900/80 !text-lime-300 !border-lime-400 border-4 !shadow-[0_0_32px_#aaff0033,0_0_64px_#00ffe7]{{ end }}"
-      >
-        <span class="drop-shadow-[0_2px_8px_#00ffe7]">
-          {{ .Name }}
-        </span>
-      </a>
-    </li>
+                {{ if eq $.RelPermalink .URL }}!bg-cyan-900/80 !text-lime-300 !border-lime-400 border-4 !shadow-[0_0_32px_#aaff0033,0_0_64px_#00ffe7]{{ end }}">
+      <span class="drop-shadow-[0_2px_8px_#00ffe7]">
+        {{ .Name }}
+      </span>
+    </a>
+  </li>
   {{ end }}
 </ul>
 

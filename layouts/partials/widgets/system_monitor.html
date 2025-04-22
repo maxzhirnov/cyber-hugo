@@ -4,7 +4,7 @@
 {{ $angle := mul (div (float $cpu) 100) 180 }}
 <div class="widget-base">
   <div class="crt-overlay"><div class="w-full h-full scanlines"></div></div>
-  
+
   <!-- Circuit Pattern/Scanline Overlay (background deco) -->
   <div class="absolute inset-0 pointer-events-none z-0 opacity-15">
     <div class="w-full h-full" style="background-image:
@@ -13,40 +13,54 @@
       background-size: 32px 32px;
     "></div>
     <div class="w-full h-full"
-          style="background: repeating-linear-gradient(to bottom,rgba(0,255,231,0.10) 0px,rgba(0,255,231,0.10) 2.6px,transparent 2.6px,transparent 8px);
+      style="background: repeating-linear-gradient(to bottom,rgba(0,255,231,0.10) 0px,rgba(0,255,231,0.10) 2.6px,transparent 2.6px,transparent 8px);
                  animation: scanmove 4s linear infinite;">
     </div>
   </div>
 
   <!-- Header -->
-  <div class="flex items-center justify-between border-b border-cyan-700 pb-2 mb-4 relative z-10">
-    <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase flex items-center gap-1">
-      <svg class="inline w-6 h-6 text-pink-500 drop-shadow-[0_0_6px_#ff00cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="9" stroke-width="1.5"/>
-        <path d="M15 14a3 3 0 1 1-6 0" stroke-width="1.5"/>
+  <div
+    class="flex items-center justify-between border-b border-cyan-700 pb-2 mb-4 relative z-10">
+    <h2
+      class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase flex items-center gap-1">
+      <svg class="inline w-6 h-6 text-pink-500 drop-shadow-[0_0_6px_#ff00cc]"
+        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" stroke-width="1.5" />
+        <path d="M15 14a3 3 0 1 1-6 0" stroke-width="1.5" />
       </svg>
       SYSTEM MONITOR
       {{ if or (gt $cpu 85) (gt $mem 90) }}
-        <span class="ml-2 px-2 py-0.5 rounded-full bg-pink-600 text-white text-xs font-mono animate-pulse-fast shadow-[0_0_8px_#ff00cc99]">ALERT</span>
+      <span
+        class="ml-2 px-2 py-0.5 rounded-full bg-pink-600 text-white text-xs font-mono animate-pulse-fast shadow-[0_0_8px_#ff00cc99]">ALERT</span>
       {{ end }}
     </h2>
-    <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
+    <span
+      class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
   </div>
 
   <!-- Meter zone -->
-  <div class="relative w-36 h-36 mx-auto my-4 flex items-center justify-center bg-gradient-to-tr from-gray-950 to-gray-800 rounded-full border-[3px] border-fuchsia-400 shadow-[0_0_32px_#00ffe766] z-10 overflow-hidden">
+  <div
+    class="relative w-36 h-36 mx-auto my-4 flex items-center justify-center bg-gradient-to-tr from-gray-950 to-gray-800 rounded-full border-[3px] border-fuchsia-400 shadow-[0_0_32px_#00ffe766] z-10 overflow-hidden">
     <!-- SVG ticks/circuit effect -->
-    <svg width="144" height="144" class="absolute inset-0 z-0 pointer-events-none" style="opacity:0.16;">
-      <circle cx="72" cy="72" r="65" stroke="#00ffe7" stroke-dasharray="4 8" stroke-width="3" fill="none"/>
-      <circle cx="72" cy="72" r="54" stroke="#ff00cc" stroke-dasharray="2 5" stroke-width="2" fill="none"/>
+    <svg width="144" height="144"
+      class="absolute inset-0 z-0 pointer-events-none" style="opacity:0.16;">
+      <circle cx="72" cy="72" r="65" stroke="#00ffe7" stroke-dasharray="4 8"
+        stroke-width="3" fill="none" />
+      <circle cx="72" cy="72" r="54" stroke="#ff00cc" stroke-dasharray="2 5"
+        stroke-width="2" fill="none" />
     </svg>
     <!-- Meter needle -->
-    <div class="absolute left-1/2 bottom-1/2 w-1.5 h-20 rounded bg-lime-400 origin-bottom transition-transform duration-500 shadow-[0_0_18px_#39ff14] {{ if gt $cpu 85 }}bg-pink-600 animate-pulse-fast{{ end }}" style="transform: rotate({{ $angle }}deg);"></div>
+    <div
+      class="absolute left-1/2 bottom-1/2 w-1.5 h-20 rounded bg-lime-400 origin-bottom transition-transform duration-500 shadow-[0_0_18px_#39ff14] {{ if gt $cpu 85 }}bg-pink-600 animate-pulse-fast{{ end }}"
+      style="transform: rotate({{ $angle }}deg);"></div>
     <!-- Center "LED" dot -->
-    <span class="absolute left-1/2 bottom-1/2 -translate-x-1/2 translate-y-1/2 w-3.5 h-3.5 rounded-full bg-cyan-400 shadow-[0_0_10px_#00ffe7] border-2 border-fuchsia-500"></span>
+    <span
+      class="absolute left-1/2 bottom-1/2 -translate-x-1/2 translate-y-1/2 w-3.5 h-3.5 rounded-full bg-cyan-400 shadow-[0_0_10px_#00ffe7] border-2 border-fuchsia-500"></span>
     <!-- Overlay alert icon if needed -->
     {{ if gt $cpu 85 }}
-      <span title="High CPU" class="absolute left-1/2 bottom-3 -translate-x-1/2 font-mono text-xs bg-pink-700 px-2 py-0.5 rounded shadow-[0_0_7px_#ff00cc66] animate-pulse-fast text-white">HIGH CPU!</span>
+    <span title="High CPU"
+      class="absolute left-1/2 bottom-3 -translate-x-1/2 font-mono text-xs bg-pink-700 px-2 py-0.5 rounded shadow-[0_0_7px_#ff00cc66] animate-pulse-fast text-white">HIGH
+      CPU!</span>
     {{ end }}
   </div>
 
@@ -55,38 +69,47 @@
     <div class="flex flex-col items-center font-mono text-cyan-200 w-28">
       <span class="uppercase text-xs opacity-70">CPU</span>
       <span class="text-lime-400 font-bold text-lg pulse">{{ $cpu }}%</span>
-      <svg width="60" height="16" class="mt-1"><polyline points="0,12 10,8 20,14 30,5 40,9 50,6 60,12" fill="none" stroke="#39ff14" stroke-width="2.5"/></svg>
-      <span class="text-[10px] opacity-80 mt-1">top: <span class="text-pink-400">nginx</span></span>
+      <svg width="60" height="16" class="mt-1"><polyline
+          points="0,12 10,8 20,14 30,5 40,9 50,6 60,12" fill="none"
+          stroke="#39ff14" stroke-width="2.5" /></svg>
+      <span class="text-[10px] opacity-80 mt-1">top: <span
+          class="text-pink-400">nginx</span></span>
     </div>
     <div class="flex flex-col items-center font-mono text-cyan-200 w-28">
       <span class="uppercase text-xs opacity-70">MEM</span>
       <span class="text-lime-400 font-bold text-lg">{{ $mem }}%</span>
-      <svg width="60" height="16" class="mt-1"><polyline points="3,1 14,8 20,14 22,5 32,9 50,6 60,12" fill="none" stroke="#39ff14" stroke-width="2.5"/></svg>
-      <span class="text-[10px] opacity-80 mt-1">swap: <span class="text-cyan-400">1.9GB</span></span>
+      <svg width="60" height="16" class="mt-1"><polyline
+          points="3,1 14,8 20,14 22,5 32,9 50,6 60,12" fill="none"
+          stroke="#39ff14" stroke-width="2.5" /></svg>
+      <span class="text-[10px] opacity-80 mt-1">swap: <span
+          class="text-cyan-400">1.9GB</span></span>
     </div>
     <div class="flex flex-col items-center font-mono text-cyan-200 w-24">
       <span class="uppercase text-xs opacity-70">DISK</span>
       <span class="text-yellow-200 font-bold text-lg">62%</span>
-      <svg width="50" height="16" class="mt-1"><polyline points="2,10 8,6 16,8 28,4 36,9 49,6" fill="none" stroke="#ffe600" stroke-width="2"/></svg>
-      <span class="text-[10px] opacity-80 mt-1">free: <span class="text-yellow-200">18GB</span></span>
+      <svg width="50" height="16" class="mt-1"><polyline
+          points="2,10 8,6 16,8 28,4 36,9 49,6" fill="none" stroke="#ffe600"
+          stroke-width="2" /></svg>
+      <span class="text-[10px] opacity-80 mt-1">free: <span
+          class="text-yellow-200">18GB</span></span>
     </div>
   </div>
 
   <!-- Terminal/Status block -->
-  <div class="px-2 py-2 mt-1 rounded bg-gray-900/60 font-mono text-[11px] text-cyan-200 border border-cyan-800 shadow-inner
+  <div
+    class="px-2 py-2 mt-1 rounded bg-gray-900/60 font-mono text-[11px] text-cyan-200 border border-cyan-800 shadow-inner
             flex flex-col sm:flex-row flex-wrap sm:justify-around gap-x-5 gap-y-1 items-center leading-tight">
-      <span>
-        <span class="text-pink-400">Uptime:</span>
-        <span class="ml-1">3d 14h</span>
-      </span>
-      <span>
-        <span class="text-yellow-300">Disk:</span>
-        <span class="ml-1">18GB/32GB free</span>
-      </span>
-      <span>
-        <span class="text-fuchsia-400">Top proc:</span>
-        <span class="ml-1">nginx (23%)</span>
-      </span>
+    <span>
+      <span class="text-pink-400">Uptime:</span>
+      <span class="ml-1">3d 14h</span>
+    </span>
+    <span>
+      <span class="text-yellow-300">Disk:</span>
+      <span class="ml-1">18GB/32GB free</span>
+    </span>
+    <span>
+      <span class="text-fuchsia-400">Top proc:</span>
+      <span class="ml-1">nginx (23%)</span>
+    </span>
   </div>
 </div>
-

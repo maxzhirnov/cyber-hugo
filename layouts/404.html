@@ -1,22 +1,25 @@
 {{ define "main" }}
-<div class="flex flex-col items-center justify-center min-h-[60vh] py-16 relative">
-  <!-- Neon stripes background -->
-  <div class="absolute inset-0 geek-stripes-bg pointer-events-none opacity-80"></div>
-  <div class="relative z-10 max-w-xl w-full bg-gray-900/90 border-2 border-fuchsia-500 rounded-2xl shadow-[0_0_40px_#ff00cc_inset,0_0_80px_#00ffe7aa] px-8 py-12 flex flex-col items-center">
-    <span class="font-vt323 text-7xl text-fuchsia-400 drop-shadow-[0_0_32px_#ff00cc] mb-4 select-none animate-pulse">404</span>
-    <h1 class="font-vt323 text-2xl md:text-3xl text-cyan-300 uppercase tracking-widest mb-4 text-center drop-shadow-[0_0_10px_#00ffe7]">
-      PAGE NOT FOUND
+<div
+  class="flex flex-col items-center justify-center min-h-[60vh] py-16 relative">
+  <div
+    class="relative z-10 max-w-xl w-full bg-gray-900/90 border-2 border-fuchsia-500 rounded-2xl shadow-[0_0_40px_#ff00cc_inset,0_0_80px_#00ffe7aa] px-8 py-12 flex flex-col items-center">
+    <span
+      class="font-vt323 text-7xl text-fuchsia-400 drop-shadow-[0_0_32px_#ff00cc] mb-4 select-none animate-pulse">404</span>
+    <h1
+      class="font-vt323 text-2xl md:text-3xl text-cyan-300 uppercase tracking-widest mb-4 text-center drop-shadow-[0_0_10px_#00ffe7]">
+      {{ i18n "page_not_found" }}
     </h1>
     <p class="text-center text-cyan-200 font-mono mb-8 max-w-md">
-      <span class="inline-block mb-2">You seem to have wandered off the grid.</span><br>
-      <span class="inline-block">Return to the neon city or try searching for another signal.</span>
+      {{ i18n "404_long_text" | safeHTML }}
     </p>
     <a href="{{ "/" | relURL }}"
-       class="inline-flex items-center gap-2 px-6 py-3 font-vt323 text-lg uppercase tracking-widest text-cyan-200 border-2 border-cyan-400 rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset]">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3"></path>
+      class="inline-flex items-center gap-2 px-6 py-3 font-vt323 text-lg uppercase tracking-widest text-cyan-200 border-2 border-cyan-400 rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset]">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor"
+        viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3"></path>
       </svg>
-      Back to Home
+      {{ i18n "back_to_home"}}
     </a>
   </div>
 </div>

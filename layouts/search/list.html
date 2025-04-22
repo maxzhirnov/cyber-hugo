@@ -1,21 +1,21 @@
 {{ define "main" }}
-<section class="relative max-w-4xl mx-auto mt-16 mb-20 px-4 py-10
-  bg-gray-900/95 border-2 border-cyan-400 rounded-2xl
-  shadow-[0_0_40px_#00ffe7_inset,0_0_80px_#ff00cc44]
-  before:absolute before:inset-0 before:geek-stripes-bg before:rounded-2xl before:pointer-events-none">
-  
-  <div class="absolute -inset-2 rounded-3xl pointer-events-none z-0 shadow-[0_0_32px_#00ffe7,0_0_64px_#ff00cc44]"></div>
+<section
+  class="relative max-w-4xl mx-auto mt-16 mb-20 px-4 py-10 bg-gray-900/95 border-2 border-cyan-400 rounded-2xl shadow-[0_0_40px_#00ffe7_inset,0_0_80px_#ff00cc44] before:absolute before:inset-0 before:geek-stripes-bg before:rounded-2xl before:pointer-events-none">
+  <div
+    class="absolute -inset-2 rounded-3xl pointer-events-none z-0 shadow-[0_0_32px_#00ffe7,0_0_64px_#ff00cc44]"></div>
 
-  <h1 class="font-vt323 text-3xl md:text-4xl text-center uppercase tracking-widest mb-8 text-cyan-300 drop-shadow-[0_0_16px_#00ffe7]">
+  <h1
+    class="font-vt323 text-3xl md:text-4xl text-center uppercase tracking-widest mb-8 text-cyan-300 drop-shadow-[0_0_16px_#00ffe7]">
     {{ .Title }}
   </h1>
 
   <!-- Search Input -->
   <div class="relative z-10 mb-8">
-    <input type="text" 
-           id="search-input" 
-           placeholder="🔍 Search posts..." 
-           class="w-full px-4 py-3 rounded-lg border-2 border-cyan-400 bg-gray-900/80 text-cyan-200 placeholder-cyan-700 focus:outline-none focus:border-fuchsia-500 transition-all font-mono shadow-[0_0_8px_#00ffe7_inset]"/>
+    <input
+      type="text"
+      id="search-input"
+      placeholder="🔍 Search posts..."
+      class="w-full px-4 py-3 rounded-lg border-2 border-cyan-400 bg-gray-900/80 text-cyan-200 placeholder-cyan-700 focus:outline-none focus:border-fuchsia-500 transition-all font-mono shadow-[0_0_8px_#00ffe7_inset]" />
   </div>
 
   <!-- Results Container -->
@@ -23,11 +23,11 @@
 </section>
 
 <!-- Include search index and scripts -->
-{{ partial "search-index.html" . }}
-
-{{ $lunrJS := resources.Get "js/vendor/lunr.min.js" | fingerprint }}
+{{ partial "search-index.html" . }} {{ $lunrJS := resources.Get
+"js/vendor/lunr.min.js" | fingerprint }}
 <script src="{{ $lunrJS.RelPermalink }}"></script>
 
-{{ $searchJS := resources.Get "js/search.js" | js.Build | minify | fingerprint }}
+{{ $searchJS := resources.Get "js/search.js" | js.Build | minify | fingerprint
+}}
 <script src="{{ $searchJS.RelPermalink }}"></script>
 {{ end }}

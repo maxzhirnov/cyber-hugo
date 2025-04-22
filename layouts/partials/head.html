@@ -8,18 +8,18 @@
     </title>
 
     {{- if .Description }}
-        <meta name="description" content="{{ .Description }}" />
+    <meta name="description" content="{{ .Description }}" />
     {{ end -}}
 
     {{- if .Keywords }}
-        <meta name="keywords" content="{{ delimit .Keywords " ," }}" />
+    <meta name="keywords" content="{{ delimit .Keywords " ," }}" />
     {{ end -}}
 
     {{- if .Params.Author }}
-        <meta name="author" content="{{ .Params.Author}}" />
+    <meta name="author" content="{{ .Params.Author}}" />
     {{ end -}}
-    
+
     {{ hugo.Generator }}
-    
+
     {{ partialCached "css.html" . }}
 </head>

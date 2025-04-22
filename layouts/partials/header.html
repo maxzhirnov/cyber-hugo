@@ -1,33 +1,33 @@
 <header class="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-8 py-6">
 
-    <nav class="relative z-100 flex items-center justify-between">
-      <!-- Logo/Title -->
-      <a href="{{ .Site.Home.Permalink }}"
-         class="font-vt323 text-2xl sm:text-3xl text-cyan-400 tracking-widest uppercase drop-shadow-[0_0_8px_#00ffe7] hover:text-fuchsia-400 transition-colors duration-150">
-        {{ .Site.Title }}
-      </a>
-  
-      <!-- Mobile burger toggle -->
-      <input id="nav-toggle" type="checkbox" class="peer hidden" />
-      <label for="nav-toggle"
-        class="sm:hidden flex items-center text-cyan-400 hover:text-fuchsia-400 cursor-pointer ml-2 z-20">
-        <!-- Burger icon -->
-        {{ partial "icons/ui" (dict "icon" "burger" "class" "h-7 w-7") }}
-      </label>
-  
-      <!-- Desktop/Tablet menu -->
-      <ul class="hidden sm:flex gap-4 px-6 py-2 bg-gray-900/80 border-2 border-cyan-400 rounded-xl shadow-[0_0_20px_#00ffe7_inset] backdrop-blur-md items-center">
-        {{ range .Site.Menus.main }}
-        <li>
-          <a href="{{ .URL }}"
-             class="btn-main {{ if eq $.RelPermalink .URL }} !bg-cyan-900/80 !text-lime-300 !border-lime-400{{ end }}">
-             <span class="btn-text">{{ .Name }}</span>
-          </a>
-        </li>
-        {{ end }}
-      </ul>
-      <!-- Mobile menu (slide-down) -->
-      {{ partial "mobile_menu" . }}
-    </nav>
-  </header>
-  
+  <nav class="relative z-100 flex items-center justify-between">
+    <!-- Logo/Title -->
+    <a href="{{ .Site.Home.Permalink }}"
+      class="font-vt323 text-2xl sm:text-3xl text-cyan-400 tracking-widest uppercase drop-shadow-[0_0_8px_#00ffe7] hover:text-fuchsia-400 transition-colors duration-150">
+      {{ .Site.Title }}
+    </a>
+
+    <!-- Mobile burger toggle -->
+    <input id="nav-toggle" type="checkbox" class="peer hidden" />
+    <label for="nav-toggle"
+      class="sm:hidden flex items-center text-cyan-400 hover:text-fuchsia-400 cursor-pointer ml-2 z-20">
+      <!-- Burger icon -->
+      {{ partial "icons/ui" (dict "icon" "burger" "class" "h-7 w-7") }}
+    </label>
+
+    <!-- Desktop/Tablet menu -->
+    <ul
+      class="hidden sm:flex gap-4 px-6 py-2 bg-gray-900/80 border-2 border-cyan-400 rounded-xl shadow-[0_0_20px_#00ffe7_inset] backdrop-blur-md items-center">
+      {{ range .Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}"
+          class="btn-main {{ if eq $.RelPermalink .URL }} !bg-cyan-900/80 !text-lime-300 !border-lime-400{{ end }}">
+          <span class="btn-text">{{ .Name }}</span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+    <!-- Mobile menu (slide-down) -->
+    {{ partial "mobile_menu" . }}
+  </nav>
+</header>

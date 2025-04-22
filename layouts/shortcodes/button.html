@@ -4,55 +4,65 @@
 {{ $size := .Get "size" | default "md" }}
 {{ $icon := .Get "icon" | default "" }}
 
-{{ $colorMap := dict 
-  "cyan" "border-cyan-400 text-cyan-300 shadow-[0_0_8px_#00ffe7_inset]" 
-  "fuchsia" "border-fuchsia-400 text-fuchsia-300 shadow-[0_0_8px_#ff00cc_inset]" 
-  "yellow" "border-yellow-400 text-yellow-300 shadow-[0_0_8px_#fff600_inset]" 
-  "lime" "border-lime-400 text-lime-300 shadow-[0_0_8px_#39ff14_inset]"
+{{ $colorMap := dict
+"cyan" "border-cyan-400 text-cyan-300 shadow-[0_0_8px_#00ffe7_inset]"
+"fuchsia" "border-fuchsia-400 text-fuchsia-300 shadow-[0_0_8px_#ff00cc_inset]"
+"yellow" "border-yellow-400 text-yellow-300 shadow-[0_0_8px_#fff600_inset]"
+"lime" "border-lime-400 text-lime-300 shadow-[0_0_8px_#39ff14_inset]"
 }}
 
 {{ $sizeMap := dict
-  "sm" "text-sm px-3 py-1"
-  "md" "px-4 py-2"
-  "lg" "text-lg px-5 py-3"
+"sm" "text-sm px-3 py-1"
+"md" "px-4 py-2"
+"lg" "text-lg px-5 py-3"
 }}
 
 {{ $colorClasses := index $colorMap $color | default (index $colorMap "cyan") }}
 {{ $sizeClasses := index $sizeMap $size | default (index $sizeMap "md") }}
 
-<a href="{{ $href }}" 
-   class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden {{ $colorClasses }} {{ $sizeClasses }}">
-  
+<a href="{{ $href }}"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden {{ $colorClasses }} {{ $sizeClasses }}">
+
   <!-- Glitch effect -->
-  <span class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
-  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
   <!-- Button content with optional icon -->
   <span class="relative z-10 flex items-center justify-center gap-2">
     {{ if eq $icon "arrow-right" }}
-      <span>{{ $text }}</span>
-      <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-      </svg>
+    <span>{{ $text }}</span>
+    <svg
+      class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+      fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+    </svg>
     {{ else if eq $icon "download" }}
-      <span>{{ $text }}</span>
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-      </svg>
+    <span>{{ $text }}</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+    </svg>
     {{ else if eq $icon "external" }}
-      <span>{{ $text }}</span>
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-      </svg>
+    <span>{{ $text }}</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+    </svg>
     {{ else }}
-      <span>{{ $text }}</span>
+    <span>{{ $text }}</span>
     {{ end }}
   </span>
-  
+
   <!-- Corner accents -->
-  <span class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
-  <span class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
-  <span class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
-  <span class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
 </a>
 
 <style>

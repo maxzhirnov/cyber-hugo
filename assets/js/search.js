@@ -124,4 +124,3 @@ class LunrSearch {
 document.addEventListener('DOMContentLoaded', function() {
     new LunrSearch();
 });
-  
