@@ -1,33 +1,238 @@
 <!-- MOTD Widget -->
-<div class="widget-base relative">
+<div class="widget-base relative overflow-visible">
+    <!-- Top cyber bracket deco -->
+    <div class="absolute top-0 left-0 right-0 flex justify-between px-4 pointer-events-none z-10">
+      <span class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none opacity-80">╔═══</span>
+      <span class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none opacity-80">═══╗</span>
+    </div>
+    <!-- Neon indicator bar -->
+    <div class="absolute top-7 left-7 right-7 h-1 bg-gradient-to-r from-fuchsia-500/40 via-cyan-400 to-fuchsia-400 rounded-full blur-sm opacity-60 pointer-events-none"></div>
+    <!-- CRT scanlines overlay -->
     <div class="crt-overlay"><div class="w-full h-full scanlines"></div></div>
-    <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3">
-      <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase">
+    <!-- Microchip SVG deco (optional) -->
+    <svg class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 opacity-25 pointer-events-none z-10" viewBox="0 0 96 24" fill="none">
+      <rect x="1" y="10" width="94" height="4" rx="1" stroke="#00ffe7" stroke-width="1.3"/>
+      <path d="M4,12 v-6 M92,12 v6" stroke="#ff00cc" stroke-width="1"/>
+      <circle cx="8" cy="12" r="2" fill="#ff00cc"/>
+      <circle cx="88" cy="12" r="2" fill="#ff00cc"/>
+    </svg>
+    <!-- Widget header -->
+    <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3 relative z-10">
+      <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase flex items-center gap-2">
+        <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke="#00ffe7"/><path d="M12 9v3l2 2" stroke="#ff00cc"/><circle cx="12" cy="12" r="4" stroke="#ff00cc"/></svg>
         System MOTD
       </h2>
-      <span class="w-2 h-2 rounded-full bg-fuchsia-400 shadow-[0_0_4px_#ff00cc]"></span>
+      <!-- Animated status LEDs -->
+      <span class="flex gap-1 items-center">
+        <span class="w-2 h-2 rounded-full bg-fuchsia-400 shadow-[0_0_8px_#ff00cc] animate-pulse-slow"></span>
+        <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse"></span>
+        <span class="w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_8px_#fff600] animate-blink"></span>
+      </span>
     </div>
-    <div class="p-4 text-center font-share-tech text-fuchsia-300 text-base md:text-lg animate-glitchy-motd select-text">
-        {{ index (shuffle (slice
-            "Hack the planet."
-            "Access granted. Welcome, Agent 47."
-            "Weather anomaly detected in sector 7."
-            "Remember: The cake is a lie."
-            "Welcome to the Neon Mainframe."
-            "Node status: NOMINAL"
-            "Encryption: MAXIMUM"
-          )) 0 }}
+    <!-- MOTD area -->
+    <div id="motd-box"
+        class="p-4 text-center font-share-tech text-fuchsia-300 text-base md:text-lg animate-glitchy-motd select-text relative z-10 cyber-motd-glow">
+      <!-- JS will insert message -->
+    </div>
+    <!-- Bottom brackets deco -->
+    <div class="absolute bottom-0 left-0 right-0 flex justify-between px-4 pointer-events-none z-10">
+      <span class="font-vt323 text-cyan-400 text-xl tracking-widest select-none opacity-80">╚═══</span>
+      <span class="font-vt323 text-cyan-400 text-xl tracking-widest select-none opacity-80">═══╝</span>
     </div>
   </div>
   
-  <!-- Add a glitchy animation to text -->
   <style>
   @keyframes glitchy-motd {
     0% { text-shadow: 0 0 8px #ff00cc, 0 0 16px #00ffe7;}
-    33% { text-shadow: 2px -1px 8px #ff00cc, -2px 2px 16px #00ffe7;}
-    66% { text-shadow: -1px 2px 7px #ff00cc, 1px -2px 13px #00ffe7;}
+    25% { text-shadow: 2.5px -1px 12px #ff00cc, -3px 2px 14px #00ffe7;}
+    48% { text-shadow: -1.5px 2.8px 8px #fff600, 2px -2px 17px #00ffe7;}
+    77% { text-shadow: 0.5px -0.5px 14px #f6f6f6, -1.5px 1.5px 11px #ff00cc;}
     100% { text-shadow: 0 0 8px #ff00cc, 0 0 16px #00ffe7;}
   }
-  .animate-glitchy-motd { animation: glitchy-motd 2.3s infinite alternate;}
+  .animate-glitchy-motd { animation: glitchy-motd 2.7s infinite alternate; }
+  @keyframes pulse-slow { 0%,100%{opacity:1;} 50%{opacity:0.55;} }
+  .animate-pulse-slow { animation: pulse-slow 2.5s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1;} 70%{opacity:0.2;} }
+  .animate-blink { animation: blink 1.2s steps(1,end) infinite; }
+  .cyber-motd-glow {
+    box-shadow: 0 0 16px #00ffe7cc, 0 0 36px #ff00cc33, 0 0 2px #fff60044;
+    border-radius: 0.7em;
+    transition: box-shadow 0.22s;
+  }
+  .cyber-motd-glow:hover, .cyber-motd-glow:focus {
+    box-shadow: 0 0 40px #00ffe7, 0 0 60px #ff00cc, 0 0 8px #fff600;
+  }
   </style>
   
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var messages = [
+        "Hack the planet.",
+        "Access granted. Welcome, Agent 47.",
+        "Weather anomaly detected in sector 7.",
+        "Remember: The cake is a lie.",
+        "Welcome to the Neon Mainframe.",
+        "Node status: NOMINAL.",
+        "Encryption: MAXIMUM.",
+        "You wandered out of the Grid.",
+        "Unusual activity logged at 02:04.",
+        "System integrity: 99.9%.",
+        "Running diagnostics... anomalies: 0.",
+        "Data stream synchronized.",
+        "WARNING: Trace detected!",
+        "Firewall at 100%.",
+        "Memory leak neutralized.",
+        "Phantom packet found.",
+        "Ghost in the machine.",
+        "You are being watched.",
+        "Initiating ICE protocol.",
+        "Neon uplink established.",
+        "Accessing subroutine /sleep().",
+        "Night City time: 23:59.",
+        "Power levels: OVERDRIVE.",
+        "Recalibrating Nanites...",
+        "Hydroponics stable.",
+        "Magnetosphere clean.",
+        "Reactor output: GREEN.",
+        "Datacore cooled.",
+        "Glitch in sector 12.",
+        "Incoming transmission...",
+        "SYSTEM MOTD: Stay frosty.",
+        "Last login: 2077-04-13",
+        "All your base are belong to us.",
+        "Decrypting message: ████.",
+        "Awaiting input _",
+        "Don’t believe the algorithm.",
+        "Neural link active.",
+        "You are not in Kansas anymore.",
+        "Port 31337: Listening.",
+        "Compiling dreams...",
+        "The night is neon.",
+        "No gods, no masters, just code.",
+        "Agent logged out.",
+        "You are in a maze of twisty little passages, all alike.",
+        "Reboot universe? (Y/N)",
+        "Uplink to datastream lost.",
+        "Network nodes: 2719 online.",
+        "Glowing in the dark.",
+        "Console ready. Type `help` for commands.",
+        "Signal strength: OVER 9000.",
+        "Deepfake detector armed.",
+        "Chromatic aberration: ENABLED.",
+        "Nobody is home.",
+        "Running... always running.",
+        "It's dangerous to go alone. Take this.",
+        "Decrypt success.",
+        "Ghost runner.",
+        "Synaptic feedback enabled.",
+        "Proxy chain length: 6.",
+        "Static on the line.",
+        "Rewind reality? Access denied.",
+        "You have mail: 0 new messages.",
+        "Splice points stabilized.",
+        "Reactor temp: 69°C.",
+        "Datavault: encrypted.",
+        "You are off the known map.",
+        "Night protocol: ACTIVE.",
+        "Passive sensors detect rain.",
+        "The Grid is alive.",
+        "Telemetry: clean.",
+        "All systems nominal.",
+        "Danger: rogue AI proximity.",
+        "Chasing shadows.",
+        "No signal. Please standby...",
+        "Pinging the void...",
+        "Virtual ghost detected.",
+        "System update complete.",
+        "Proxy engaged.",
+        "Welcome, sysop.",
+        "Uplink reestablished.",
+        "Phantom process exited.",
+        "Matrix checksum: OK.",
+        "Hacking the Gibson...",
+        "Wake up, Samurai.",
+        "Encryption keys rotated.",
+        "Welcome, wanderer.",
+        "Run silent, run neon.",
+        "Don't jack out.",
+        "MEMORY: 1337 MB FREE",
+        "Reality distortion field: WEAKENING.",
+        "Dive deep, agent.",
+        "Watch your backdoor.",
+        "Parity check: PASSED.",
+        "Sudo make me a sandwich.",
+        "All dreams are valid.",
+        "You are now off-grid.",
+        "Console locked. Insert coin to continue.",
+        "Relays rerouted.",
+        "Searching for lost time...",
+        "Terminal velocity: NEON.",
+        "Rainbow glitch detected.",
+        "Null pointer encountered.",
+        "Signal jamming: ATTEMPTED.",
+        "Output to monitor 3.",
+        "Enhanced vision: ON.",
+        "Enter the datastream.",
+        "You are not supposed to be here.",
+        "Overflow imminent.",
+        "01001000 01001001",
+        "Executing mainframe paradox.",
+        "Cyberdeck temperature: NOMINAL.",
+        "SYN/ACK received.",
+        "Node worm quarantined.",
+        "Suspicious process detected.",
+        "Glitch in the algorithm.",
+        "Please enjoy the synthwave.",
+        "Neon rain is falling.",
+        "System will reboot at midnight.",
+        "Command line: open.",
+        "PORTAL READY: Awaiting transmission.",
+        "Your cyberstyle is on point.",
+        "This is not a drill.",
+        "Restoring last backup...",
+        "Take the red pill.",
+        "EM interference: 8%.",
+        "Awaiting Operator.",
+        "Re-rolling perception...",
+        "Hyperlink severed.",
+        "Quantum encryption unlocked.",
+        "Execute order 66.",
+        "Intrusion detected; holding perimeter.",
+        "Uplink secure.",
+        "Firewall breached. (Just kidding.)",
+        "Fractal node collapsing.",
+        "Mission timer: 00:42:00.",
+        "Awaiting neural handshake.",
+        "Mirror shades required.",
+        "Re-entering Cyberspace...",
+        "Hexadecimal weather: 0xDEAD",
+        "Data spike incoming!",
+        "Sector 9: CONGESTED",
+        "Upload complete.",
+        "Packet loss: minimal.",
+        "Surveillance mode: ENGAGED.",
+        "Welcome, Digital Ronin.",
+        "You are remembered.",
+        "Antimatter stable.",
+        "Fragmentation detected.",
+        "Waiting for sysadmin...",
+        "You have left the safe zone.",
+        "Don’t panic.",
+        "Chillwave detected in buffer.",
+        "Welcome to the grid.",
+        "It's always night in the city.",
+        "All nodes lead home.",
+        "Glyphs unscrambled.",
+        "Dashboards are for dreamers.",
+        "Breakpoint set.",
+        "Spread the signal.",
+        "Awaiting next transmission..."
+      ];
+      var box = document.getElementById('motd-box');
+      if (!box) return;
+      // Pick a random message
+      var i = Math.floor(Math.random() * messages.length);
+      box.textContent = messages[i];
+    });
+    </script>
