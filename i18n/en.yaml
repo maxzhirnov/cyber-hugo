@@ -46,3 +46,9 @@ faq:
 
 portfolio:
   other: 'Portfolio'
+
+close:
+  other: 'Close'
+
+no_entries_found:
+  other: 'No entries found'

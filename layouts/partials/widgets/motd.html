@@ -1,0 +1,33 @@
+<!-- MOTD Widget -->
+<div class="widget-base relative">
+    <div class="crt-overlay"><div class="w-full h-full scanlines"></div></div>
+    <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3">
+      <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase">
+        System MOTD
+      </h2>
+      <span class="w-2 h-2 rounded-full bg-fuchsia-400 shadow-[0_0_4px_#ff00cc]"></span>
+    </div>
+    <div class="p-4 text-center font-share-tech text-fuchsia-300 text-base md:text-lg animate-glitchy-motd select-text">
+        {{ index (shuffle (slice
+            "Hack the planet."
+            "Access granted. Welcome, Agent 47."
+            "Weather anomaly detected in sector 7."
+            "Remember: The cake is a lie."
+            "Welcome to the Neon Mainframe."
+            "Node status: NOMINAL"
+            "Encryption: MAXIMUM"
+          )) 0 }}
+    </div>
+  </div>
+  
+  <!-- Add a glitchy animation to text -->
+  <style>
+  @keyframes glitchy-motd {
+    0% { text-shadow: 0 0 8px #ff00cc, 0 0 16px #00ffe7;}
+    33% { text-shadow: 2px -1px 8px #ff00cc, -2px 2px 16px #00ffe7;}
+    66% { text-shadow: -1px 2px 7px #ff00cc, 1px -2px 13px #00ffe7;}
+    100% { text-shadow: 0 0 8px #ff00cc, 0 0 16px #00ffe7;}
+  }
+  .animate-glitchy-motd { animation: glitchy-motd 2.3s infinite alternate;}
+  </style>
+  

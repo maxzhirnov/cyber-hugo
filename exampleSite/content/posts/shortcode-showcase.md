@@ -8,6 +8,8 @@ single_prose_color: "text-cyber-rose"
 
 Welcome to the showcase of custom shortcodes available in the Cyber Hugo theme. These shortcodes extend markdown capabilities and help maintain a consistent cyberpunk aesthetic throughout your site.
 
+<!--more-->
+
 ## Button Shortcode
 
 The button shortcode creates styled buttons that match the theme's cyberpunk design.

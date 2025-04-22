@@ -21,26 +21,13 @@
         <li>
           <a href="{{ .URL }}"
              class="btn-main {{ if eq $.RelPermalink .URL }} !bg-cyan-900/80 !text-lime-300 !border-lime-400{{ end }}">
-            {{ .Name }}
+             <span class="btn-text">{{ .Name }}</span>
           </a>
         </li>
         {{ end }}
       </ul>
-  
       <!-- Mobile menu (slide-down) -->
-      <ul id="nav-menu"
-          class="fixed top-0 left-0 w-full h-screen bg-gray-950/95 border-b-2 border-cyan-400 z-10
-                 flex flex-col items-center gap-6 pt-24 transition-all duration-300
-                 -translate-y-full peer-checked:translate-y-0 sm:hidden">
-        {{ range .Site.Menus.main }}
-        <li>
-          <a href="{{ .URL }}"
-             class="btn-main {{ if eq $.RelPermalink .URL }} !bg-cyan-900/80 !text-lime-300 !border-lime-400{{ end }}">
-            {{ .Name }}
-          </a>
-        </li>
-        {{ end }}
-      </ul>
+      {{ partial "mobile_menu" . }}
     </nav>
   </header>
   

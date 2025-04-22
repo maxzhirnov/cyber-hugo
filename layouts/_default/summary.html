@@ -1,7 +1,7 @@
-{{ $textColor := .Params.single_title_color | default .Site.Params.single_title_color | default "text-cyan-300" }}
-{{ $proseColor := .Params.single_prose_color | default .Site.Params.single_prose_color | default "prose-cyan" }}
-{{ $postTextColor := .Params.single_title_color | default $textColor }}
-{{ $postProseColor := .Params.single_prose_color | default $proseColor }}
+{{ $textColor := .Site.Params.single_title_color | default "text-cyan-300" }}
+{{ $proseColor := .Site.Params.single_prose_color | default "prose-cyan" }}
+{{ $postTextColor := $textColor }}
+{{ $postProseColor := $proseColor }}
 
 
   
@@ -9,26 +9,38 @@
   bg-gray-800/90 border-2 border-cyan-600 rounded-xl p-6
   shadow-[inset_0_0_16px_#00ffe7]
   transition-transform hover:scale-[1.005] hover:shadow-[0_0_32px_#ff00cc44]">
-  <div class="prose prose-headings:font-vt323 max-w-prose mx-auto prose-img:max-w-full prose-pre:overflow-x-auto">
-    <h2 class="font-vt323 text-4xl uppercase tracking-wide mb-2 drop-shadow-[0_0_16px_#00ffe7] {{ $postTextColor }}">
-        <a href="{{ .Permalink }}" class="hover:text-fuchsia-400 transition-colors">{{ .Title }}</a>
-    </h2>
-    <div class="flex items-center gap-4 text-xs font-mono opacity-80 {{ $postTextColor }}">
-    <span>{{ .Date.Format "2006-01-02" }}</span>
-    {{ with .Params.tags }}
-        <span>
-        {{ partial "icons/ui" (dict "icon" "tags" "class" "inline w-4 h-4 mr-1 text-fuchsia-400") }}
-        {{ delimit . ", " }}
-        </span>
-    {{ end }}
+
+    <div class="prose prose-headings:font-vt323 max-w-prose mx-auto prose-img:max-w-full prose-pre:overflow-x-auto">
+        <h2 class="font-vt323 text-4xl uppercase tracking-wide mb-2 drop-shadow-[0_0_16px_#00ffe7] {{ $postTextColor }}">
+            <a href="{{ .Permalink }}" class="hover:text-fuchsia-400 transition-colors">{{ .Title }}</a>
+        </h2>
+
+        <div class="flex items-center gap-4 text-xs font-mono opacity-80 {{ $postTextColor }}">
+            <span>{{ .Date.Format "2006-01-02" }}</span>
+            {{ with .Params.tags }}
+            <span class="inline-flex items-center flex-wrap gap-1">
+                {{ partial "icons/ui" (dict "icon" "tags" "class" "inline w-4 h-4 text-fuchsia-400") }}
+                {{ range $i, $tag := . }}
+                <a
+                    href="{{ "/tags/" | relURL }}{{ $tag | urlize }}/"
+                    class="inline-block px-2 py-0.5 rounded text-xs font-mono bg-gray-900/70 border border-fuchsia-400 text-fuchsia-300 hover:bg-fuchsia-900/80 hover:text-white transition"
+                    >#{{ $tag }}</a>{{ if ne (add $i 1) (len .) }}{{ end }}
+                {{ end }}
+            </span>
+            {{ end }}
+
+        </div>
+
+        <div class="post-summary mt-2 {{ $postProseColor }} ">
+            {{ .Summary }}
+        </div>
+
+        <div class="mt-4">
+            <a href="{{ .Permalink }}" class="btn-main inline-block">
+                <span class="btn-text">{{ i18n "read_more" }}</span>
+            </a>
+        </div>
+
     </div>
-    <div class="post-summary {{ $postProseColor }} ">
-        {{ .Summary }}
-    </div>
-    <div class="mt-4">
-        <a href="{{ .Permalink }}" class="btn-main inline-block">
-            {{ i18n "read_more" }}
-        </a>
-      </div>
-  </div>
+
 </article>
