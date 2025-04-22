@@ -1,10 +1,5 @@
 {{ define "main" }}
-<div class="relative max-w-4xl mx-auto mt-16 mb-20 px-4 py-10
-            bg-gray-900/90 border-2 border-fuchsia-500 rounded-2xl
-            shadow-[0_0_40px_#ff00cc_inset,0_0_80px_#00ffe7aa]
-            backdrop-blur-md
-            before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none">
-  <div class="absolute -inset-2 rounded-3xl pointer-events-none z-0 shadow-[0_0_32px_#00ffe7,0_0_64px_#ff00cc44]"></div>
+<div class="cnt-main border-fuchsia-400 shadow-[0_0_40px_#ff00cc_inset,0_0_80px_#00ffe744]">
 
   <h1 class="relative z-10 font-vt323 text-3xl md:text-4xl text-center uppercase tracking-widest mb-8 text-fuchsia-400 drop-shadow-[0_0_16px_#ff00cc]">
     {{ .Title | default (print .Data.Plural | title) }}

@@ -1,9 +1,5 @@
 {{ define "main" }}
-<section class="relative max-w-3xl mx-auto mt-16 mb-20 px-6 py-12
-                bg-gray-900/95 border-2 border-fuchsia-500 rounded-2xl
-                shadow-[0_0_40px_#ff00cc_inset,0_0_80px_#00ffe7aa]
-                before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none">
-  <div class="absolute -inset-2 rounded-3xl pointer-events-none z-0 shadow-[0_0_32px_#00ffe7,0_0_64px_#ff00cc44]"></div>
+<div class="cnt-main md:px-8 pb-16">
 
   <div class="relative z-10 flex flex-col items-center text-center gap-6">
     <!-- Avatar -->
@@ -11,7 +7,7 @@
          class="w-32 h-32 rounded-full border-4 border-cyan-400 shadow-[0_0_24px_#00ffe7] mb-4 object-cover bg-gray-800/80">
 
     <h1 class="font-vt323 text-4xl text-fuchsia-400 drop-shadow-[0_0_16px_#ff00cc] uppercase tracking-widest mb-2">
-      About Me
+      {{ .Title | default (i18n "about_me") }}
     </h1>
 
     <p class="text-cyan-200 font-mono max-w-xl mb-3">
@@ -33,13 +29,9 @@
         <a href="{{ .url }}"
            class="flex items-center gap-2 px-4 py-2 border-2 border-cyan-400 rounded-lg text-cyan-200 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset] font-vt323 uppercase tracking-widest">
           {{ if eq .icon "email" }}
-            <svg class="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
+            {{ partial "icons/social" (dict "icon" "email" "class" "w-5 h-5 text-cyan-300") }}
           {{ else if eq .icon "github" }}
-            <svg class="w-5 h-5 text-cyan-300" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.867 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.621.069-.609.069-.609 1.004.07 1.532 1.031 1.532 1.031.892 1.529 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.221-.252-4.555-1.111-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.748-1.025 2.748-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .268.18.579.688.481C19.135 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-            </svg>
+            {{ partial "icons/social" (dict "icon" "github" "class" "w-5 h-5 text-cyan-300") }}
           {{ end }}
           {{ .label }}
         </a>
@@ -47,9 +39,9 @@
     </div>
 
     <!-- About Content from Markdown -->
-    <div class="prose prose-cyan dark:prose-invert prose-headings:font-vt323 prose-headings:text-cyan-300 prose-a:text-fuchsia-400 hover:prose-a:text-cyan-300 prose-img:rounded-lg max-w-none mt-8 text-left">
+    <div class="prose text-cyan-200 prose-headings:font-vt323 prose-headings:text-cyan-300 prose-a:text-fuchsia-400 hover:prose-a:text-cyan-300 prose-img:rounded-lg max-w-none mt-8 text-left">
       {{ .Content }}
     </div>
   </div>
-</section>
+</div>
 {{ end }}

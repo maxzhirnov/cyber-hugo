@@ -3,24 +3,32 @@
 {{ $postTextColor := .Params.single_title_color | default $textColor }}
 {{ $postProseColor := .Params.single_prose_color | default $proseColor }}
 
-<h2 class="font-vt323 text-4xl uppercase tracking-wide mb-2 drop-shadow-[0_0_16px_#00ffe7] {{ $postTextColor }}">
-    <a href="{{ .Permalink }}" class="hover:text-fuchsia-400 transition-colors">{{ .Title }}</a>
-</h2>
-<div class="flex items-center gap-4 text-xs font-mono opacity-80 {{ $postTextColor }}">
-<span>{{ .Date.Format "2006-01-02" }}</span>
-{{ with .Params.tags }}
-    <span>
-    {{ partial "icons/ui" (dict "icon" "tags" "class" "inline w-4 h-4 mr-1 text-fuchsia-400") }}
-    {{ delimit . ", " }}
-    </span>
-{{ end }}
-</div>
-<article class="post-summary {{ $postProseColor }} ">
-    {{ .Summary }}
-</article>
-<div class="mt-4">
-    <a href="{{ .Permalink }}" class="btn-main inline-block">
-      Read More →
-    </a>
-  </div>
+
   
+<article class="w-full max-w-full sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto
+  bg-gray-800/90 border-2 border-cyan-600 rounded-xl p-6
+  shadow-[inset_0_0_16px_#00ffe7]
+  transition-transform hover:scale-[1.005] hover:shadow-[0_0_32px_#ff00cc44]">
+  <div class="prose prose-headings:font-vt323 max-w-prose mx-auto prose-img:max-w-full prose-pre:overflow-x-auto">
+    <h2 class="font-vt323 text-4xl uppercase tracking-wide mb-2 drop-shadow-[0_0_16px_#00ffe7] {{ $postTextColor }}">
+        <a href="{{ .Permalink }}" class="hover:text-fuchsia-400 transition-colors">{{ .Title }}</a>
+    </h2>
+    <div class="flex items-center gap-4 text-xs font-mono opacity-80 {{ $postTextColor }}">
+    <span>{{ .Date.Format "2006-01-02" }}</span>
+    {{ with .Params.tags }}
+        <span>
+        {{ partial "icons/ui" (dict "icon" "tags" "class" "inline w-4 h-4 mr-1 text-fuchsia-400") }}
+        {{ delimit . ", " }}
+        </span>
+    {{ end }}
+    </div>
+    <div class="post-summary {{ $postProseColor }} ">
+        {{ .Summary }}
+    </div>
+    <div class="mt-4">
+        <a href="{{ .Permalink }}" class="btn-main inline-block">
+            {{ i18n "read_more" }}
+        </a>
+      </div>
+  </div>
+</article>

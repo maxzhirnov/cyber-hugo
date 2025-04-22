@@ -34,6 +34,26 @@
       
     }
 
+    .cnt-main {
+      @apply relative max-w-5xl mx-auto mt-16 mb-20 px-4 py-10
+        bg-gray-900/90 border-2 border-cyan-400 rounded-2xl
+        shadow-[0_0_40px_#00ffe7_inset,0_0_80px_#ff00cc44]
+        backdrop-blur-md
+        before:absolute before:inset-0  before:rounded-2xl before:pointer-events-none
+    }
+
+    .cnt-main::after {
+        content: '';
+        position: absolute;
+        inset: -0.5rem;
+        border-radius: 1.5rem;
+        pointer-events: none;
+        z-index: 0;
+        box-shadow:
+          0 0 32px #00ffe7,
+          0 0 64px #ff00cc44;
+      }
+
     .btn-main {
         @apply relative flex items-center justify-center px-5 py-2 font-vt323 text-lg uppercase tracking-widest
           border-2 border-cyan-400 rounded-md

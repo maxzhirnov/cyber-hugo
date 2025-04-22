@@ -1,0 +1,48 @@
+read_more:
+  other: "Read More →"
+
+no_posts_found:
+  other: "No posts found"
+
+previous:
+  other: "Previous"
+
+next:
+  other: "Next"
+
+back:
+  other: "Back"
+
+tag_page_summary:
+  one: 'Tag page: Showing <span class="font-bold text-fuchsia-400">{{ .Count }}</span> article tagged with <span class="font-bold text-cyan-300">"{{ .Title }}"</span>.'
+  other: 'Tag page: Showing <span class="font-bold text-fuchsia-400">{{ .Count }}</span> articles tagged with <span class="font-bold text-cyan-300">"{{ .Title }}"</span>.'
+
+no_articles_found:
+  other: 'No articles found for this tag.'
+
+about_me:
+  other: 'About Me'
+
+archive:
+  other: 'Archive'
+
+archive_no_posts_found:
+  other: 'No posts found in archive.'
+
+contact:
+  other: 'Contact'
+
+name:
+  other: 'Name'
+
+message:
+  other: 'Message'
+
+send_message:
+  other: 'Send Message'
+
+faq:
+  other: 'FAQ'
+
+portfolio:
+  other: 'Portfolio'

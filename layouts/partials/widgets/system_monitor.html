@@ -2,27 +2,33 @@
 {{ $cpu := default 42 .Site.Params.dashboard.status.cpu }}
 {{ $mem := .Site.Params.dashboard.status.memory | default "78%" }}
 {{ $angle := mul (div (float $cpu) 100) 180 }}
-<div class="bg-gray-800 border-2 border-cyan-600 rounded-lg p-5 flex flex-col items-center shadow-[inset_0_0_16px_#00ffe7]">
-  <div class="flex items-center justify-between w-full border-b border-cyan-600 pb-2 mb-3">
-    <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase">
-      {{ .Site.Params.widgets.system_monitor | default "SYSTEM MONITOR" }}
-    </h2>
-    <span class="font-mono text-cyan-400 text-xs tracking-widest">LOAD</span>
+<div class="bg-gray-800 border-2 border-cyan-600 rounded-lg p-5 flex flex-col shadow-[inset_0_0_16px_#00ffe7]">
+  <!-- Header -->
+  <div class="flex items-center justify-between border-b border-cyan-700 pb-2 mb-4">
+    <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase">SYSTEM MONITOR</h2>
+    <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_4px_#00ffe7]"></span>
   </div>
-  <!-- Analog Meter -->
-  <div class="relative w-32 h-32 border-2 border-cyan-500 rounded-full bg-gradient-to-b from-gray-950 to-gray-800 my-4 flex items-center justify-center">
-    <div class="absolute bottom-1/2 left-1/2 w-1 h-16 bg-pink-500 rounded origin-bottom transition-transform duration-500"
-         style="transform: rotate({{ $angle }}deg);"></div>
-    <!-- Optionally, meter ticks can be added here -->
+  <!-- Meter with Ticks and Glow -->
+  <div class="relative w-36 h-36 mx-auto my-5 bg-gradient-to-tr from-gray-950 to-gray-800 rounded-full border-[3px] border-pink-400 shadow-[0_0_24px_#00ffe7] flex items-center justify-center">
+    <!-- Glowing meter ticks (SVG or divs) -->
+    <!-- Meter needle; add class for alert color if needed -->
+    <div class="absolute left-1/2 bottom-1/2 w-1 h-20 bg-lime-400 rounded origin-bottom transition-transform duration-500
+    {{ if gt $cpu 85 }}bg-pink-600 pulse{{ end }}"
+    style="transform: rotate({{ $angle }}deg);"></div>
   </div>
-  <div class="flex w-full justify-evenly mt-4">
-    <div class="flex gap-1 items-center font-mono text-cyan-300">
-      <span class="uppercase text-xs opacity-80">CPU:</span>
-      <span class="text-lime-400 font-bold text-lg">{{ $cpu }}%</span>
+  <!-- Usage stats and sparklines -->
+  <div class="flex w-full justify-evenly mt-2">
+    <div class="flex flex-col items-center font-mono text-cyan-200">
+      <span class="uppercase text-xs opacity-60">CPU</span>
+      <span class="text-lime-400 font-bold text-lg pulse">{{ $cpu }}%</span>
+      <!-- Example sparkline -->
+      <svg width="60" height="16"><polyline points="0,12 10,8 20,14 30,5 ..." style="fill:none;stroke:#39ff14;stroke-width:2;" /></svg> 
     </div>
-    <div class="flex gap-1 items-center font-mono text-cyan-300">
-      <span class="uppercase text-xs opacity-80">MEM:</span>
+    <div class="flex flex-col items-center font-mono text-cyan-200">
+      <span class="uppercase text-xs opacity-60">MEM</span>
       <span class="text-lime-400 font-bold text-lg">{{ $mem }}%</span>
+      <svg width="60" height="16"><polyline ... /></svg>
     </div>
   </div>
+
 </div>
