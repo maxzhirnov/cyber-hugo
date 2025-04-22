@@ -1,67 +1,91 @@
 <!-- MOTD Widget -->
 <div class="widget-base relative overflow-visible">
-    <!-- Top cyber bracket deco -->
+    <!-- Header -->
+  <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3 z-20">
+    <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
+      <span class="drop-shadow-[0_0_6px_#00ffe7]">🠔</span>
+      {{ .Site.Params.widgets.system_motd | default "SYSTEM MOTD" }}
+    </h2>
+    <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
+  </div>
+    <!-- Cyberpunk MOTD Widget -->
+<div class="relative p-7 flex flex-col items-center justify-center select-none" style="perspective: 700px;">
+    <!-- Glass, Tech, and Neon Deco -->
     <div class="absolute top-0 left-0 right-0 flex justify-between px-4 pointer-events-none z-10">
       <span class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none opacity-80">╔═══</span>
       <span class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none opacity-80">═══╗</span>
     </div>
-    <!-- Neon indicator bar -->
-    <div class="absolute top-7 left-7 right-7 h-1 bg-gradient-to-r from-fuchsia-500/40 via-cyan-400 to-fuchsia-400 rounded-full blur-sm opacity-60 pointer-events-none"></div>
-    <!-- CRT scanlines overlay -->
-    <div class="crt-overlay"><div class="w-full h-full scanlines"></div></div>
-    <!-- Microchip SVG deco (optional) -->
-    <svg class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 opacity-25 pointer-events-none z-10" viewBox="0 0 96 24" fill="none">
-      <rect x="1" y="10" width="94" height="4" rx="1" stroke="#00ffe7" stroke-width="1.3"/>
-      <path d="M4,12 v-6 M92,12 v6" stroke="#ff00cc" stroke-width="1"/>
-      <circle cx="8" cy="12" r="2" fill="#ff00cc"/>
-      <circle cx="88" cy="12" r="2" fill="#ff00cc"/>
-    </svg>
-    <!-- Widget header -->
-    <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3 relative z-10">
-      <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase flex items-center gap-2">
-        <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke="#00ffe7"/><path d="M12 9v3l2 2" stroke="#ff00cc"/><circle cx="12" cy="12" r="4" stroke="#ff00cc"/></svg>
-        System MOTD
-      </h2>
-      <!-- Animated status LEDs -->
-      <span class="flex gap-1 items-center">
-        <span class="w-2 h-2 rounded-full bg-fuchsia-400 shadow-[0_0_8px_#ff00cc] animate-pulse-slow"></span>
-        <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse"></span>
-        <span class="w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_8px_#fff600] animate-blink"></span>
-      </span>
+
+    <div class="relative w-full max-w-xl mx-auto min-h-[94px] md:min-h-[120px] flex items-center justify-center
+        bg-gradient-to-br from-gray-900/95 to-gray-800/85
+        border-[4px] border-cyan-400/90 shadow-[0_0_44px_#00ffe777,0_0_24px_#ff00cc44] overflow-visible"
+        style="clip-path: polygon(10% 0, 90% 0, 100% 25%, 100% 75%, 90% 100%, 10% 100%, 0 75%, 0 25%);
+            backdrop-filter: blur(6px) brightness(1.05)">
+    <!-- SVG Edge Glow Overlay -->
+        <svg class="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="10,0 90,0 100,25 100,75 90,100 10,100 0,75 0,25"
+                fill="none" stroke="#ff00cc88" stroke-width="2.5"></polygon>
+        </svg>
+        <div class="absolute inset-0 pointer-events-none z-20"
+            style="clip-path: inherit; background: linear-gradient(105deg,rgba(255,255,255,0.14) 7%,rgba(0,255,231,0.12) 95%);"></div>
+        <div class="absolute inset-0 pointer-events-none z-30 opacity-26 mix-blend-screen">
+            <div class="w-full h-full scanlines"></div>
+        </div>
+        <div id="motd-box"
+            class="w-full flex justify-center items-center px-4 py-3 font-share-tech text-center text-cyan-200 text-base sm:text-xl md:text-2xl tracking-[.07em] motd-segmented z-40 select-text bg-black/10"
+            style="
+                letter-spacing:.07em;
+                text-shadow:0 1px 8px #00ffe7cc,0 1px 14px #ff00ccb0,0 0 2px #fff600cc;
+                word-break:break-word;
+                overflow-wrap:anywhere;
+                max-width:100%;
+                min-width:0;
+                white-space:normal;
+            ">
+        </div>
+        <div class="absolute inset-0 pointer-events-none z-40">
+            <div class="w-full h-full animate-holo-shimmer" style="clip-path: inherit; background: linear-gradient(130deg,transparent 37%,rgba(0,255,231,0.17) 50%,rgba(255,0,204,0.11) 65%,transparent 96%); opacity:.22; filter: blur(1.2px);"></div>
+        </div>
     </div>
-    <!-- MOTD area -->
-    <div id="motd-box"
-        class="p-4 text-center font-share-tech text-fuchsia-300 text-base md:text-lg animate-glitchy-motd select-text relative z-10 cyber-motd-glow">
-      <!-- JS will insert message -->
-    </div>
-    <!-- Bottom brackets deco -->
-    <div class="absolute bottom-0 left-0 right-0 flex justify-between px-4 pointer-events-none z-10">
-      <span class="font-vt323 text-cyan-400 text-xl tracking-widest select-none opacity-80">╚═══</span>
-      <span class="font-vt323 text-cyan-400 text-xl tracking-widest select-none opacity-80">═══╝</span>
-    </div>
+
+
+
+    <!-- Widget label under display -->
+    <div class="w-full max-w-xl text-center mt-2 flex items-center justify-center gap-4">
+        <span class="font-vt323 text-cyan-400 tracking-[.22em] text-base md:text-lg select-none opacity-85"> 0xC13-LAB </span>
+        <span class="font-share-tech text-yellow-200 text-xs md:text-sm select-none opacity-70"> ■Ξ■ Q-CORE // SIGMA </span>
+        <span class="font-vt323 text-fuchsia-300 tracking-[.13em] text-base select-none opacity-60"> Ξ≡Ω </span>
+      </div>
+  </div>
   </div>
   
   <style>
-  @keyframes glitchy-motd {
-    0% { text-shadow: 0 0 8px #ff00cc, 0 0 16px #00ffe7;}
-    25% { text-shadow: 2.5px -1px 12px #ff00cc, -3px 2px 14px #00ffe7;}
-    48% { text-shadow: -1.5px 2.8px 8px #fff600, 2px -2px 17px #00ffe7;}
-    77% { text-shadow: 0.5px -0.5px 14px #f6f6f6, -1.5px 1.5px 11px #ff00cc;}
-    100% { text-shadow: 0 0 8px #ff00cc, 0 0 16px #00ffe7;}
+  .motd-segmented {
+    font-family: 'Share Tech Mono', 'Roboto Mono', 'VT323', monospace;
+    font-variant-ligatures: none;
+    background: linear-gradient(95deg,#00ffe7, #ff00cc, #fff600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: motd-glow 2.2s infinite alternate;
   }
-  .animate-glitchy-motd { animation: glitchy-motd 2.7s infinite alternate; }
-  @keyframes pulse-slow { 0%,100%{opacity:1;} 50%{opacity:0.55;} }
-  .animate-pulse-slow { animation: pulse-slow 2.5s ease-in-out infinite; }
-  @keyframes blink { 0%,100%{opacity:1;} 70%{opacity:0.2;} }
-  .animate-blink { animation: blink 1.2s steps(1,end) infinite; }
-  .cyber-motd-glow {
-    box-shadow: 0 0 16px #00ffe7cc, 0 0 36px #ff00cc33, 0 0 2px #fff60044;
-    border-radius: 0.7em;
-    transition: box-shadow 0.22s;
+  @keyframes motd-glow {
+    from { text-shadow: 0 0 10px #00ffe7dd, 0 0 20px #ff00cc90;}
+    to   { text-shadow: 0 0 18px #ff00ccbb, 0 0 30px #00ffe733;}
   }
-  .cyber-motd-glow:hover, .cyber-motd-glow:focus {
-    box-shadow: 0 0 40px #00ffe7, 0 0 60px #ff00cc, 0 0 8px #fff600;
+
+  .scanlines {
+    background: repeating-linear-gradient(
+      to bottom, rgba(0,255,231,0.13) 0px, rgba(0,255,231,0.09) 2px,
+      transparent 2px, transparent 8px );
+    animation: scanmove .68s linear infinite;
   }
+  @keyframes scanmove {0%{background-position-y:0;}100%{background-position-y:8px;}}
+  @keyframes holo-shimmer {
+    0% { transform:translateX(-90%) skewX(-18deg);}
+    95% { transform:translateX(120%) skewX(-18deg);}
+    100%{ transform:translateX(-90%) skewX(-18deg);}
+  }
+  .animate-holo-shimmer { animation: holo-shimmer 4.2s infinite linear; }
   </style>
   
   
