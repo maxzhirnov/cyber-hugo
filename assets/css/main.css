@@ -22,12 +22,31 @@
    Tailwind Layer: base
    ===================== */
    @layer base {
-    h1 { @apply text-4xl font-bold my-2; }
-    h2 { @apply text-3xl font-bold my-2; }
-    h3 { @apply text-2xl font-semibold my-2 underline; }
-    h4 { @apply text-xl font-semibold my-2; }
-    h5 { @apply text-lg font-semibold my-2; }
-    h6 { @apply text-base font-semibold my-2; }
+    h1 { @apply text-4xl font-bold mb-2 mt-4; }
+    h2 { @apply text-3xl font-bold mb-2 mt-4; }
+    h3 { @apply text-2xl font-semibold mb-2 mt-4 underline; }
+    h4 { @apply text-xl font-semibold mb-2 mt-4; }
+    h5 { @apply text-lg font-semibold mb-2 mt-4; }
+    h6 { @apply text-base font-semibold mb-2 mt-4; }
+    p  { @apply mb-4 }
+
+    blockquote {
+      @apply p-4 my-6 bg-gray-900 border-l-4 border-cyber-fuchsia text-cyber-emerald italic;
+    }
+
+    code {
+      @apply bg-gray-900 text-cyber-fuchsia px-2 py-0.5 rounded font-medium;
+    }
+
+    a {
+      @apply text-cyber-fuchsia underline underline-offset-2 transition-colors duration-200;
+    }
+    a:hover, a:focus {
+      @apply text-cyber-emerald;
+    }
+    a:active {
+      @apply text-cyber-orange;
+    }
   }
   
   /* ==========================

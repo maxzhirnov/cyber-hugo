@@ -67,18 +67,6 @@ menus:
     - name: FAQ
       url: /faq/
 
-# Available  colors:
-  # --color-cyber-cyan:    #00ffe7;
-  # --color-cyber-fuchsia: #ff00cc;
-  # --color-cyber-lime:    #39ff14;
-  # --color-cyber-blue:    #00bfff;
-  # --color-cyber-yellow:  #fff600;
-  # --color-cyber-orange:  #ff8800;
-  # --color-cyber-rose:    #ff007a;
-  # --color-cyber-violet:  #a259ff;
-  # --color-cyber-emerald: #00ffae;
-  # --color-terminal-black: #0f1021;
-  # --color-deep-gray: #1a1a2e;
 params:
   name: Hugo Tailwindcss Starter
   description: A simple bootstraped theme for Hugo, build with Tailwindcss.
