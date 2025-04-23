@@ -1,21 +1,9 @@
-{{/*
-Cyberpunk-inspired Table of Contents (Hugo Component)
-- Neon glows, animated chevron, cyber scrollbars and bullets, Tailwind-based
-- TOC will only show if enabled and content available
-*/}}
+{{ $showToc := .Params.showToc | default .Site.Params.content.showToc | default false }}
+{{ $tocOpen := .Params.tocOpen | default .Site.Params.content.tocOpen | default true }}
 
-{{ $showToc := .Site.Params.content.showToc | default false }}
-{{ if isset .Params "showToc" }}
-{{ $showToc = .Params.content.showToc }}
-{{ end }}
-
-{{ $tocOpen := .Site.Params.content.tocOpen | default true }}
-{{ if isset .Params "tocOpen" }}
-{{ $tocOpen = .Params.content.tocOpen }}
-{{ end }}
 
 {{ if $showToc }}
-{{ $tocContent := .TableOfContents }}
+  {{ $tocContent := .TableOfContents }}
 {{ if ne $tocContent "<nav id=\"TableOfContents\"></nav>" }}
 <div class="relative max-w-full mx-auto mb-8 p-4
                 bg-gray-900/90 border-2 border-cyan-400 rounded-xl
