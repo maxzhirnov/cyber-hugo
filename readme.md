@@ -26,28 +26,89 @@ A cyberpunk-inspired Hugo theme with neon aesthetics, glowing elements, and retr
 
 ## Installation
 
-### Option 1: As a Hugo Module (recommended)
+## How to Install and Run the Cyber-Hugo Theme with TailwindCSS
+
+### 1. Install Hugo and Node.js
+
+- [Download and install Hugo](https://gohugo.io/getting-started/installing/) for your operating system.
+- [Download and install Node.js](https://nodejs.org/) (which includes npm).
+
+Check your installations:
 
 ```bash
-# Initialize Hugo module if you haven't already
-hugo mod init github.com/yourusername/yoursite
+hugo version
+node -v
+npm -v
+```
 
-# Edit your config.yaml or config.toml to add the module
-# In config.yaml:
+---
+
+### 2. Create a New Hugo Site
+
+```bash
+hugo new site mysite
+cd mysite
+```
+
+---
+
+### 3. Add the Theme
+
+Clone the theme into your `themes` directory (replace the URL with your theme’s repository):
+
+```bash
+git clone https://github.com/maxzhirnov/cyber-hugo themes/cyber-hugo
+```
+
+---
+
+### 4. Install TailwindCSS CLI in the Project Root
+
+**Important:**  
+Hugo Pipes requires the TailwindCSS CLI to be available in the project root. Install it there:
+
+```bash
+npm init -y
+npm install -D tailwindcss @tailwindcss/cli
+```
+
+---
+
+### 5. Add or Check Configuration
+
+In your `hugo.yaml` (or `config.yaml`/`config.toml`), ensure you have the following (adjust as needed):
+
+```yaml
+theme: cyber-hugo
+
+build:
+  buildStats:
+    enable: true
+  cachebusters:
+  - source: assets/notwatching/hugo_stats\.json
+    target: css
+  - source: (postcss|tailwind)\.config\.js
+    target: css
+
 module:
-  imports:
-    - path: github.com/maxzhirnov/cyber-hugo
+  mounts:
+  - source: assets
+    target: assets
+  - disableWatch: true
+    source: hugo_stats.json
+    target: assets/notwatching/hugo_stats.json
 ```
 
-### Option 2: Clone the Repository
+---
+
+### 6. Start the Hugo Server
 
 ```bash
-# Clone the repository into your themes directory
-git clone https://github.com/maxzhirnov/cyber-hugo.git themes/cyber-hugo
-
-# Edit your config.yaml to use the theme
-theme: "cyber-hugo"
+hugo server -D
 ```
+
+Open [http://localhost:1313](http://localhost:1313) in your browser to view your site.
+
 
 ## Configuration
 

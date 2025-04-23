@@ -1,5 +1,5 @@
 ---
-title: "Jacking In—Your Cyber-Hugo YAML Setup Guidee"
+title: "Jacking In Your Cyber-Hugo YAML Setup Guide"
 date: 2025-04-21T06:18:48+00:00
 tags: ["theme", "setup"]
 summary: "Plug into the neon grid! This guide jacks you straight into configuring your hugo.yaml for the Cyber-Hugo theme—covering every setting, from menus to terminal widgets, so your site pulses with Blade Runner energy and hacker precision. Deploy your digital city with style."
