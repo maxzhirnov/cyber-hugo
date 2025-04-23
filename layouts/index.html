@@ -4,7 +4,7 @@
     {{ partial "widgets/console.html" . }}
   {{ end }}
 
-  <div class="grid md:grid-cols-2 2xl:grid-cols-3 gap-6">
+  <div class="grid md:grid-cols-2 gap-6">
     {{ $widgets := .Site.Params.homepage.widgets.order }}
     {{ if not $widgets }}
       {{/* Fallback: default widgets if not set */}}
