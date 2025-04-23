@@ -109,7 +109,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       var box = document.getElementById('motd-box');
       if (!box) return;
-      fetch('/motd.json')
+      fetch('motd.json')
         .then(function(res) { return res.json(); })
         .then(function(messages) {
           if (!Array.isArray(messages) || messages.length === 0) {
