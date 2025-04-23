@@ -81,13 +81,9 @@
     font-family: 'Share Tech Mono', 'Roboto Mono', 'VT323', monospace;
     font-variant-ligatures: none;
     background: linear-gradient(95deg,#00ffe7, #ff00cc, #fff600);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: motd-glow 2.2s infinite alternate;
-  }
-  @keyframes motd-glow {
-    from { text-shadow: 0 0 10px #00ffe7dd, 0 0 20px #ff00cc90;}
-    to   { text-shadow: 0 0 18px #ff00ccbb, 0 0 30px #00ffe733;}
   }
 
   .scanlines {
