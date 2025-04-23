@@ -137,7 +137,7 @@ params:
   github_repo: https://github.com/dirkolbrich/hugo-tailwindcss-starter-theme
   github_banner: true
   favicon: favicon.ico
-  single_title_color: "text-cyber-fuchsia"
+  single_heading_color: "text-cyber-fuchsia"
   single_prose_color: "text-cyber-emerald"
   dashboard:
     title: SYSTEM CONSOLE
@@ -157,7 +157,7 @@ params:
 - **mainSections**: Where the action happens (blog posts).
 - **GitHub**: Banner and repo link—show your code cred.
 - **favicon**: Your icon in the matrix.
-- **single_title_color/single_prose_color**: Custom neon colorways.
+- **single_heading_color/single_prose_color**: Custom neon colorways.
 - **dashboard**: SYSTEM CONSOLE widget—CPU and memory status, just for fun.
 - **widgets.quick_links**: Label for your quick access menu.
 - **rss_post_footer**: Custom signature for your RSS syndicate.

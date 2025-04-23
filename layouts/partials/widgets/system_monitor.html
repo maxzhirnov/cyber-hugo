@@ -1,6 +1,6 @@
 <!-- System Monitor Widget -->
-{{ $cpu := default 42 .Site.Params.dashboard.status.cpu }}
-{{ $mem := .Site.Params.dashboard.status.memory | default "78%" }}
+{{ $cpu := default 42 .Site.Params.homepage.dashboard.status.cpu }}
+{{ $mem := .Site.Params.homepage.dashboard.status.memory | default "78%" }}
 {{ $angle := mul (div (float $cpu) 100) 180 }}
 <div class="widget-base">
   <div class="crt-overlay"><div class="w-full h-full scanlines"></div></div>

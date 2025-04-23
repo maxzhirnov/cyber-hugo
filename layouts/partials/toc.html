@@ -4,14 +4,14 @@ Cyberpunk-inspired Table of Contents (Hugo Component)
 - TOC will only show if enabled and content available
 */}}
 
-{{ $showToc := .Site.Params.showToc | default false }}
+{{ $showToc := .Site.Params.content.showToc | default false }}
 {{ if isset .Params "showToc" }}
-{{ $showToc = .Params.showToc }}
+{{ $showToc = .Params.content.showToc }}
 {{ end }}
 
-{{ $tocOpen := .Site.Params.tocOpen | default true }}
+{{ $tocOpen := .Site.Params.content.tocOpen | default true }}
 {{ if isset .Params "tocOpen" }}
-{{ $tocOpen = .Params.tocOpen }}
+{{ $tocOpen = .Params.content.tocOpen }}
 {{ end }}
 
 {{ if $showToc }}

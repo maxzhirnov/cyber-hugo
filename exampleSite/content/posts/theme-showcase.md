@@ -134,7 +134,7 @@ Individual pages can override the default styling:
 ```yaml
 ---
 title: "Custom Styled Page"
-single_title_color: "text-fuchsia-400"  # Override default title color
+single_heading_color: "text-fuchsia-400"  # Override default title color
 single_prose_color: "prose-fuchsia"     # Override default content color
 ---
 ```

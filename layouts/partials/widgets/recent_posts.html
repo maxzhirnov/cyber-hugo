@@ -16,7 +16,7 @@
   <!-- Recent Entries List -->
   <div class="flex-1 overflow-y-auto pr-1 z-20 custom-scrollbar">
     {{ range $idx, $p := first 5 (where .Site.RegularPages "Type" "in"
-    site.Params.mainSections) }}
+    site.Params.content.mainSections) }}
     <div class="relative flex items-center gap-0 mb-2 group/item transition">
       <span
         class="font-share-tech text-lime-400 text-xs w-8 md:w-12 text-right mr-2 opacity-80 tracking-wider select-none">

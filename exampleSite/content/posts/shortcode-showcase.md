@@ -2,7 +2,7 @@
 title: "Cyberpunk Theme Shortcodes Showcase"
 date: 2025-04-19T10:00:00+00:00
 tags: ["theme", "shortcodes", "demo", "cyberpunk"]
-single_title_color: "text-cyber-fuchsia"
+single_heading_color: "text-cyber-fuchsia"
 single_prose_color: "text-cyber-rose"
 ---
 

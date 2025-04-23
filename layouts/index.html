@@ -1,13 +1,28 @@
 {{ define "main" }}
-
 <div class="max-w-5xl mx-auto px-4 py-8">
-  {{ partial "widgets/console.html" . }}
-  <!-- Dashboard Grid -->
+  {{ if .Site.Params.homepage.show_console_widget }}
+    {{ partial "widgets/console.html" . }}
+  {{ end }}
+
   <div class="grid md:grid-cols-2 2xl:grid-cols-3 gap-6">
-    {{ partial "widgets/recent_posts.html" . }}    
-    {{ partial "widgets/system_monitor.html" . }}
-    {{ partial "widgets/quick_access.html" . }}
-    {{ partial "widgets/motd.html" . }}
+    {{ $widgets := .Site.Params.homepage.widgets.order }}
+    {{ if not $widgets }}
+      {{/* Fallback: default widgets if not set */}}
+      {{ $widgets = slice "recent_posts" "system_monitor" "quick_access" "motd" }}
+    {{ end }}
+
+    {{ $ctx := . }}
+    {{ range $i, $widget := $widgets }}
+      {{ if eq $widget "recent_posts" }}
+        {{ partial "widgets/recent_posts.html" $ctx }}
+      {{ else if eq $widget "system_monitor" }}
+        {{ partial "widgets/system_monitor.html" $ctx }}
+      {{ else if eq $widget "quick_access" }}
+        {{ partial "widgets/quick_access.html" $ctx }}
+      {{ else if eq $widget "motd" }}
+        {{ partial "widgets/motd.html" $ctx }}
+      {{ end }}
+    {{ end }}
   </div>
 </div>
 {{ end }}

@@ -68,26 +68,36 @@ menus:
       url: /faq/
 
 params:
-  name: Hugo Tailwindcss Starter
-  description: A simple bootstraped theme for Hugo, build with Tailwindcss.
-  showToc: true
-  tocOpen: false
-  mainSections:
-    - posts
-  github_user: maxzhirnov
-  github_repo: https://github.com/dirkolbrich/hugo-tailwindcss-starter-theme
-  github_banner: true
-  favicon: favicon.ico
-  single_title_color: "text-cyber-fuchsia"
-  single_prose_color: "text-cyber-emerald"
-  dashboard:
-    title: SYSTEM CONSOLE
-    subtitle: MAIN ACCESS POINT
-    status:
-      cpu: 42
-      memory: 78
-  widgets:
-    quick_links: QUICK ACCESS
-  rss_post_footer: "Read more cyberpunk content at <a href='https://yoursite.com'>YourSite</a>"
-  images:
-    - "/images/site-logo.png"  # First image used in RSS feed
+  site:
+    name: Hugo Tailwindcss Starter
+    description: A simple bootstraped theme for Hugo, build with Tailwindcss.
+    favicon: favicon.ico
+    images:
+      - "/images/site-logo.png"
+  appearance:
+    single_heading_color: "text-cyber-fuchsia"
+    single_prose_color: "text-cyber-emerald"
+  content:
+    showToc: true
+    tocOpen: false
+    mainSections:
+      - posts
+  github:
+    user: maxzhirnov
+    repo: https://github.com/dirkolbrich/hugo-tailwindcss-starter-theme
+    banner: true
+  homepage:
+    show_console_widget: true
+    widgets:
+      order:
+        - recent_posts
+        - motd
+        - system_monitor
+        - quick_access
+      quick_links: QUICK ACCESS
+    dashboard:
+      title: SYSTEM CONSOLE
+      subtitle: MAIN ACCESS POINT
+      status:
+        cpu: 42
+        memory: 78

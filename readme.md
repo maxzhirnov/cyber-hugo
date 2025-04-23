@@ -174,7 +174,7 @@ categories: ["technology"]
 image: "/images/featured.jpg"
 showToc: true
 tocOpen: true
-single_title_color: "text-fuchsia-400"  # Override default title color
+single_heading_color: "text-fuchsia-400"  # Override default title color
 single_prose_color: "prose-fuchsia"     # Override default content color
 ---
 ```
