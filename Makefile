@@ -3,3 +3,8 @@ run:
 
 serve:
 	serve exampleSite/public
+
+git-push:
+	git add .
+	git commit -m "$(m)"
+	git push

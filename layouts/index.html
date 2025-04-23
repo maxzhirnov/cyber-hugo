@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="max-w-5xl mx-auto px-4 py-8">
-  {{ if .Site.Params.homepage.show_console_widget }}
+  {{ if (default true .Site.Params.homepage.show_console_widget) }}
     {{ partial "widgets/console.html" . }}
   {{ end }}
 
