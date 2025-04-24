@@ -50,7 +50,7 @@
         <p class="px-2 py-4 rounded bg-gray-900/60 font-mono text-[11px] text-cyan-200 border border-cyan-800 shadow-inner
             sm:justify-around gap-x-5 gap-y-1 text-center">
             <span class="text-fuchsia-400">"</span>
-                {{ . }}
+                {{ . | safeHTML}}
             <span class="text-fuchsia-400">"</span>
         </p>
         {{ end }}

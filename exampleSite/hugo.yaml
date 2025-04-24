@@ -122,8 +122,8 @@ params:
         - about_me
         - recent_posts
         - motd
-        - system_monitor
         - quick_access
+        - system_monitor
       quick_links: QUICK ACCESS
     dashboard:
       title: SYSTEM CONSOLE
