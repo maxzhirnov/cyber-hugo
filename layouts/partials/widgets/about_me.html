@@ -1,5 +1,5 @@
 {{ $cfg := .Site.Params.homepage.widgets.about_me }}
-{{ $title := $cfg.title | default (i18n "about_me") | default "ABOUT_ME" }}
+{{ $title := $cfg.title | default "ABOUT_ME" }}
 {{ $show_scanning_overlay := $cfg.show_scanning_overlay | default true}}
 {{ $showAvatar := $cfg.show_avatar | default true }}
 {{ $avatar := $cfg.avatar | default .Site.Params.author.avatar }}
