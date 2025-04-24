@@ -10,8 +10,9 @@
 {{ $nerd_footer_text_2 := $cfg.nerd_footer_text_2 | default "CTRL+ALT+T to open terminal"}}
 {{ $nerd_footer_text_3 := $cfg.nerd_footer_text_3 | default "[127.0.0.1]"}}
 
-<div
-  class="bg-gray-900 border-2 border-cyan-500 rounded-xl shadow-[0_0_40px_#00ffe7_inset,0_0_80px_#ff00cc26] p-6 flex flex-col items-center mb-8 relative overflow-hidden group/console">
+<div class="bg-gray-900 border-2 border-cyan-500 rounded-xl shadow-[0_0_40px_#00ffe7_inset,0_0_80px_#ff00cc26] 
+          p-6 flex flex-col items-center mb-8 relative overflow-hidden group/console">
+          
   <!-- Top “bracket” deco -->
   {{ if $show_top_bracket_decko }}
     <div

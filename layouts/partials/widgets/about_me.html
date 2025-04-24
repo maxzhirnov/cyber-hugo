@@ -12,10 +12,10 @@
 <div class="widget-base relative">
 
     {{ if $show_scanning_overlay }}
-    <div class="crt-overlay">
-        <div class="w-full h-full scanlines">
+        <div class="crt-overlay">
+            <div class="w-full h-full scanlines">
+            </div>
         </div>
-    </div>
     {{ end }}
 
     <!-- Header -->
@@ -31,10 +31,9 @@
     <div class="flex flex-col gap-3 px-2 py-1 z-20 relative">
         {{ if and $showAvatar $avatar }}
             <div class="relative w-fit mx-auto">
-                <img src="{{ $avatar }}"
-                     alt="Author avatar"
-                     class="w-24 h-24 rounded-full border-4 border-cyan-400/80 shadow-[0_0_36px_#00ffe799,0_0_24px_#ff00cc44_inset] mx-auto bg-black object-cover
-                transition-transform duration-200 group-hover:scale-105" />
+                <img src="{{ $avatar }}" alt="Author avatar" 
+                    class="w-24 h-24 rounded-full border-4 border-cyan-400/80 shadow-[0_0_36px_#00ffe799,0_0_24px_#ff00cc44_inset] 
+                    mx-auto bg-black object-cover transition-transform duration-200 group-hover:scale-105" />
             </div>
         {{ end }}
 
@@ -79,7 +78,7 @@
             href="{{ .RelPermalink }}"
             class="relative font-vt323 uppercase text-cyan-200 border-b-2 border-cyan-400 hover:text-fuchsia-400 hover:border-fuchsia-400 px-4 py-2
                  before:absolute before:-inset-1 before:bg-gradient-to-l before:from-cyan-500/20 before:to-fuchsia-900/10 before:blur before:rounded-lg before:opacity-0 hover:before:opacity-95 before:transition-all before:duration-300">
-            <span class="relative z-10">{{ i18n "more_about_me" }}</span>
+            <span class="relative z-10">{{ i18n "more_about_me" | default "More about me →" }}</span>
         </a>
     </div>
     {{ end }}

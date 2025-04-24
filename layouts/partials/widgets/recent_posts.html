@@ -52,7 +52,7 @@
       </div>
     {{ else }}
       <div class="text-gray-400 text-center py-4">
-        {{ i18n "no_entries_found" }}
+        {{ i18n "no_entries_found" | default "No entries found"}}
       </div>
     {{ end }}
   </div>
