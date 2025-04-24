@@ -12,7 +12,7 @@
 
 {{ $disk_units := $cfg.status.disk_units | default "GB" }}
 {{ $disk_total := $cfg.status.disk_total | default 100 }}
-{{ $disk_used  := $cfg.status.disk_used | default 0 }}
+{{ $disk_used  := $cfg.status.disk_used | default 88 }}
 {{ $disk_free    := sub $disk_total $disk_used }}
 {{ if lt $disk_free 0 }}
   {{ $disk_free = 0 }}
