@@ -170,7 +170,7 @@ params:
         show_scanning_overlay: true
 
       console:
-        title: SYSTEM CONSOLE
+        title: SYSTEM_CONSOLE
         subtitle: MAIN ACCESS POINT
         subtitle_animation: true
         extra_info: "All systems functional"

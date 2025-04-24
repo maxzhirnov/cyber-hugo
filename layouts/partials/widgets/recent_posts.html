@@ -1,5 +1,5 @@
 {{ $cfg := .Site.Params.homepage.widgets.recent_posts }}
-{{ $title := $cfg.title | default "RECENT ENTRIES"}}
+{{ $title := $cfg.title | default "RECENT_ENTRIES"}}
 {{ $show_scanning_overlay := $cfg.show_scanning_overlay | default true}}
 {{ $post_limit := $cfg.count | default 5 }}
 {{ $main_sections := site.Params.content.mainSections }}
