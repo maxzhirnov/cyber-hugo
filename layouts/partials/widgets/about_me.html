@@ -1,43 +1,58 @@
+{{ $cfg := .Site.Params.homepage.widgets.about_me }}
+{{ $title := $cfg.title | default (i18n "about_me") | default "About me" }}
+{{ $show_scanning_overlay := $cfg.show_scanning_overlay | default true}}
+{{ $showAvatar := $cfg.show_avatar | default true }}
+{{ $avatar := $cfg.avatar | default .Site.Params.author.avatar }}
+{{ $author_name := .Site.Params.author.name | default (i18n "unknown_netrunner") }}
+{{ $author_expertise := .Site.Params.author.expertise | default (i18n "cyberpunk_expertise") }}
+{{ $author_bio := .Site.Params.author.bio }}
+{{ $author_location := .Site.Params.author.location }}
+{{ $aboutPage := site.GetPage "/about" }}
+
 <div class="widget-base relative">
-    <div class="crt-overlay"><div class="w-full h-full scanlines"></div></div>
+
+    {{ if $show_scanning_overlay }}
+    <div class="crt-overlay">
+        <div class="w-full h-full scanlines">
+        </div>
+    </div>
+    {{ end }}
 
     <!-- Header -->
     <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3 z-20">
         <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
             {{ partial "icons/ui.html" (dict "icon" "about" "class" "w-6 h-6") }}
-            {{ i18n "about_me" }}
+            {{ $title }}
         </h2>
         <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
     </div>
 
     <!-- Author Information -->
     <div class="flex flex-col gap-3 px-2 py-1 z-20 relative">
-        {{ with .Site.Params.author.avatar }}
-        <div class="relative w-fit mx-auto">
-            <img
-                src="{{ . }}"
-                alt="Author avatar"
-                class="w-24 h-24 rounded-full border-4 border-cyan-400/80 shadow-[0_0_36px_#00ffe799,0_0_24px_#ff00cc44_inset] mx-auto bg-black object-cover
-            transition-transform duration-200 group-hover:scale-105" />
-        </div>
+        {{ if and $showAvatar $avatar }}
+            <div class="relative w-fit mx-auto">
+                <img src="{{ $avatar }}"
+                     alt="Author avatar"
+                     class="w-24 h-24 rounded-full border-4 border-cyan-400/80 shadow-[0_0_36px_#00ffe799,0_0_24px_#ff00cc44_inset] mx-auto bg-black object-cover
+                transition-transform duration-200 group-hover:scale-105" />
+            </div>
         {{ end }}
 
-        <div class="text-center">
-            <div class="flex justify-center items-center gap-2 mb-1">
-                <span
-                    class="uppercase font-vt323 text-xs text-cyan-300/70 tracking-widest px-2 py-0.5 rounded border border-cyan-600/80 shadow-[0_0_4px_#00ffe799_inset]">USER</span>
-                <span
-                    class="font-vt323 text-cyan-200 text-lg drop-shadow-[0_0_8px_#00ffe7bb]">
-                    {{ .Site.Params.author.name | default (i18n
-                    "unknown_netrunner") }}
-                </span>
-            </div>
-            <span
-                class="block font-share-tech text-fuchsia-300 text-xs tracking-wider  px-2 py-1 rounded hover:bg-gradient-to-br ">
-                {{ .Site.Params.author.expertise | default (i18n
-                "cyberpunk_expertise") }}
+    <div class="text-center">
+        <div class="flex justify-center items-center gap-2 mb-1">
+            <span class="uppercase font-vt323 text-xs text-cyan-300/70 tracking-widest px-2 py-0.5 rounded border border-cyan-600/80 shadow-[0_0_4px_#00ffe799_inset]">
+            USER
             </span>
-            {{ with .Site.Params.author.location }}
+            <span
+                class="font-vt323 text-cyan-200 text-lg drop-shadow-[0_0_8px_#00ffe7bb]">
+                {{ $author_name }}
+            </span>
+        </div>
+        <span class="block font-share-tech text-fuchsia-300 text-xs tracking-wider  px-2 py-1 rounded hover:bg-gradient-to-br ">
+            {{ $author_expertise }}
+        </span>
+
+        {{ with $author_location }}
             <p
                 class="font-vt323 text-xs text-cyan-400 mt-2 opacity-70 flex items-center gap-1 justify-center">
                 <span
@@ -46,7 +61,8 @@
             </p>
             {{ end }}
         </div>
-        {{ with .Site.Params.author.bio }}
+
+        {{ with $author_bio }}
         <p class="px-2 py-4 rounded bg-gray-900/60 font-mono text-[11px] text-cyan-200 border border-cyan-800 shadow-inner
             sm:justify-around gap-x-5 gap-y-1 text-center">
             <span class="text-fuchsia-400">"</span>
@@ -57,7 +73,7 @@
     </div>
 
     <!-- Optional Animated About Page Link Button -->
-    {{ with site.GetPage "/about" }}
+    {{ with $aboutPage }}
     <div class="px-2 py-3 flex justify-center mt-2">
         <a
             href="{{ .RelPermalink }}"

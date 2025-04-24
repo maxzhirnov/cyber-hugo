@@ -1,52 +1,59 @@
 {{/* UI Icon partial: supports copy, check, external, download, etc. */}}
 {{- $class := .class | default "w-5 h-5 text-cyan-400" -}}
+
 {{- if eq .icon "about" }}
 <svg class="{{ $class }}" fill="none" viewBox="0 0 22 22" stroke="currentColor"
   xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <!-- Head -->
   <circle cx="11" cy="7" r="4"  stroke-width="2"
     fill="#181926" />
-  <!-- Shoulders -->
   <path d="M4 17c0-3.3 3.2-6 7-6s7 2.7 7 6"  stroke-width="2"
     fill="none" />
 </svg>
+
 {{- else if eq .icon "system_monitor" }}
 <svg class="{{ $class }}"
   fill="none" stroke="currentColor" viewBox="0 0 24 24">
   <circle cx="12" cy="12" r="9" stroke-width="1.5" />
   <path d="M15 14a3 3 0 1 1-6 0" stroke-width="1.5" />
 </svg>
+
 {{- else if eq .icon "copy" }}
 <svg class="{{ $class }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
     d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
 </svg>
+
 {{- else if eq .icon "check" }}
 <svg class="{{ $class }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
     d="M5 13l4 4L19 7" />
 </svg>
+
 {{- else if eq .icon "external" }}
 <svg class="{{ $class }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
     d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6m0 0v6m0-6L10 14" />
 </svg>
+
 {{- else if eq .icon "download" }}
 <svg class="{{ $class }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
     d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
 </svg>
+
 {{- else if eq .icon "close" }}
 <svg class="{{ $class }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
     d="M6 18L18 6M6 6l12 12" />
 </svg>
+
 {{- else if eq .icon "burger" }}
 <svg class="{{ $class }}" fill="none" stroke="currentColor" stroke-width="2"
   viewBox="0 0 24 24">
   <path stroke-linecap="round" stroke-linejoin="round"
     d="M4 6h16M4 12h16M4 18h16" />
 </svg>
+
 {{- else if eq .icon "tags" }}
 <svg class="{{ $class }}" fill="currentColor" viewBox="0 0 20 20"><path
     d="M5 3a2 2 0 0 0-2 2v2a2 2 0 0 0 .586 1.414l7 7a2 2 0 0 0 2.828 0l2-2a2 2 0 0 0 0-2.828l-7-7A2 2 0 0 0 7 3H5zm0 2h2l7 7-2 2-7-7V5z"></path></svg>
@@ -56,4 +63,11 @@
   viewBox="0 0 24 24">
   <path stroke-linecap="round" d="M6 6l12 12M6 18L18 6" />
 </svg>
+
+{{- else if eq .icon "pointed_circle"}}
+<svg class="{{ $class }}" fill="none"
+  stroke="currentColor" stroke-width="2" viewBox="0 0 16 16">
+  <circle cx="8" cy="8" r="7" stroke-dasharray="2,2" />
+</svg>
+
 {{- end }}

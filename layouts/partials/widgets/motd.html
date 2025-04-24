@@ -1,20 +1,37 @@
+{{ $cfg := .Site.Params.homepage.quick_access.motd }}
+{{ $title := $cfg.title | default "QUICK_ACCESS"}}
+{{ $show_scanning_overlay := $cfg.show_scanning_overlay | default true}}
+{{ $show_top_bracket_decko := $cfg.show_top_bracket_decko | default true}}
+{{ $show_nerd_footer := $cfg.show_nerd_footer | default true}}
+{{ $nerd_footer_text_1 := $cfg.nerd_footer_text_1 | default "0xC13-LAB"}}
+{{ $nerd_footer_text_2 := $cfg.nerd_footer_text_2 | default "■Ξ■ Q-CORE // SIGMA"}}
+{{ $nerd_footer_text_3 := $cfg.nerd_footer_text_3 | default "Ξ≡Ω"}}
+
 <!-- MOTD Widget -->
 <div class="widget-base relative overflow-visible">
+
+  {{ if $show_scanning_overlay }}
+  <div class="crt-overlay">
+    <div class="w-full h-full scanlines">
+    </div>
+  </div>
+  {{ end }}
+
     <!-- Header -->
     <div
         class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3 z-20">
         <h2
             class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
             <span class="drop-shadow-[0_0_6px_#00ffe7]">🠔</span>
-            {{ .Site.Params.widgets.system_motd | default "SYSTEM MOTD" }}
+            {{ $title }}
         </h2>
         <span
             class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
     </div>
-    <div
-        class="relative p-7 flex flex-col items-center justify-center select-none"
-        style="perspective: 700px;">
-        <!-- Glass, Tech, and Neon Deco -->
+
+    <div class="relative p-7 flex flex-col items-center justify-center select-none" style="perspective: 700px;">
+
+        {{ if $show_top_bracket_decko }}
         <div
             class="absolute top-0 left-0 right-0 flex justify-between px-4 pointer-events-none z-10">
             <span
@@ -22,6 +39,7 @@
             <span
                 class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none opacity-80">═══╗</span>
         </div>
+        {{ end }}
 
         <div
             class="relative w-full max-w-xl mx-auto min-h-[94px] md:min-h-[120px] flex items-center justify-center
@@ -60,19 +78,20 @@
             </div>
         </div>
 
-        <!-- Widget label under display -->
+        {{ if $show_nerd_footer }}
         <div
             class="w-full max-w-xl text-center mt-2 flex items-center justify-center gap-4">
             <span
                 class="font-vt323 text-cyan-400 tracking-[.22em] text-base md:text-lg select-none opacity-85">
-                0xC13-LAB </span>
+                {{ $nerd_footer_text_1 }} </span>
             <span
                 class="font-share-tech text-yellow-200 text-xs md:text-sm select-none opacity-70">
-                ■Ξ■ Q-CORE // SIGMA </span>
+                {{ $nerd_footer_text_2 }}  </span>
             <span
                 class="font-vt323 text-fuchsia-300 tracking-[.13em] text-base select-none opacity-60">
-                Ξ≡Ω </span>
+                {{ $nerd_footer_text_3 }}  </span>
         </div>
+        {{ end }}
     </div>
 </div>
 

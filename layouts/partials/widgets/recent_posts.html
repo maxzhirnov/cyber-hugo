@@ -1,37 +1,60 @@
+{{ $cfg := .Site.Params.homepage.widgets.recent_posts }}
+{{ $title := $cfg.title | default "RECENT ENTRIES"}}
+{{ $show_scanning_overlay := $cfg.show_scanning_overlay | default true}}
+{{ $post_limit := $cfg.count | default 5 }}
+{{ $main_sections := site.Params.content.mainSections }}
+{{ $recent_posts := first $post_limit (where .Site.RegularPages "Type" "in" $main_sections) }}
+{{ $show_time := $cfg.show_time | default true}}
+{{ $time_format := $cfg.time_format | default "15:04"}}
+{{ $show_new_tag := $cfg.show_new_tag | default true}}
+
 <div class="widget-base">
-  <div class="crt-overlay"><div class="w-full h-full scanlines"></div></div>
+  
+  {{ if $show_scanning_overlay }}
+  <div class="crt-overlay">
+    <div class="w-full h-full scanlines">
+    </div>
+  </div>
+  {{ end }}
 
   <!-- Header -->
   <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3 z-20">
     <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
       <span class="drop-shadow-[0_0_6px_#00ffe7]">🠔</span>
-      {{ .Site.Params.widgets.recent_posts | default "RECENT ENTRIES" }}
+      {{ $title }}
     </h2>
     <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
   </div>
 
   <!-- Recent Entries List -->
   <div class="flex-1 overflow-y-auto pr-1 z-20 custom-scrollbar">
-    {{ range $idx, $p := first 5 (where .Site.RegularPages "Type" "in"
-    site.Params.content.mainSections) }}
-    <div class="relative flex items-center gap-0 mb-2 group/item transition">
-      <span
-        class="font-share-tech text-lime-400 text-xs w-8 md:w-12 text-right mr-2 opacity-80 tracking-wider select-none">
-        {{ $p.Date.Format "15:04" }}
-      </span>
-      <a href="{{ $p.RelPermalink }}"
-        class="flex-1 font-share-tech text-cyan-200 hover:text-fuchsia-400 bg-gray-900/70 rounded px-2 py-1 transition-all duration-150 hover:shadow-[inset_0_0_8px_#ff00cc,inset_0_0_16px_#00ffe7bb] relative">
-        {{ $p.Title }}
-        {{ if eq $idx 0 }}
-        <!-- NEW badge absolutely positioned top-right inside the link -->
-        <span
-          class="absolute  right-2 px-2 py-0.5 rounded-full text-xs font-mono text-fuchsia-200 bg-fuchsia-700/60 border border-fuchsia-400 animate-pulse-fast shadow-[0_0_8px_#ff00cc99] z-10">NEW</span>
+    {{ range $idx, $p := $recent_posts }}
+      <div class="relative flex items-center gap-0 mb-2 group/item transition">
+        {{ if $show_time }}
+          <span
+            class="font-share-tech text-lime-400 text-xs w-16 md:w-18 text-right mr-2 opacity-80 tracking-wider select-none">
+            {{ $p.Date.Format $time_format }}
+          </span>
         {{ end }}
-      </a>
-    </div>
+        <a href="{{ $p.RelPermalink }}"
+          class="flex-1 font-share-tech text-cyan-200 hover:text-fuchsia-400 bg-gray-900/70 rounded px-2 py-1 
+                  transition-all duration-150 hover:shadow-[inset_0_0_8px_#ff00cc,inset_0_0_16px_#00ffe7bb] relative">
+          {{ $p.Title }}
+          {{ if and (eq $idx 0) $show_new_tag }}
+            <!-- NEW badge  -->
+            <span class="absolute right-2 px-2 py-0.5 rounded-full text-xs font-mono 
+                        text-fuchsia-200 bg-fuchsia-700/60 border border-fuchsia-400 
+                        animate-pulse-fast shadow-[0_0_8px_#ff00cc99] z-10">
+              NEW
+            </span>
+          {{ end }}
+        </a>
+      </div>
     {{ else }}
-    <div class="text-gray-400 text-center py-4">{{ i18n "no_entries_found"
-      }}</div>
+      <div class="text-gray-400 text-center py-4">
+        {{ i18n "no_entries_found" }}
+      </div>
     {{ end }}
   </div>
+
 </div>

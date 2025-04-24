@@ -176,7 +176,7 @@
       overflow: hidden;
       white-space: nowrap;
       border-right: 2px solid #ff00cc;
-      animation: typing 1.65s steps(30,end) 1, blink-cursor 0.7s step-end infinite alternate;
+      animation: typing 1.65s steps(30, end) 1, blink-cursor 0.7s step-end infinite alternate;
     }
     .scanlines {
       background: repeating-linear-gradient(

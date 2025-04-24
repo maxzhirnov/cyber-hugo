@@ -1,20 +1,43 @@
+{{ $cfg := .Site.Params.homepage.widgets.quick_access }}
+{{ $title := $cfg.title | default "QUICK ACCESS" }}
+{{ $show_scanning_overlay := $cfg.show_scanning_overlay | default true}}
+
+{{ $paramLinks := $cfg.links }}
+{{ $menuLinks := .Site.Menus.quicklinks }}
+{{ $links := $paramLinks }}
+{{ if not (and $links (gt (len $links) 0)) }}
+  {{ $links = $menuLinks }}
+{{ end }}
+
 <div class="widget-base relative">
-  <div class="crt-overlay"><div class="w-full h-full scanlines"></div></div>
-  <div
-    class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3">
-    <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase">QUICK
-      ACCESS</h2>
-    <span
-      class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_4px_#00ffe7]"></span>
+
+  {{ if $show_scanning_overlay }}
+    <div class="crt-overlay">
+      <div class="w-full h-full scanlines">
+      </div>
+    </div>
+  {{ end }}
+
+  <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3">
+    <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase">{{ $title }}</h2>
+    <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_4px_#00ffe7]"></span>
   </div>
   <div class="grid grid-cols-2 gap-3 mt-3">
-    {{ range .Site.Menus.quicklinks }}
-    <a href="{{ .URL }}" class="btn-cyber group" tabindex="0">
-      <span class="btn-cyber-bracket">[</span>
-      <span class="btn-text">{{ .Name }}</span>
-      <span class="btn-cyber-bracket">]</span>
-      <span class="btn-cyber-glass"></span>
-    </a>
+    {{ range $links }}
+      {{ $href := .URL }}
+      {{ if not $href }}{{ $href = .url }}{{ end }}
+      {{ $text := .Name }}
+      {{ if not $text }}{{ $text = .name }}{{ end }}
+      <a href="{{ $href }}" class="btn-cyber group" tabindex="0">
+        <span class="btn-cyber-bracket">[</span>
+        <span class="btn-text">{{ $text }}</span>
+        <span class="btn-cyber-bracket">]</span>
+        <span class="btn-cyber-glass"></span>
+      </a>
+    {{ else }}
+      <div class="col-span-2 text-center text-cyan-500 opacity-60">
+        {{ i18n "no_links_found" | default "No quick links available" }}
+      </div>
     {{ end }}
   </div>
 </div>

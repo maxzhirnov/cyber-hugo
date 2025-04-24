@@ -4,7 +4,7 @@
     <!-- Logo/Title -->
     <a href="{{ .Site.Home.Permalink }}"
       class="font-vt323 text-2xl sm:text-3xl text-cyan-400 tracking-widest uppercase drop-shadow-[0_0_8px_#00ffe7] hover:text-fuchsia-400 transition-colors duration-150">
-      {{ .Site.Title }}
+      {{ .Site.Params.site.name | default .Site.Title | default "Cyber Hugo" }}
     </a>
   
     {{ with .Site.Menus.main }}

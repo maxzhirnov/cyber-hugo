@@ -99,11 +99,9 @@ params:
         url: "https://twitter.com/vegabyte"
 
   site:
-    name: Hugo Tailwindcss Starter
+    name: Cyber Hugo
     description: A simple bootstraped theme for Hugo, build with Tailwindcss.
     favicon: favicon.ico
-    images:
-      - "/images/site-logo.png"
 
   appearance:
     single_heading_color: "text-cyber-fuchsia"
@@ -124,10 +122,63 @@ params:
         - motd
         - quick_access
         - system_monitor
-      quick_links: QUICK ACCESS
-    dashboard:
-      title: SYSTEM CONSOLE
-      subtitle: MAIN ACCESS POINT
-      status:
-        cpu: 42
-        memory: 78
+    # Widget-specific configs:
+      about_me:
+        title: ABOUT_ME
+        avatar: /images/author.jpeg
+        show_avatar: true
+        show_scanning_overlay: true
+
+      recent_posts:
+        title: RECENT_ENTRIES
+        count: 5
+        show_time: true
+        time_format: 06-01-02
+        show_new_tag: true
+        show_scanning_overlay: true
+
+      motd:
+        title: SYSTEM_MOTD
+        show_scanning_overlay: false
+        show_top_bracket_decko: true
+        show_nerd_footer: true
+        nerd_footer_text_1: 0xC13-LAB
+        nerd_footer_text_2: ■Ξ■ Q-CORE // SIGMA
+        nerd_footer_text_3: Ξ≡Ω
+      
+      quick_access:
+        title: QUICK_ACCESS
+        show_scanning_overlay: true
+        # links: # ← If this is omitted, falls back to .Site.Menus.quicklinks
+        #   - name: GitHub
+        #     url: "https://github.com/maxzhirnov"
+        #   - name: Email
+        #     url: "mailto:maximz2009@gmail.com"
+        #   - name: Archive
+        #     url: "/archive/"
+
+      system_monitor:
+        title: SYSTEM_MONITOR
+        status:
+          cpu: 42
+          memory: 78
+          disk_total: 128
+          disk_used: 79
+          disk_units: GB
+          uptime: 17d 23h
+        show_charts: true
+        show_scanning_overlay: true
+
+      console:
+        title: SYSTEM CONSOLE
+        subtitle: MAIN ACCESS POINT
+        subtitle_animation: true
+        extra_info: "All systems functional"
+        show_top_bracket_decko: true
+        show_scanning_overlay: false
+        show_leds_pseudo_buttons: true
+        show_nerd_footer: true
+        nerd_footer_text_1: v1.4.7-beta
+        nerd_footer_text_2: CTRL+ALT+T to open terminal
+        nerd_footer_text_3: [127.0.0.1]
+    

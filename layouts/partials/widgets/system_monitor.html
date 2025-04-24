@@ -1,17 +1,42 @@
-<!-- System Monitor Widget -->
-{{ $cpu := default 42 .Site.Params.homepage.dashboard.status.cpu }}
-{{ $mem := .Site.Params.homepage.dashboard.status.memory | default "78%" }}
-{{ $angle := mul (div (float $cpu) 100) 180 }}
-<div class="widget-base">
-  <div class="crt-overlay"><div class="w-full h-full scanlines"></div></div>
+{{ $cfg := .Site.Params.homepage.widgets.system_monitor }}
+{{ $title := $cfg.title | default "SYSTEM_MONITOR" }}
+{{ $show_scanning_overlay := $cfg.show_scanning_overlay | default true}}
 
+{{ $cpu := $cfg.status.cpu | default 42 }}
+{{ $mem := $cfg.status.memory | default 78 }}
+{{ $angle := mul (div (float $cpu) 100) 180 }}
+{{ $uptime := $cfg.status.uptime | default "16d 14h"}}
+{{ $top_proc := $cfg.status.top_proc | default "nginx (22%)"}}
+{{ $swap := $cfg.status.swap | default "1.9GB"}}
+{{ $top_cpu_utilizer := $cfg.status.top_cpu_utilizer | default "nginx (23%)"}}
+
+{{ $disk_units := $cfg.status.disk_units | default "GB" }}
+{{ $disk_total := $cfg.status.disk_total | default 100 }}
+{{ $disk_used  := $cfg.status.disk_used | default 0 }}
+{{ $disk_free    := sub $disk_total $disk_used }}
+{{ if lt $disk_free 0 }}
+  {{ $disk_free = 0 }}
+{{ end }}
+
+{{ $disk_percent := 0 }}
+{{ if gt $disk_total 0 }}
+  {{ $disk_percent = div (mul $disk_used 100) $disk_total | int }}
+{{ end }}
+
+<div class="widget-base">
+  {{ if $show_scanning_overlay}}
+  <div class="crt-overlay">
+    <div class="w-full h-full scanlines">
+    </div>
+  </div>
+  {{ end }}
 
   <!-- Header -->
   <div
     class="flex items-center justify-between border-b border-cyan-700 pb-2 mb-4 relative z-10">
     <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
       {{ partial "icons/ui.html" (dict "icon" "system_monitor" "class" "w-6 h-6") }}
-      SYSTEM MONITOR
+      {{ $title }}
       {{ if or (gt $cpu 85) (gt $mem 90) }}
       <span
         class="ml-2 px-2 py-0.5 rounded-full bg-pink-600 text-white text-xs font-mono animate-pulse-fast shadow-[0_0_8px_#ff00cc99]">ALERT</span>
@@ -56,7 +81,7 @@
           points="0,12 10,8 20,14 30,5 40,9 50,6 60,12" fill="none"
           stroke="#39ff14" stroke-width="2.5" /></svg>
       <span class="text-[10px] opacity-80 mt-1">top: <span
-          class="text-pink-400">nginx</span></span>
+          class="text-pink-400">{{ $top_cpu_utilizer }}</span></span>
     </div>
     <div class="flex flex-col items-center font-mono text-cyan-200 w-28">
       <span class="uppercase text-xs opacity-70">MEM</span>
@@ -65,16 +90,16 @@
           points="3,1 14,8 20,14 22,5 32,9 50,6 60,12" fill="none"
           stroke="#39ff14" stroke-width="2.5" /></svg>
       <span class="text-[10px] opacity-80 mt-1">swap: <span
-          class="text-cyan-400">1.9GB</span></span>
+          class="text-cyan-400">{{ $swap }}</span></span>
     </div>
     <div class="flex flex-col items-center font-mono text-cyan-200 w-24">
       <span class="uppercase text-xs opacity-70">DISK</span>
-      <span class="text-yellow-200 font-bold text-lg">62%</span>
+      <span class="text-yellow-200 font-bold text-lg">{{ $disk_percent }}%</span>
       <svg width="50" height="16" class="mt-1"><polyline
           points="2,10 8,6 16,8 28,4 36,9 49,6" fill="none" stroke="#ffe600"
           stroke-width="2" /></svg>
       <span class="text-[10px] opacity-80 mt-1">free: <span
-          class="text-yellow-200">18GB</span></span>
+          class="text-yellow-200">{{ $disk_free}}{{ $disk_units }}</span></span>
     </div>
   </div>
 
@@ -84,15 +109,15 @@
             flex flex-col sm:flex-row flex-wrap sm:justify-around gap-x-5 gap-y-1 items-center leading-tight">
     <span>
       <span class="text-pink-400">Uptime:</span>
-      <span class="ml-1">3d 14h</span>
+      <span class="ml-1">{{ $uptime }}</span>
     </span>
     <span>
       <span class="text-yellow-300">Disk:</span>
-      <span class="ml-1">18GB/32GB free</span>
+      <span class="ml-1">{{ $disk_free}}{{ $disk_units }}/{{ $disk_total}}{{ $disk_units }} free</span>
     </span>
     <span>
       <span class="text-fuchsia-400">Top proc:</span>
-      <span class="ml-1">nginx (23%)</span>
+      <span class="ml-1">{{ $top_proc }}</span>
     </span>
   </div>
 </div>
