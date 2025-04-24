@@ -8,12 +8,14 @@
     {{ $widgets := .Site.Params.homepage.widgets.order }}
     {{ if not $widgets }}
       {{/* Fallback: default widgets if not set */}}
-      {{ $widgets = slice "recent_posts" "system_monitor" "quick_access" "motd" }}
-    {{ end }}
+      {{ $widgets = slice "about_me" "recent_posts" "system_monitor" "quick_access" "motd" }}
+    {{ end }} 
 
     {{ $ctx := . }}
     {{ range $i, $widget := $widgets }}
-      {{ if eq $widget "recent_posts" }}
+      {{ if eq $widget "about_me" }}
+        {{ partial "widgets/about_me.html" $ctx }}
+      {{ else if eq $widget "recent_posts" }}
         {{ partial "widgets/recent_posts.html" $ctx }}
       {{ else if eq $widget "system_monitor" }}
         {{ partial "widgets/system_monitor.html" $ctx }}

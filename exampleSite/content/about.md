@@ -1,32 +1,33 @@
 ---
 title: "About"
-avatar: "/images/avatar.jpeg"
 layout: about
-name: "Maksim Zhirnov"
-bio: "Hi, I'm <span class='text-fuchsia-400 font-bold'>Maksim Zhirnov</span> — retro UI enthusiast, automation wizard, and digital craftsman.<br>I build nostalgic interfaces with modern tech, breathing life into pixels while the synthwave plays."
-skills:
-  - label: "Retro UI"
-    color: "fuchsia"
-  - label: "Automation"
-    color: "cyan"
-  - label: "Hugo/Tailwind"
-    color: "yellow"
-  - label: "Terminal Geek"
-    color: "lime"
-socials:
-  - icon: "email"
-    label: "Email"
-    url: "mailto:maximz2009@gmail.com"
-  - icon: "github"
-    label: "GitHub"
-    url: "https://github.com/maxzhirnov"
 ---
-I'm a vibe coder with a passion for all things retro-futuristic. When I'm not crafting pixel-perfect interfaces that blend nostalgic aesthetics with modern functionality, you'll find me automating the mundane to focus on what truly matters: creating digital experiences that resonate.
 
-My toolkit includes Hugo and Tailwind CSS, which I leverage to build lightning-fast static sites with that perfect retro feel. I draw inspiration from the maximalist designs of yesteryear while maintaining clean, functional code underneath.
+I’m Vega Byte—a wanderer between code and chrome, breathing synthwave life into cold digital spaces.
 
-The intersection of retro design and modern tech is where I thrive. I believe in bringing back the bold typography, grainy textures, and vibrant color schemes that made early digital interfaces so captivating, while ensuring everything I build is responsive, accessible, and future-proof.
+Born with a terminal in one hand and a synth in the other, I’ve always believed that technology should illuminate the soul, not obscure it. My fascination lies at the intersection of glitch aesthetics, retro interfaces, and the bold optimism of futures past.
 
-When not coding, I'm exploring new automation workflows, contributing to open-source projects, or diving deep into terminal customizations that make my development environment as efficient as it is aesthetically pleasing.
+By day, I conjure cybernetic layouts, pixel art, and interactive experiences that hum with neon brilliance. By night, you’ll find me sculpting code into sound and color, chasing that perfect blend where analogue nostalgia meets digital innovation.
 
-Let's collaborate and build something that stands out in today's sea of minimalist interfaces – something with character, nostalgia, and a touch of digital magic.
+**What I Do:**
+- Build hyper-responsive, visually electric sites using Hugo and Tailwind CSS
+- Create glitchy, animated art that evokes the shimmering uncertainty of the early digital era
+- Automate, optimize, and remix everything—from code to workflow—to keep creativity flowing
+- Collect rare synthwave vinyl and tinker with hardware mods to bring the past into the present
+
+**Beliefs & Vibes:**
+- The Internet should feel alive: luminous, dynamic, and welcoming to dreamers and outcasts alike
+- Accessibility and speed are never optional—no matter how wild the visuals may get
+- Imperfection is beautiful; a glitch is an opportunity for art
+- Community is everything—open source, open minds, open hearts
+
+Come ride with me through this endless digital night.  
+If you’re ready to build a corner of the web that pulses with real character, let’s connect!
+
+---
+
+**Contact me, follow my synthwave journey, or check out my latest projects:**  
+Find all the links just above, in glorious neon.
+
+Stay electric,  
+**Vega Byte**

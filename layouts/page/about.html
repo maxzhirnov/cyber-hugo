@@ -1,44 +1,71 @@
 {{ define "main" }}
 <div class="cnt-main md:px-8 pb-16">
-
   <div class="relative z-10 flex flex-col items-center text-center gap-6">
-    <!-- Avatar -->
-    <img src="{{ .Params.avatar | default "/images/avatar.jpeg" }}" alt="{{ .Params.name | default "Your Avatar" }}"
+    <!-- ================= Avatar ================== -->
+    {{ $avatar := .Params.avatar | default .Site.Params.author.avatar | default "/images/avatar.jpeg" }}
+    <img src="{{ $avatar }}" alt="{{ .Params.name | default .Site.Params.author.name | default "Your Avatar" }}"
          class="w-32 h-32 rounded-full border-4 border-cyan-400 shadow-[0_0_24px_#00ffe7] mb-4 object-cover bg-gray-800/80">
 
+    <!-- =============== Title/Name =============== -->
     <h1 class="font-vt323 text-4xl text-fuchsia-400 drop-shadow-[0_0_16px_#ff00cc] uppercase tracking-widest mb-2">
-      {{ .Title | default (i18n "about_me") }}
+      {{ .Params.name | default .Site.Params.author.name | default .Title | default (i18n "about_me") }}
     </h1>
 
+    <!-- ================= Expertise/Tagline (optional) ================== -->
+    {{ with .Params.expertise | default .Site.Params.author.expertise }}
+      <p class="text-cyan-400 font-vt323 text-lg mb-1">
+        {{ . }}
+      </p>
+    {{ end }}
+
+    <!-- =============== Bio/Main About =============== -->
+    {{ $longbio := .Params.long_bio | default .Site.Params.author.long_bio | default .Params.bio | default .Site.Params.author.bio }}
     <p class="text-cyan-200 font-mono max-w-xl mb-3">
-      {{ .Params.bio | safeHTML }}
+      {{ $longbio | safeHTML }}
     </p>
 
-    <!-- Skills -->
+    <!-- =============== Location (optional) =============== -->
+    {{ with .Params.location | default .Site.Params.author.location }}
+      <p class="font-share-tech text-cyan-300 text-base flex items-center justify-center gap-1">
+        {{ i18n "author_location_icon" | safeHTML }}
+        {{ . }}
+      </p>
+    {{ end }}
+
+    <!-- ================= Skills ================== -->
+    {{ $skills := .Params.skills | default .Site.Params.author.skills }}
+    {{ if $skills }}
     <div class="flex flex-wrap justify-center gap-3 mt-2">
-      {{ range .Params.skills }}
-        <span class="px-3 py-1 rounded-full border-2 border-{{ .color }}-400 bg-gray-900/80 text-{{ .color }}-200 font-vt323 text-sm shadow-[0_0_8px_#{{ if eq .color "cyan" }}00ffe7{{ else if eq .color "fuchsia" }}ff00cc{{ else if eq .color "yellow" }}fff600{{ else if eq .color "lime" }}39ff14{{ end }}_inset]">
+      {{ range $skills }}
+        <span class="px-3 py-1 rounded-full border-2 border-{{ .color | default "cyan" }}-400 bg-gray-900/80 text-{{ .color | default "cyan" }}-200 font-vt323 text-sm shadow-[0_0_8px_#{{ if eq .color "cyan" }}00ffe7{{ else if eq .color "fuchsia" }}ff00cc{{ else if eq .color "yellow" }}fff600{{ else if eq .color "lime" }}39ff14{{ else }}00ffe7{{ end }}_inset]">
           {{ .label }}
         </span>
       {{ end }}
     </div>
+    {{ end }}
 
-    <!-- Social/Contact Links -->
+    <!-- ============= Social/Contact Links ============== -->
+    {{ $socials := .Params.socials | default .Site.Params.author.socials }}
+    {{ if $socials }}
     <div class="flex flex-wrap justify-center gap-4 mt-6">
-      {{ range .Params.socials }}
+      {{ range $socials }}
         <a href="{{ .url }}"
-           class="flex items-center gap-2 px-4 py-2 border-2 border-cyan-400 rounded-lg text-cyan-200 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset] font-vt323 uppercase tracking-widest">
+           class="flex items-center gap-2 px-4 py-2 border-2 border-cyan-400 rounded-lg text-cyan-200 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all shadow-[0_0_8px_#00ffe7_inset] font-vt323 uppercase tracking-widest"
+           {{ if in .url "://" }}target="_blank" rel="noopener"{{ end }}>
           {{ if eq .icon "email" }}
             {{ partial "icons/social" (dict "icon" "email" "class" "w-5 h-5 text-cyan-300") }}
           {{ else if eq .icon "github" }}
             {{ partial "icons/social" (dict "icon" "github" "class" "w-5 h-5 text-cyan-300") }}
+          {{ else if eq .icon "twitter" }}
+            {{ partial "icons/social" (dict "icon" "twitter" "class" "w-5 h-5 text-cyan-300") }}
           {{ end }}
           {{ .label }}
         </a>
       {{ end }}
     </div>
+    {{ end }}
 
-    <!-- About Content from Markdown -->
+    <!-- ============= About Content from Markdown ============== -->
     <div class="prose text-cyan-200 prose-headings:font-vt323 prose-headings:text-cyan-300 prose-a:text-fuchsia-400 hover:prose-a:text-cyan-300 prose-img:rounded-lg max-w-none mt-8 text-left">
       {{ .Content }}
     </div>

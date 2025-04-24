@@ -5,29 +5,12 @@
 <div class="widget-base">
   <div class="crt-overlay"><div class="w-full h-full scanlines"></div></div>
 
-  <!-- Circuit Pattern/Scanline Overlay (background deco) -->
-  <div class="absolute inset-0 pointer-events-none z-0 opacity-15">
-    <div class="w-full h-full" style="background-image:
-      linear-gradient(to right, #00ffe711 1px, transparent 1px),
-      linear-gradient(to bottom, #00ffe711 1px, transparent 1px);
-      background-size: 32px 32px;
-    "></div>
-    <div class="w-full h-full"
-      style="background: repeating-linear-gradient(to bottom,rgba(0,255,231,0.10) 0px,rgba(0,255,231,0.10) 2.6px,transparent 2.6px,transparent 8px);
-                 animation: scanmove 4s linear infinite;">
-    </div>
-  </div>
 
   <!-- Header -->
   <div
     class="flex items-center justify-between border-b border-cyan-700 pb-2 mb-4 relative z-10">
-    <h2
-      class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase flex items-center gap-1">
-      <svg class="inline w-6 h-6 text-pink-500 drop-shadow-[0_0_6px_#ff00cc]"
-        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="9" stroke-width="1.5" />
-        <path d="M15 14a3 3 0 1 1-6 0" stroke-width="1.5" />
-      </svg>
+    <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
+      {{ partial "icons/ui.html" (dict "icon" "system_monitor" "class" "w-6 h-6") }}
       SYSTEM MONITOR
       {{ if or (gt $cpu 85) (gt $mem 90) }}
       <span

@@ -1,0 +1,70 @@
+<div class="widget-base relative">
+    <div class="crt-overlay"><div class="w-full h-full scanlines"></div></div>
+
+    <!-- Header -->
+    <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3 z-20">
+        <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
+            {{ partial "icons/ui.html" (dict "icon" "about" "class" "w-6 h-6") }}
+            {{ i18n "about_me" }}
+        </h2>
+        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
+    </div>
+
+    <!-- Author Information -->
+    <div class="flex flex-col gap-3 px-2 py-1 z-20 relative">
+        {{ with .Site.Params.author.avatar }}
+        <div class="relative w-fit mx-auto">
+            <img
+                src="{{ . }}"
+                alt="Author avatar"
+                class="w-24 h-24 rounded-full border-4 border-cyan-400/80 shadow-[0_0_36px_#00ffe799,0_0_24px_#ff00cc44_inset] mx-auto bg-black object-cover
+            transition-transform duration-200 group-hover:scale-105" />
+        </div>
+        {{ end }}
+
+        <div class="text-center">
+            <div class="flex justify-center items-center gap-2 mb-1">
+                <span
+                    class="uppercase font-vt323 text-xs text-cyan-300/70 tracking-widest px-2 py-0.5 rounded border border-cyan-600/80 shadow-[0_0_4px_#00ffe799_inset]">USER</span>
+                <span
+                    class="font-vt323 text-cyan-200 text-lg drop-shadow-[0_0_8px_#00ffe7bb]">
+                    {{ .Site.Params.author.name | default (i18n
+                    "unknown_netrunner") }}
+                </span>
+            </div>
+            <span
+                class="block font-share-tech text-fuchsia-300 text-xs tracking-wider  px-2 py-1 rounded hover:bg-gradient-to-br ">
+                {{ .Site.Params.author.expertise | default (i18n
+                "cyberpunk_expertise") }}
+            </span>
+            {{ with .Site.Params.author.location }}
+            <p
+                class="font-vt323 text-xs text-cyan-400 mt-2 opacity-70 flex items-center gap-1 justify-center">
+                <span
+                    class="material-symbols-outlined text-cyan-300">location_on</span>
+                <span class="uppercase tracking-widest">{{ . }}</span>
+            </p>
+            {{ end }}
+        </div>
+        {{ with .Site.Params.author.bio }}
+        <p class="px-2 py-4 rounded bg-gray-900/60 font-mono text-[11px] text-cyan-200 border border-cyan-800 shadow-inner
+            sm:justify-around gap-x-5 gap-y-1 text-center">
+            <span class="text-fuchsia-400">"</span>
+                {{ . }}
+            <span class="text-fuchsia-400">"</span>
+        </p>
+        {{ end }}
+    </div>
+
+    <!-- Optional Animated About Page Link Button -->
+    {{ with site.GetPage "/about" }}
+    <div class="px-2 py-3 flex justify-center mt-2">
+        <a
+            href="{{ .RelPermalink }}"
+            class="relative font-vt323 uppercase text-cyan-200 border-b-2 border-cyan-400 hover:text-fuchsia-400 hover:border-fuchsia-400 px-4 py-2
+                 before:absolute before:-inset-1 before:bg-gradient-to-l before:from-cyan-500/20 before:to-fuchsia-900/10 before:blur before:rounded-lg before:opacity-0 hover:before:opacity-95 before:transition-all before:duration-300">
+            <span class="relative z-10">{{ i18n "more_about_me" }}</span>
+        </a>
+    </div>
+    {{ end }}
+</div>
