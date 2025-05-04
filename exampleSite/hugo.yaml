@@ -104,6 +104,9 @@ params:
     favicon: favicon.ico
 
   appearance:
+    bg_color: '#0f1021'   # default #0f1021
+    use_stripes: true
+    disable_animations: false
     single_heading_color: "text-cyber-fuchsia"
     single_prose_color: "text-cyber-emerald"
 

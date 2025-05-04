@@ -1,5 +1,6 @@
+HUGO_BIN := $(shell hvm status --printExecPathCached)
 run:
-	hugo server -s exampleSite --themesDir=../.. --disableFastRender --baseURL="http://localhost:1313/"
+	$(HUGO_BIN) server -s exampleSite --themesDir=../.. --disableFastRender --baseURL="http://localhost:1313/"
 
 serve:
 	serve exampleSite/public

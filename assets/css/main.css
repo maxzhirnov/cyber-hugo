@@ -193,6 +193,11 @@
   /* ===================================
      Plain CSS for non-Tailwind features
      =================================== */
+
+  .no-animations * {
+      animation: none !important;
+      transition: none !important;
+    }
   
   .cnt-main::after {
     content: '';
