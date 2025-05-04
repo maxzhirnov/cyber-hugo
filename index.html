@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hi, and welcome. - Cyber Theme
+    </title>
+    <meta name="author" content="Dirk Olbrich" />
+    <meta name="generator" content="Hugo 0.145.0">
+
+    
+  
+    
+    
+      
+        
+          <link rel="stylesheet" href="/cyber-hugo/css/main.1e8aab9c74511f6d7b93e458c3eafdfe037ab6bff29fd0960d55636e11b370d4.css" integrity="sha256-HoqrnHRRH217k&#43;RYw&#43;r9/gN6tr/yn9CWDVVjbhGzcNQ=" crossorigin="anonymous">
+        
+      
+    
+  
+
+</head>
+  <body
+  class="flex flex-col min-h-screen text-cyan-100 font-share-tech antialiased geek-stripes-bg"
+  style="background-color: #0f1021;">
+    <header class="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-8 py-6">
+
+  <nav class="relative z-100 flex items-center justify-between">
+    
+    <a href="https://maxzhirnov.github.io/cyber-hugo/"
+      class="font-vt323 text-2xl sm:text-3xl text-cyan-400 tracking-widest uppercase drop-shadow-[0_0_8px_#00ffe7] hover:text-fuchsia-400 transition-colors duration-150">
+      Cyber Hugo
+    </a>
+  
+    
+      
+      
+      <input id="nav-toggle" type="checkbox" class="peer hidden" />
+      <label for="nav-toggle"
+        class="sm:hidden flex items-center text-cyan-400 hover:text-fuchsia-400 cursor-pointer ml-2 z-20">
+        
+<svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"
+  viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round"
+    d="M4 6h16M4 12h16M4 18h16" />
+</svg>
+
+      </label>
+  
+      
+      <ul
+        class="hidden sm:flex gap-4 px-6 py-2 bg-gray-900/80 border-2 border-cyan-400 rounded-xl shadow-[0_0_20px_#00ffe7_inset] backdrop-blur-md items-center">
+        
+        <li>
+          <a href="https://maxzhirnov.github.io/cyber-hugo/"
+            class="btn-main  !bg-cyan-900/80 !text-lime-300 !border-lime-400">
+            <span class="btn-text">Home</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://maxzhirnov.github.io/cyber-hugo/posts/"
+            class="btn-main ">
+            <span class="btn-text">Blog</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://maxzhirnov.github.io/cyber-hugo/tags/"
+            class="btn-main ">
+            <span class="btn-text">Tags</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://maxzhirnov.github.io/cyber-hugo/about/"
+            class="btn-main ">
+            <span class="btn-text">About</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://maxzhirnov.github.io/cyber-hugo/search/"
+            class="btn-main ">
+            <span class="btn-text">Search</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+      
+<ul id="nav-menu"
+  class="fixed top-0 left-0 w-full h-screen
+           bg-gray-950/95 border-b-2 border-cyan-400 z-50 backdrop-blur-lg
+           flex flex-col items-center gap-6 pt-24 transition-all duration-300
+           -translate-y-full peer-checked:translate-y-0 sm:hidden group/nav-menu">
+
+  
+  <div class="absolute inset-0 pointer-events-none z-0">
+    <div class="w-full h-full opacity-80"
+      style="
+           background:
+             radial-gradient(circle at 20% 40%, #00ffe7cc 0%, transparent 60%),
+             radial-gradient(circle at 80% 70%, #ff00ccbb 0%, transparent 65%);
+           filter: blur(40px);
+         ">
+    </div>
+  </div>
+
+  
+  <button onclick="document.getElementById('nav-toggle').checked=false"
+    class="absolute top-5 right-6 text-cyan-300 hover:text-fuchsia-400 z-10 transition-colors flex items-center gap-2 group cursor-pointer"
+    tabindex="0" aria-label="Close menu">
+    
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M6 18L18 6M6 6l12 12" />
+</svg>
+
+    <span class="font-mono text-sm uppercase">Close</span>
+  </button>
+
+  
+  <li class="relative z-10">
+    <a href="https://maxzhirnov.github.io/cyber-hugo/"
+      class="btn-main block text-center w-[13.5rem] text-2xl py-3
+                font-vt323 uppercase tracking-widest
+                border-2 border-cyan-400 rounded-xl bg-gray-900/80 text-cyan-200
+                shadow-[0_0_10px_#00ffe7_inset,0_0_28px_#ff00cc66]
+                transition-all duration-150
+                hover:bg-gradient-to-r hover:from-cyan-900/80 hover:to-fuchsia-900/80
+                hover:text-white hover:border-fuchsia-400 hover:shadow-[0_0_24px_#ff00cc99,0_0_34px_#00ffe7bb]
+                focus:outline-none focus:ring-2 focus:ring-fuchsia-400
+                !bg-cyan-900/80 !text-lime-300 !border-lime-400 border-4 !shadow-[0_0_32px_#aaff0033,0_0_64px_#00ffe7]">
+      <span class="drop-shadow-[0_2px_8px_#00ffe7]">
+        Home
+      </span>
+    </a>
+  </li>
+  
+  <li class="relative z-10">
+    <a href="https://maxzhirnov.github.io/cyber-hugo/posts/"
+      class="btn-main block text-center w-[13.5rem] text-2xl py-3
+                font-vt323 uppercase tracking-widest
+                border-2 border-cyan-400 rounded-xl bg-gray-900/80 text-cyan-200
+                shadow-[0_0_10px_#00ffe7_inset,0_0_28px_#ff00cc66]
+                transition-all duration-150
+                hover:bg-gradient-to-r hover:from-cyan-900/80 hover:to-fuchsia-900/80
+                hover:text-white hover:border-fuchsia-400 hover:shadow-[0_0_24px_#ff00cc99,0_0_34px_#00ffe7bb]
+                focus:outline-none focus:ring-2 focus:ring-fuchsia-400
+                ">
+      <span class="drop-shadow-[0_2px_8px_#00ffe7]">
+        Blog
+      </span>
+    </a>
+  </li>
+  
+  <li class="relative z-10">
+    <a href="https://maxzhirnov.github.io/cyber-hugo/tags/"
+      class="btn-main block text-center w-[13.5rem] text-2xl py-3
+                font-vt323 uppercase tracking-widest
+                border-2 border-cyan-400 rounded-xl bg-gray-900/80 text-cyan-200
+                shadow-[0_0_10px_#00ffe7_inset,0_0_28px_#ff00cc66]
+                transition-all duration-150
+                hover:bg-gradient-to-r hover:from-cyan-900/80 hover:to-fuchsia-900/80
+                hover:text-white hover:border-fuchsia-400 hover:shadow-[0_0_24px_#ff00cc99,0_0_34px_#00ffe7bb]
+                focus:outline-none focus:ring-2 focus:ring-fuchsia-400
+                ">
+      <span class="drop-shadow-[0_2px_8px_#00ffe7]">
+        Tags
+      </span>
+    </a>
+  </li>
+  
+  <li class="relative z-10">
+    <a href="https://maxzhirnov.github.io/cyber-hugo/about/"
+      class="btn-main block text-center w-[13.5rem] text-2xl py-3
+                font-vt323 uppercase tracking-widest
+                border-2 border-cyan-400 rounded-xl bg-gray-900/80 text-cyan-200
+                shadow-[0_0_10px_#00ffe7_inset,0_0_28px_#ff00cc66]
+                transition-all duration-150
+                hover:bg-gradient-to-r hover:from-cyan-900/80 hover:to-fuchsia-900/80
+                hover:text-white hover:border-fuchsia-400 hover:shadow-[0_0_24px_#ff00cc99,0_0_34px_#00ffe7bb]
+                focus:outline-none focus:ring-2 focus:ring-fuchsia-400
+                ">
+      <span class="drop-shadow-[0_2px_8px_#00ffe7]">
+        About
+      </span>
+    </a>
+  </li>
+  
+  <li class="relative z-10">
+    <a href="https://maxzhirnov.github.io/cyber-hugo/search/"
+      class="btn-main block text-center w-[13.5rem] text-2xl py-3
+                font-vt323 uppercase tracking-widest
+                border-2 border-cyan-400 rounded-xl bg-gray-900/80 text-cyan-200
+                shadow-[0_0_10px_#00ffe7_inset,0_0_28px_#ff00cc66]
+                transition-all duration-150
+                hover:bg-gradient-to-r hover:from-cyan-900/80 hover:to-fuchsia-900/80
+                hover:text-white hover:border-fuchsia-400 hover:shadow-[0_0_24px_#ff00cc99,0_0_34px_#00ffe7bb]
+                focus:outline-none focus:ring-2 focus:ring-fuchsia-400
+                ">
+      <span class="drop-shadow-[0_2px_8px_#00ffe7]">
+        Search
+      </span>
+    </a>
+  </li>
+  
+</ul>
+
+
+<style>
+ 
+#nav-menu {
+  will-change: transform, box-shadow;
+}
+ 
+.peer-checked ~ #nav-menu {
+  box-shadow:
+    0 0 88px #00ffe7cc,
+    0 0 32px #ff00cc99;
+}
+
+@media (min-width: 640px) {
+   
+  #nav-menu { display: none !important; }
+}
+</style>
+
+    
+  </nav>
+</header>
+
+    <main
+      class="flex-1 grow mx-auto w-full max-w-5xl px-4 sm:px-8 pt-6 sm:pt-12">
+      
+<div class="max-w-5xl mx-auto px-4 py-8">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+<div class="bg-gray-900 border-2 border-cyan-500 rounded-xl shadow-[0_0_40px_#00ffe7_inset,0_0_80px_#ff00cc26] 
+          p-6 flex flex-col items-center mb-8 relative overflow-hidden group/console">
+          
+  
+  
+    <div
+      class="absolute top-0 left-0 right-0 flex justify-between px-4 pointer-events-none z-10">
+      <span class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none">╔═══</span>
+      <span class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none">═══╗</span>
+    </div>
+  
+      
+  
+  
+
+  
+  
+    <div class="hidden md:flex absolute top-8 right-12  gap-2 z-20">
+      <span
+        class="w-3 h-3 rounded-full bg-lime-400 shadow-[0_0_8px_#39ff14] animate-pulse"
+        title="online"></span>
+      <span
+        class="w-3 h-3 rounded-full bg-fuchsia-500 shadow-[0_0_8px_#ff00cc] animate-pulse-fast"
+        title="activity"></span>
+      <span
+        class="w-3 h-3 rounded-full bg-yellow-300 shadow-[0_0_8px_#fff600] animate-blink"
+        title="warning"></span>
+    </div>
+  
+
+  <h1 class="font-vt323 text-3xl md:text-4xl text-cyan-400 tracking-widest 
+            text-center drop-shadow-[0_0_8px_#00ffe7] uppercase mt-4 select-text glitch-text">
+    <span class="pr-2">&gt;_</span>
+    <span>SYSTEM_CONSOLE</span>
+  </h1>
+  <p class="mt-2 text-fuchsia-400 font-share-tech text-lg tracking-wide text-center drop-shadow-[0_0_6px_#ff00cc] nerd-typewriter">
+    MAIN ACCESS POINT
+  </p>
+
+  
+  
+    <div
+      class="w-full mt-6 font-mono text-xs text-cyan-300/60 flex justify-between opacity-80 tracking-tight space-x-2">
+      <span class="flex items-center gap-1">
+        
+<svg class="w-3 h-3 inline text-cyan-400" fill="none"
+  stroke="currentColor" stroke-width="2" viewBox="0 0 16 16">
+  <circle cx="8" cy="8" r="7" stroke-dasharray="2,2" />
+</svg>
+
+        v1.4.7-beta
+      </span>
+      <span class="uppercase">
+        CTRL&#43;ALT&#43;T to open terminal
+      </span>
+      <span>
+        [127.0.0.1]
+      </span>
+    </div>
+  
+</div>
+
+  
+
+  <div class="grid md:grid-cols-2 gap-6">
+    
+     
+
+    
+    
+      
+        
+
+
+
+
+
+
+
+
+
+
+<div class="widget-base relative">
+
+    
+        <div class="crt-overlay">
+            <div class="w-full h-full scanlines">
+            </div>
+        </div>
+    
+
+    
+    <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3 z-20">
+        <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
+            
+<svg class="w-6 h-6" fill="none" viewBox="0 0 22 22" stroke="currentColor"
+  xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <circle cx="11" cy="7" r="4"  stroke-width="2"
+    fill="#181926" />
+  <path d="M4 17c0-3.3 3.2-6 7-6s7 2.7 7 6"  stroke-width="2"
+    fill="none" />
+</svg>
+
+            ABOUT_ME
+        </h2>
+        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
+    </div>
+
+    
+    <div class="flex flex-col gap-3 px-2 py-1 z-20 relative">
+        
+            <div class="relative w-fit mx-auto">
+                <img src="https://maxzhirnov.github.io/cyber-hugo/images/author.jpeg" alt="Author avatar" 
+                    class="w-24 h-24 rounded-full border-4 border-cyan-400/80 shadow-[0_0_36px_#00ffe799,0_0_24px_#ff00cc44_inset] 
+                    mx-auto bg-black object-cover transition-transform duration-200 group-hover:scale-105" />
+            </div>
+        
+
+    <div class="text-center">
+        <div class="flex justify-center items-center gap-2 mb-1">
+            <span class="uppercase font-vt323 text-xs text-cyan-300/70 tracking-widest px-2 py-0.5 rounded border border-cyan-600/80 shadow-[0_0_4px_#00ffe799_inset]">
+            USER
+            </span>
+            <span
+                class="font-vt323 text-cyan-200 text-lg drop-shadow-[0_0_8px_#00ffe7bb]">
+                Vega Byte
+            </span>
+        </div>
+        <span class="block font-share-tech text-fuchsia-300 text-xs tracking-wider  px-2 py-1 rounded hover:bg-gradient-to-br ">
+            Glitch Artist &amp; Synthwave Developer
+        </span>
+
+        
+            <p
+                class="font-vt323 text-xs text-cyan-400 mt-2 opacity-70 flex items-center gap-1 justify-center">
+                <span
+                    class="material-symbols-outlined text-cyan-300">location_on</span>
+                <span class="uppercase tracking-widest">Night City, CZ</span>
+            </p>
+            
+        </div>
+
+        
+        <p class="px-2 py-4 rounded bg-gray-900/60 font-mono text-[11px] text-cyan-200 border border-cyan-800 shadow-inner
+            sm:justify-around gap-x-5 gap-y-1 text-center">
+            <span class="text-fuchsia-400">"</span>
+                Living on the edge of code & chrome. Building tomorrow, one neon pixel at a time.
+            <span class="text-fuchsia-400">"</span>
+        </p>
+        
+    </div>
+
+    
+    
+    <div class="px-2 py-3 flex justify-center mt-2">
+        <a
+            href="https://maxzhirnov.github.io/cyber-hugo/about/"
+            class="relative font-vt323 uppercase text-cyan-200 border-b-2 border-cyan-400 hover:text-fuchsia-400 hover:border-fuchsia-400 px-4 py-2
+                 before:absolute before:-inset-1 before:bg-gradient-to-l before:from-cyan-500/20 before:to-fuchsia-900/10 before:blur before:rounded-lg before:opacity-0 hover:before:opacity-95 before:transition-all before:duration-300">
+            <span class="relative z-10">More About Me →</span>
+        </a>
+    </div>
+    
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+
+
+
+
+<div class="widget-base">
+  
+  
+  <div class="crt-overlay">
+    <div class="w-full h-full scanlines">
+    </div>
+  </div>
+  
+
+  
+  <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3 z-20">
+    <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
+      <span class="drop-shadow-[0_0_6px_#00ffe7]">🠔</span>
+      RECENT_ENTRIES
+    </h2>
+    <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
+  </div>
+
+  
+  <div class="flex-1 overflow-y-auto pr-1 z-20 custom-scrollbar">
+    
+      <div class="relative flex items-center gap-0 mb-2 group/item transition">
+        
+          <span
+            class="font-share-tech text-lime-400 text-xs w-16 md:w-18 text-right mr-2 opacity-80 tracking-wider select-none">
+            25-04-21
+          </span>
+        
+        <a href="https://maxzhirnov.github.io/cyber-hugo/posts/hugo-yaml-cyberpunk-setup/"
+          class="flex-1 font-share-tech text-cyan-200 hover:text-fuchsia-400 bg-gray-900/70 rounded px-2 py-1 
+                  transition-all duration-150 hover:shadow-[inset_0_0_8px_#ff00cc,inset_0_0_16px_#00ffe7bb] relative">
+          Jacking In Your Cyber-Hugo YAML Setup Guide
+          
+            
+            <span class="absolute right-2 px-2 py-0.5 rounded-full text-xs font-mono 
+                        text-fuchsia-200 bg-fuchsia-700/60 border border-fuchsia-400 
+                        animate-pulse-fast shadow-[0_0_8px_#ff00cc99] z-10">
+              NEW
+            </span>
+          
+        </a>
+      </div>
+    
+      <div class="relative flex items-center gap-0 mb-2 group/item transition">
+        
+          <span
+            class="font-share-tech text-lime-400 text-xs w-16 md:w-18 text-right mr-2 opacity-80 tracking-wider select-none">
+            25-04-20
+          </span>
+        
+        <a href="https://maxzhirnov.github.io/cyber-hugo/posts/theme-showcase/"
+          class="flex-1 font-share-tech text-cyan-200 hover:text-fuchsia-400 bg-gray-900/70 rounded px-2 py-1 
+                  transition-all duration-150 hover:shadow-[inset_0_0_8px_#ff00cc,inset_0_0_16px_#00ffe7bb] relative">
+          Theme showcase
+          
+        </a>
+      </div>
+    
+      <div class="relative flex items-center gap-0 mb-2 group/item transition">
+        
+          <span
+            class="font-share-tech text-lime-400 text-xs w-16 md:w-18 text-right mr-2 opacity-80 tracking-wider select-none">
+            25-04-19
+          </span>
+        
+        <a href="https://maxzhirnov.github.io/cyber-hugo/posts/shortcode-showcase/"
+          class="flex-1 font-share-tech text-cyan-200 hover:text-fuchsia-400 bg-gray-900/70 rounded px-2 py-1 
+                  transition-all duration-150 hover:shadow-[inset_0_0_8px_#ff00cc,inset_0_0_16px_#00ffe7bb] relative">
+          Cyberpunk Theme Shortcodes Showcase
+          
+        </a>
+      </div>
+    
+      <div class="relative flex items-center gap-0 mb-2 group/item transition">
+        
+          <span
+            class="font-share-tech text-lime-400 text-xs w-16 md:w-18 text-right mr-2 opacity-80 tracking-wider select-none">
+            25-04-18
+          </span>
+        
+        <a href="https://maxzhirnov.github.io/cyber-hugo/posts/first-post/"
+          class="flex-1 font-share-tech text-cyan-200 hover:text-fuchsia-400 bg-gray-900/70 rounded px-2 py-1 
+                  transition-all duration-150 hover:shadow-[inset_0_0_8px_#ff00cc,inset_0_0_16px_#00ffe7bb] relative">
+          First Post
+          
+        </a>
+      </div>
+    
+      <div class="relative flex items-center gap-0 mb-2 group/item transition">
+        
+          <span
+            class="font-share-tech text-lime-400 text-xs w-16 md:w-18 text-right mr-2 opacity-80 tracking-wider select-none">
+            25-04-14
+          </span>
+        
+        <a href="https://maxzhirnov.github.io/cyber-hugo/posts/second-post/"
+          class="flex-1 font-share-tech text-cyan-200 hover:text-fuchsia-400 bg-gray-900/70 rounded px-2 py-1 
+                  transition-all duration-150 hover:shadow-[inset_0_0_8px_#ff00cc,inset_0_0_16px_#00ffe7bb] relative">
+          A second Post
+          
+        </a>
+      </div>
+    
+  </div>
+
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+
+
+
+
+<div class="widget-base relative overflow-visible">
+
+  
+  <div class="crt-overlay">
+    <div class="w-full h-full scanlines">
+    </div>
+  </div>
+  
+
+    
+    <div
+        class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3 z-20">
+        <h2
+            class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
+            <span class="drop-shadow-[0_0_6px_#00ffe7]">🠔</span>
+            SYSTEM_MOTD
+        </h2>
+        <span
+            class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
+    </div>
+
+    <div class="relative p-7 flex flex-col items-center justify-center select-none" style="perspective: 700px;">
+
+        
+        <div
+            class="absolute top-0 left-0 right-0 flex justify-between px-4 pointer-events-none z-10">
+            <span
+                class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none opacity-80">╔═══</span>
+            <span
+                class="font-vt323 text-cyan-400 text-2xl tracking-widest select-none opacity-80">═══╗</span>
+        </div>
+        
+
+        <div
+            class="relative w-full max-w-xl mx-auto min-h-[94px] md:min-h-[120px] flex items-center justify-center
+            bg-gradient-to-br from-gray-900/95 to-gray-800/85
+            border-[4px] border-cyan-400/90 shadow-[0_0_44px_#00ffe777,0_0_24px_#ff00cc44] overflow-visible"
+            style="clip-path: polygon(10% 0, 90% 0, 100% 25%, 100% 75%, 90% 100%, 10% 100%, 0 75%, 0 25%);
+                backdrop-filter: blur(6px) brightness(1.05)">
+            
+            <svg class="absolute inset-0 w-full h-full pointer-events-none z-10"
+                viewBox="0 0 100 100" preserveAspectRatio="none">
+                <polygon
+                    points="10,0 90,0 100,25 100,75 90,100 10,100 0,75 0,25"
+                    fill="none" stroke="#ff00cc88" stroke-width="2.5"></polygon>
+            </svg>
+            <div class="absolute inset-0 pointer-events-none z-20"
+                style="clip-path: inherit; background: linear-gradient(105deg,rgba(255,255,255,0.14) 7%,rgba(0,255,231,0.12) 95%);"></div>
+            <div
+                class="absolute inset-0 pointer-events-none z-30 opacity-26 mix-blend-screen">
+                <div class="w-full h-full scanlines"></div>
+            </div>
+            <div id="motd-box"
+                class="w-full flex justify-center items-center px-4 py-3 font-share-tech text-center text-cyan-200 text-base sm:text-xl md:text-2xl tracking-[.07em] motd-segmented z-40 select-none bg-black/10"
+                style="
+                letter-spacing:.07em;
+                text-shadow:0 1px 8px #00ffe7cc,0 1px 14px #ff00ccb0,0 0 2px #fff600cc;
+                word-break:break-word;
+                overflow-wrap:anywhere;
+                max-width:100%;
+                min-width:0;
+                white-space:normal;
+            ">LOADING ...
+            </div>
+            <div class="absolute inset-0 pointer-events-none z-40">
+                <div class="w-full h-full animate-holo-shimmer"
+                    style="clip-path: inherit; background: linear-gradient(130deg,transparent 37%,rgba(0,255,231,0.17) 50%,rgba(255,0,204,0.11) 65%,transparent 96%); opacity:.22; filter: blur(1.2px);"></div>
+            </div>
+        </div>
+
+        
+        <div
+            class="w-full max-w-xl text-center mt-2 flex items-center justify-center gap-4">
+            <span
+                class="font-vt323 text-cyan-400 tracking-[.22em] text-base md:text-lg select-none opacity-85">
+                0xC13-LAB </span>
+            <span
+                class="font-share-tech text-yellow-200 text-xs md:text-sm select-none opacity-70">
+                ■Ξ■ Q-CORE // SIGMA  </span>
+            <span
+                class="font-vt323 text-fuchsia-300 tracking-[.13em] text-base select-none opacity-60">
+                Ξ≡Ω  </span>
+        </div>
+        
+    </div>
+</div>
+
+<style>
+  .motd-segmented {
+    font-family: 'Share Tech Mono', 'Roboto Mono', 'VT323', monospace;
+    font-variant-ligatures: none;
+    background: linear-gradient(95deg,#00ffe7, #ff00cc, #fff600);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .scanlines {
+    background: repeating-linear-gradient(
+      to bottom, rgba(0,255,231,0.13) 0px, rgba(0,255,231,0.09) 2px,
+      transparent 2px, transparent 8px );
+    animation: scanmove .68s linear infinite;
+  }
+  @keyframes scanmove {0%{background-position-y:0;}100%{background-position-y:8px;}}
+  @keyframes holo-shimmer {
+    0% { transform:translateX(-90%) skewX(-18deg);}
+    95% { transform:translateX(120%) skewX(-18deg);}
+    100%{ transform:translateX(-90%) skewX(-18deg);}
+  }
+  .animate-holo-shimmer { animation: holo-shimmer 4.2s infinite linear; }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var box = document.getElementById('motd-box');
+      if (!box) return;
+      fetch('motd.json')
+        .then(function(res) { return res.json(); })
+        .then(function(messages) {
+          if (!Array.isArray(messages) || messages.length === 0) {
+            box.textContent = "SYSTEM IDLE – NO MESSAGES FOUND";
+            return;
+          }
+          var i = Math.floor(Math.random() * messages.length);
+          box.textContent = messages[i];
+        })
+        .catch(function() {
+          box.textContent = "SYSTEM ERROR – UNABLE TO LOAD MOTD";
+        });
+    });
+    </script>
+      
+    
+      
+        
+
+
+
+
+
+
+
+  
+
+
+<div class="widget-base relative">
+
+  
+    <div class="crt-overlay">
+      <div class="w-full h-full scanlines">
+      </div>
+    </div>
+  
+
+  <div class="flex items-center justify-between border-b border-cyan-600 pb-2 mb-3">
+    <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase">QUICK_ACCESS</h2>
+    <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_4px_#00ffe7]"></span>
+  </div>
+  <div class="grid grid-cols-2 gap-3 mt-3">
+    
+      
+      
+      
+      
+      <a href="https://maxzhirnov.github.io/cyber-hugo/archive/" class="btn-cyber group" tabindex="0">
+        <span class="btn-cyber-bracket">[</span>
+        <span class="btn-text">Archive</span>
+        <span class="btn-cyber-bracket">]</span>
+        <span class="btn-cyber-glass"></span>
+      </a>
+    
+      
+      
+      
+      
+      <a href="https://maxzhirnov.github.io/cyber-hugo/contact/" class="btn-cyber group" tabindex="0">
+        <span class="btn-cyber-bracket">[</span>
+        <span class="btn-text">Contact</span>
+        <span class="btn-cyber-bracket">]</span>
+        <span class="btn-cyber-glass"></span>
+      </a>
+    
+      
+      
+      
+      
+      <a href="https://maxzhirnov.github.io/cyber-hugo/about/" class="btn-cyber group" tabindex="0">
+        <span class="btn-cyber-bracket">[</span>
+        <span class="btn-text">About</span>
+        <span class="btn-cyber-bracket">]</span>
+        <span class="btn-cyber-glass"></span>
+      </a>
+    
+      
+      
+      
+      
+      <a href="https://maxzhirnov.github.io/cyber-hugo/faq/" class="btn-cyber group" tabindex="0">
+        <span class="btn-cyber-bracket">[</span>
+        <span class="btn-text">FAQ</span>
+        <span class="btn-cyber-bracket">]</span>
+        <span class="btn-cyber-glass"></span>
+      </a>
+    
+      
+      
+      
+      
+      <a href="https://maxzhirnov.github.io/cyber-hugo/portfolio/" class="btn-cyber group" tabindex="0">
+        <span class="btn-cyber-bracket">[</span>
+        <span class="btn-text">Portfolio</span>
+        <span class="btn-cyber-bracket">]</span>
+        <span class="btn-cyber-glass"></span>
+      </a>
+    
+  </div>
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="widget-base">
+  
+  <div class="crt-overlay">
+    <div class="w-full h-full scanlines">
+    </div>
+  </div>
+  
+
+  
+  <div class="flex items-center justify-between border-b border-cyan-700 pb-2 mb-4 relative z-10">
+    <h2 class="font-vt323 text-cyan-400 text-lg tracking-wider uppercase drop-shadow-[0_0_8px_#00ffe7] flex items-center gap-2">
+      
+<svg class="w-6 h-6"
+  fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="9" stroke-width="1.5" />
+  <path d="M15 14a3 3 0 1 1-6 0" stroke-width="1.5" />
+</svg>
+
+      SYSTEM_MONITOR
+      
+    </h2>
+    <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00ffe7] animate-pulse-slow"></span>
+  </div>
+
+  
+  <div class="relative w-36 h-36 mx-auto my-4 flex items-center justify-center bg-gradient-to-tr 
+            from-gray-950 to-gray-800 rounded-full border-[3px] border-fuchsia-400 shadow-[0_0_32px_#00ffe766] z-10 overflow-hidden">
+    
+    <svg width="144" height="144" class="absolute inset-0 z-0 pointer-events-none" style="opacity:0.16;">
+      <circle cx="72" cy="72" r="65" stroke="#00ffe7" stroke-dasharray="4 8" stroke-width="3" fill="none" />
+      <circle cx="72" cy="72" r="54" stroke="#ff00cc" stroke-dasharray="2 5" stroke-width="2" fill="none" />
+    </svg>
+    
+    <div class="absolute left-1/2 bottom-1/2 w-1.5 h-20 rounded bg-lime-400 origin-bottom transition-transform 
+                duration-500 shadow-[0_0_18px_#39ff14] "
+          style="transform: rotate(75.6deg);"></div>
+    
+    <span class="absolute left-1/2 bottom-1/2 -translate-x-1/2 translate-y-1/2 w-3.5 h-3.5 rounded-full 
+                bg-cyan-400 shadow-[0_0_10px_#00ffe7] border-2 border-fuchsia-500"></span>
+    
+    
+  </div>
+
+  
+  <div class="flex w-full justify-evenly items-end mt-1 mb-4 gap-2 z-10">
+    <div class="flex flex-col items-center font-mono text-cyan-200 w-28">
+      <span class="uppercase text-xs opacity-70">cpu</span>
+      <span class="text-lime-400 font-bold text-lg pulse">42%</span>
+      <svg width="60" height="16" class="mt-1"><polyline
+          points="0,12 10,8 20,14 30,5 40,9 50,6 60,12" fill="none"
+          stroke="#39ff14" stroke-width="2.5" /></svg>
+      <span class="text-[10px] opacity-80 mt-1">top: <span
+          class="text-pink-400">nginx (23%)</span></span>
+    </div>
+    <div class="flex flex-col items-center font-mono text-cyan-200 w-28">
+      <span class="uppercase text-xs opacity-70">mem</span>
+      <span class="text-lime-400 font-bold text-lg">78%</span>
+      <svg width="60" height="16" class="mt-1"><polyline
+          points="3,1 14,8 20,14 22,5 32,9 50,6 60,12" fill="none"
+          stroke="#39ff14" stroke-width="2.5" /></svg>
+      <span class="text-[10px] opacity-80 mt-1">swap: <span
+          class="text-cyan-400">1.9GB</span></span>
+    </div>
+    <div class="flex flex-col items-center font-mono text-cyan-200 w-24">
+      <span class="uppercase text-xs opacity-70">disk</span>
+      <span class="text-yellow-200 font-bold text-lg">61%</span>
+      <svg width="50" height="16" class="mt-1"><polyline
+          points="2,10 8,6 16,8 28,4 36,9 49,6" fill="none" stroke="#ffe600"
+          stroke-width="2" /></svg>
+      <span class="text-[10px] opacity-80 mt-1">free: <span
+          class="text-yellow-200">49GB</span></span>
+    </div>
+  </div>
+
+  
+  <div
+    class="px-2 py-2 mt-1 rounded bg-gray-900/60 font-mono text-[11px] text-cyan-200 border border-cyan-800 shadow-inner
+            flex flex-col sm:flex-row flex-wrap sm:justify-around gap-x-5 gap-y-1 items-center leading-tight">
+    <span>
+      <span class="capitalize text-pink-400">uptime:</span>
+      <span class="ml-1">17d 23h</span>
+    </span>
+    <span>
+      <span class="capitalize text-yellow-300">disk:</span>
+      <span class="ml-1">49GB/128GB free</span>
+    </span>
+    <span>
+      <span class="text-fuchsia-400">Top proc:</span>
+      <span class="ml-1">nginx (22%)</span>
+    </span>
+  </div>
+</div>
+
+      
+    
+  </div>
+</div>
+
+    </main>
+    <footer
+  class="relative w-full mt-12 px-4 py-8 bg-gray-900/90 border-t-2 border-cyan-400 shadow-[0_0_32px_#00ffe7_inset]">
+  
+  <div class="absolute inset-0 pointer-events-none opacity-70"></div>
+  <div
+    class="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto">
+    <div class="flex items-center gap-3 mb-4 md:mb-0">
+      <span
+        class="font-vt323 text-lg text-cyan-300 tracking-widest drop-shadow-[0_0_8px_#00ffe7]">©
+        2025 Cyber Theme</span>
+      <span class="hidden md:inline text-cyan-700">|</span>
+      <span class="font-mono text-xs text-cyan-400 opacity-80">All Rights
+        Reserved</span>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="https://gohugo.io" target="_blank" rel="noopener"
+        class="flex items-center gap-1 font-vt323 text-cyan-200 hover:text-fuchsia-400 transition-colors underline underline-offset-2">
+        <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke-width="2" />
+          <path d="M8 12l2 2 4-4" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        Hugo
+      </a>
+      <a href="https://tailwindcss.com" target="_blank" rel="noopener"
+        class="flex items-center gap-1 font-vt323 text-cyan-200 hover:text-fuchsia-400 transition-colors underline underline-offset-2">
+        <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24">
+          <path d="M3 12a9 9 0 0118 0 9 9 0 01-18 0zm9-4v8m0 0l3-3m-3 3l-3-3"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        TailwindCSS
+      </a>
+    </div>
+    <div class="flex items-center gap-2 mt-2 md:mt-0">
+      <span class="font-vt323 text-fuchsia-400 text-sm tracking-wider drop-shadow-[0_0_6px_#ff00cc] uppercase">
+        Theme:
+      </span>
+      <a
+        href="https://github.com/maxzhirnov"
+        target="_blank"
+        rel="noopener"
+        class="font-vt323 text-cyan-300 text-base hover:text-fuchsia-400 transition-colors underline underline-offset-2 drop-shadow-[0_0_6px_#00ffe7]"
+      >
+        handcrafted by mzhirnov
+      </a>
+    </div>
+  </div>
+</footer>
+
+    
+
+
+
+
+
+
+<script src="https://maxzhirnov.github.io/cyber-hugo/js/code-bundle.min.472eae1acd856f23eb2d623baaec2d001829a55e76d50ff45f2b1331606a46ba.js" integrity="sha256-Ry6uGs2FbyPrLWI7quwtABgppV521Q/0XysTMWBqRro=" defer></script>
+
+  </body>
+</html>

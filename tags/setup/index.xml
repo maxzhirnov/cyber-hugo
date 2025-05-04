@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Setup on Cyber Theme</title>
+    <link>https://maxzhirnov.github.io/cyber-hugo/tags/setup/</link>
+    <description>Recent content in Setup on Cyber Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Apr 2025 06:18:48 +0000</lastBuildDate>
+    
+    <atom:link href="https://maxzhirnov.github.io/cyber-hugo/tags/setup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jacking In Your Cyber-Hugo YAML Setup Guide</title>
+      <link>https://maxzhirnov.github.io/cyber-hugo/posts/hugo-yaml-cyberpunk-setup/</link>
+      <pubDate>Mon, 21 Apr 2025 06:18:48 +0000</pubDate>
+      
+      <guid>https://maxzhirnov.github.io/cyber-hugo/posts/hugo-yaml-cyberpunk-setup/</guid>
+      <description><![CDATA[<h3 id="1-core-settings--identity-matrix">1. [CORE SETTINGS] :: Identity Matrix</h3>
+
+
+<div class="highlight" data-lang="yaml">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-5e06f62d98c10dec552d415dc569a50f')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language-yaml bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-5e06f62d98c10dec552d415dc569a50f" class="language-yaml font-mono">theme: cyber-hugo
+languageCode: en-us
+baseURL: &#34;https://maxzhirnov.github.io/cyber-hugo/&#34;
+relativeURLs: false
+canonifyURLs: true
+title: Cyber Theme
+pagination:
+  pagerSize: 10</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            yaml
+          </div>
+        </div>
+      </div>
+<ul>
+<li><strong>theme</strong>: Activates the <em>cyber-hugo</em> neural skin.</li>
+<li><strong>languageCode</strong>: Sets your system language.</li>
+<li><strong>baseURL</strong>: Your site’s root in cyberspace.</li>
+<li><strong>relativeURLs/canonifyURLs</strong>: Clean, canonical URLs for max traceability.</li>
+<li><strong>title</strong>: Terminal title bar.</li>
+<li><strong>pagerSize</strong>: Posts per page—scroll the feed, cyber style.</li>
+</ul>
+<hr>
+<h3 id="2-build-ops--cache-compile-and-mount">2. [BUILD OPS] :: Cache, Compile, and Mount</h3>
+
+
+<div class="highlight" data-lang="yaml">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-af952c5c5457ea8fb84f647124d3d29c')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language-yaml bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-af952c5c5457ea8fb84f647124d3d29c" class="language-yaml font-mono">build:
+  buildStats:
+    enable: true
+  cachebusters:
+  - source: assets/notwatching/hugo_stats\.json
+    target: css
+  - source: (postcss|tailwind)\.config\.js
+    target: css
+
+module:
+  mounts:
+  - source: assets
+    target: assets
+  - disableWatch: true
+    source: hugo_stats.json
+    target: assets/notwatching/hugo_stats.json</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            yaml
+          </div>
+        </div>
+      </div>
+<ul>
+<li>
+<p><strong>buildStats</strong>: Fires up Hugo’s stats collector, which scans your templates for every Tailwind utility class you use. This lets Tailwind purge unused CSS and generate only what your site actually needs—keeping your stylesheets razor-thin and your load times lightning-fast. No wasted bytes, just pure neon.</p>
+</li>
+<li>
+<p><strong>cachebusters</strong>: These rules are your anti-ghost protocol. Whenever you tweak your Tailwind or PostCSS config, or when Hugo’s stats file changes, cachebusters force a CSS rebuild and make browsers fetch the latest version. This guarantees you’ll never see stale or broken styles haunting your site—every deploy is fresh from the grid.</p>
+</li>
+<li>
+<p><strong>module.mounts</strong>: This is your file system wiring. It tells Hugo where to find and serve your assets (like images, fonts, and CSS) and ensures that the all-important <code>hugo_stats.json</code> (generated by buildStats) is mounted exactly where Tailwind expects to find it. The <code>disableWatch: true</code> flag prevents unnecessary rebuilds, keeping your development workflow smooth and efficient.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Heads up:</strong><br>
+This setup isn’t optional for Tailwind + Hugo. It’s straight from the <a href="https://gohugo.io/functions/css/tailwindcss/">official Hugo Tailwind docs</a>, and it’s the backbone that keeps your cyberpunk theme running sharp and responsive. Skip these steps and you risk broken styles, sluggish reloads, and a site that’s more glitch than glow.</p></blockquote>
+<p><strong>In short:</strong><br>
+This build and module configuration is your site’s power grid—fueling live-reloading, cache-busting, and asset delivery, all optimized for that slick, cyberpunk experience.<br>
+Plug it in, and your theme will always look as fresh as a midnight city skyline.</p>
+<h3 id="3-markup--neon-syntax--toc">3. [MARKUP] :: Neon Syntax &amp; TOC</h3>
+
+
+<div class="highlight" data-lang="yaml">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-c5a47d22a64df4d9550861e344df543d')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language-yaml bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-c5a47d22a64df4d9550861e344df543d" class="language-yaml font-mono">markup:
+  highlight:
+    codeFences: true
+    guessSyntax: false
+    lineNos: false
+    noClasses: false
+    style: monokai
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+    ordered: false</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            yaml
+          </div>
+        </div>
+      </div>
+<ul>
+<li><strong>highlight</strong>: Code blocks glow in <em>Monokai</em>—like neon on rain-slick streets.</li>
+<li><strong>tableOfContents</strong>: Auto-generate a TOC for your docs. Only the essentials, operator.</li>
+</ul>
+<hr>
+<h3 id="4-navigation--mainframe-menus">4. [NAVIGATION] :: Mainframe Menus</h3>
+
+
+<div class="highlight" data-lang="yaml">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-1bde5e0119b5fae869dbb6c851e1fd68')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language-yaml bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-1bde5e0119b5fae869dbb6c851e1fd68" class="language-yaml font-mono">menus:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Blog
+      url: /posts/
+      weight: 2
+    - name: Tags
+      url: /tags/
+      weight: 3
+    - name: About
+      url: /about/
+      weight: 4
+    - name: Search
+      url: /search/
+      weight: 5
+  quicklinks:
+    - name: Archive
+      url: /archive/
+      weight: 1
+    - name: Contact
+      url: /contact/
+      weight: 2
+    - name: About
+      url: /about/
+      weight: 4
+    - name: Portfolio
+      url: /portfolio/
+    - name: FAQ
+      url: /faq/</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            yaml
+          </div>
+        </div>
+      </div>
+<ul>
+<li><strong>main</strong>: Primary nav—your city grid.</li>
+<li><strong>quicklinks</strong>: Fast access portals for power users.</li>
+</ul>
+<hr>
+<h3 id="5-params--customization-protocols">5. [PARAMS] :: Customization Protocols</h3>
+
+
+<div class="highlight" data-lang="yaml">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-7a354f8768b16205aaca7e19b42293ca')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language-yaml bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-7a354f8768b16205aaca7e19b42293ca" class="language-yaml font-mono">params:
+  name: Hugo Tailwindcss Starter
+  description: A simple bootstraped theme for Hugo, build with Tailwindcss.
+  showToc: true
+  tocOpen: false
+  mainSections:
+    - posts
+  github_user: maxzhirnov
+  github_repo: https://github.com/dirkolbrich/hugo-tailwindcss-starter-theme
+  github_banner: true
+  favicon: favicon.ico
+  single_heading_color: &#34;text-cyber-fuchsia&#34;
+  single_prose_color: &#34;text-cyber-emerald&#34;
+  dashboard:
+    title: SYSTEM CONSOLE
+    subtitle: MAIN ACCESS POINT
+    status:
+      cpu: 42
+      memory: 78
+  widgets:
+    quick_links: QUICK ACCESS
+  rss_post_footer: &#34;Read more cyberpunk content at YourSite&#34;
+  images:
+    - &#34;/images/site-logo.png&#34;</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            yaml
+          </div>
+        </div>
+      </div>
+<ul>
+<li><strong>name/description</strong>: Your site’s identity chip.</li>
+<li><strong>showToc/tocOpen</strong>: Table of Contents—on demand.</li>
+<li><strong>mainSections</strong>: Where the action happens (blog posts).</li>
+<li><strong>GitHub</strong>: Banner and repo link—show your code cred.</li>
+<li><strong>favicon</strong>: Your icon in the matrix.</li>
+<li><strong>single_heading_color/single_prose_color</strong>: Custom neon colorways.</li>
+<li><strong>dashboard</strong>: SYSTEM CONSOLE widget—CPU and memory status, just for fun.</li>
+<li><strong>widgets.quick_links</strong>: Label for your quick access menu.</li>
+<li><strong>rss_post_footer</strong>: Custom signature for your RSS syndicate.</li>
+<li><strong>images</strong>: Site logo for feeds and embeds.</li>
+</ul>
+<hr>
+<h2 id="mission-complete--youre-live-in-the-neon-grid">[MISSION COMPLETE] :: You’re Live in the Neon Grid</h2>
+<p>Your <code>hugo.yaml</code> is now tuned for a cyberpunk terminal experience.<br>
+Menus glow, code blocks pulse, and your dashboard hums with digital life.</p>
+<blockquote>
+<p><strong>Operator Tip:</strong><br>
+Tweak, hack, and remix these settings to make your site your own.<br>
+Every change is instant—no waiting for the rain to stop.</p></blockquote>
+<p><strong>Jack out and deploy. Your city awaits.</strong><br>
+<em>— The Console</em></p>
+]]></description>
+    </item>
+    
+  </channel>
+</rss>

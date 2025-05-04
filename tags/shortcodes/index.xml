@@ -1,0 +1,1795 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shortcodes on Cyber Theme</title>
+    <link>https://maxzhirnov.github.io/cyber-hugo/tags/shortcodes/</link>
+    <description>Recent content in Shortcodes on Cyber Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Apr 2025 10:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://maxzhirnov.github.io/cyber-hugo/tags/shortcodes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cyberpunk Theme Shortcodes Showcase</title>
+      <link>https://maxzhirnov.github.io/cyber-hugo/posts/shortcode-showcase/</link>
+      <pubDate>Sat, 19 Apr 2025 10:00:00 +0000</pubDate>
+      
+      <guid>https://maxzhirnov.github.io/cyber-hugo/posts/shortcode-showcase/</guid>
+      <description><![CDATA[<p>Welcome to the showcase of custom shortcodes available in the Cyber Hugo theme. These shortcodes extend markdown capabilities and help maintain a consistent cyberpunk aesthetic throughout your site.</p>
+<h2 id="button-shortcode">Button Shortcode</h2>
+<p>The button shortcode creates styled buttons that match the theme&rsquo;s cyberpunk design.</p>
+<h3 id="basic-usage">Basic Usage</h3>
+
+
+<div class="highlight" data-lang="">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-e916d018d73320ed00bc9e209b94b0ee')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language- bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-e916d018d73320ed00bc9e209b94b0ee" class="language- font-mono">{{&lt; button href=&#34;https://maxzhirnov.github.io/cyber-hugo/contact&#34; text=&#34;Contact Me&#34; &gt;}}</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            txt
+          </div>
+        </div>
+      </div>
+<h3 id="result">Result:</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/contact"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden border-cyan-400 text-cyan-300 shadow-[0_0_8px_#00ffe7_inset] px-4 py-2">
+
+  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
+  
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    
+    <span>Contact Me</span>
+    
+  </span>
+
+  
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+</a>
+
+<style>
+  .bg-glitch-overlay {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 4px 4px;
+    animation: glitch-move 0.5s linear infinite;
+  }
+  
+  @keyframes glitch-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 4px 4px; }
+  }
+</style>
+
+<h3 id="color-variants">Color Variants</h3>
+
+
+<div class="highlight" data-lang="">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-9208c5502e9b034afb9e3e1496891de8')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language- bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-9208c5502e9b034afb9e3e1496891de8" class="language- font-mono">{{&lt; button href=&#34;#&#34; text=&#34;Cyan Button&#34; color=&#34;cyan&#34; &gt;}}
+{{&lt; button href=&#34;#&#34; text=&#34;Fuchsia Button&#34; color=&#34;fuchsia&#34; &gt;}}
+{{&lt; button href=&#34;#&#34; text=&#34;Yellow Button&#34; color=&#34;yellow&#34; &gt;}}
+{{&lt; button href=&#34;#&#34; text=&#34;Lime Button&#34; color=&#34;lime&#34; &gt;}}
+
+{{&lt; button href=&#34;#&#34; text=&#34;Small Button&#34; size=&#34;sm&#34; &gt;}}
+{{&lt; button href=&#34;#&#34; text=&#34;Regular Button&#34; &gt;}}
+{{&lt; button href=&#34;#&#34; text=&#34;Large Button&#34; size=&#34;lg&#34; &gt;}}
+
+{{&lt; button href=&#34;#&#34; text=&#34;Next Page&#34; icon=&#34;arrow-right&#34; &gt;}}
+{{&lt; button href=&#34;#&#34; text=&#34;Download&#34; icon=&#34;download&#34; color=&#34;fuchsia&#34; &gt;}}
+{{&lt; button href=&#34;#&#34; text=&#34;External Link&#34; icon=&#34;external&#34; color=&#34;yellow&#34; &gt;}}</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            txt
+          </div>
+        </div>
+      </div>
+<h3 id="result-1">Result:</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="#"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden border-cyan-400 text-cyan-300 shadow-[0_0_8px_#00ffe7_inset] px-4 py-2">
+
+  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
+  
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    
+    <span>Cyan Button</span>
+    
+  </span>
+
+  
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+</a>
+
+<style>
+  .bg-glitch-overlay {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 4px 4px;
+    animation: glitch-move 0.5s linear infinite;
+  }
+  
+  @keyframes glitch-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 4px 4px; }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="#"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden border-fuchsia-400 text-fuchsia-300 shadow-[0_0_8px_#ff00cc_inset] px-4 py-2">
+
+  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
+  
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    
+    <span>Fuchsia Button</span>
+    
+  </span>
+
+  
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+</a>
+
+<style>
+  .bg-glitch-overlay {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 4px 4px;
+    animation: glitch-move 0.5s linear infinite;
+  }
+  
+  @keyframes glitch-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 4px 4px; }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="#"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden border-yellow-400 text-yellow-300 shadow-[0_0_8px_#fff600_inset] px-4 py-2">
+
+  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
+  
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    
+    <span>Yellow Button</span>
+    
+  </span>
+
+  
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+</a>
+
+<style>
+  .bg-glitch-overlay {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 4px 4px;
+    animation: glitch-move 0.5s linear infinite;
+  }
+  
+  @keyframes glitch-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 4px 4px; }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="#"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden border-lime-400 text-lime-300 shadow-[0_0_8px_#39ff14_inset] px-4 py-2">
+
+  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
+  
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    
+    <span>Lime Button</span>
+    
+  </span>
+
+  
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+</a>
+
+<style>
+  .bg-glitch-overlay {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 4px 4px;
+    animation: glitch-move 0.5s linear infinite;
+  }
+  
+  @keyframes glitch-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 4px 4px; }
+  }
+</style>
+</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="#"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden border-cyan-400 text-cyan-300 shadow-[0_0_8px_#00ffe7_inset] text-sm px-3 py-1">
+
+  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
+  
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    
+    <span>Small Button</span>
+    
+  </span>
+
+  
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+</a>
+
+<style>
+  .bg-glitch-overlay {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 4px 4px;
+    animation: glitch-move 0.5s linear infinite;
+  }
+  
+  @keyframes glitch-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 4px 4px; }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="#"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden border-cyan-400 text-cyan-300 shadow-[0_0_8px_#00ffe7_inset] px-4 py-2">
+
+  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
+  
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    
+    <span>Regular Button</span>
+    
+  </span>
+
+  
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+</a>
+
+<style>
+  .bg-glitch-overlay {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 4px 4px;
+    animation: glitch-move 0.5s linear infinite;
+  }
+  
+  @keyframes glitch-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 4px 4px; }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="#"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden border-cyan-400 text-cyan-300 shadow-[0_0_8px_#00ffe7_inset] text-lg px-5 py-3">
+
+  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
+  
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    
+    <span>Large Button</span>
+    
+  </span>
+
+  
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+</a>
+
+<style>
+  .bg-glitch-overlay {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 4px 4px;
+    animation: glitch-move 0.5s linear infinite;
+  }
+  
+  @keyframes glitch-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 4px 4px; }
+  }
+</style>
+</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="#"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden border-cyan-400 text-cyan-300 shadow-[0_0_8px_#00ffe7_inset] px-4 py-2">
+
+  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
+  
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    
+    <span>Next Page</span>
+    <svg
+      class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+      fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+    </svg>
+    
+  </span>
+
+  
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+</a>
+
+<style>
+  .bg-glitch-overlay {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 4px 4px;
+    animation: glitch-move 0.5s linear infinite;
+  }
+  
+  @keyframes glitch-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 4px 4px; }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="#"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden border-fuchsia-400 text-fuchsia-300 shadow-[0_0_8px_#ff00cc_inset] px-4 py-2">
+
+  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
+  
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    
+    <span>Download</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+    </svg>
+    
+  </span>
+
+  
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+</a>
+
+<style>
+  .bg-glitch-overlay {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 4px 4px;
+    animation: glitch-move 0.5s linear infinite;
+  }
+  
+  @keyframes glitch-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 4px 4px; }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="#"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden border-yellow-400 text-yellow-300 shadow-[0_0_8px_#fff600_inset] px-4 py-2">
+
+  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
+  
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    
+    <span>External Link</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+    </svg>
+    
+  </span>
+
+  
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+</a>
+
+<style>
+  .bg-glitch-overlay {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 4px 4px;
+    animation: glitch-move 0.5s linear infinite;
+  }
+  
+  @keyframes glitch-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 4px 4px; }
+  }
+</style>
+</p>
+<h2 id="notice-shortcode">Notice Shortcode</h2>
+<p>The notice shortcode displays highlighted information in styled boxes.</p>
+<h3 id="info-notice">Info Notice</h3>
+
+
+<div class="highlight" data-lang="">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-787fa83e935b4f75192f1f570be539e9')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language- bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-787fa83e935b4f75192f1f570be539e9" class="language- font-mono">{{&lt; notice type=&#34;info&#34; /&gt;}}
+This is an information notice with important details.
+{{&lt;/ /notice &gt;}}</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            txt
+          </div>
+        </div>
+      </div>
+<h3 id="result-2">Result:</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="notice-79940a007c92bbac173e807b9773dc0d" class="notice-container group my-4 relative rounded-lg overflow-hidden transition-all duration-300">
+  
+  <div class="absolute inset-0 border-l-4 border-cyan-400 text-cyan-300 bg-cyan-900/10 shadow-[0_0_12px_#00ffe7_inset] rounded-lg pointer-events-none"></div>
+  
+  
+  <div class="relative p-4 bg-gray-800/80 rounded-lg z-10">
+    
+    <div class="flex items-start">
+      
+      <div class="flex-shrink-0 mr-3">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+        </svg>
+      </div>
+      
+      
+      <div class="notice-content font-mono w-full">
+        
+        <p class="font-vt323 text-base mb-1 leading-tight">Info</p>
+        
+        
+This is an information notice with important details.
+
+      </div>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+<style>
+   
+  .notice-content h1, .notice-content h2, .notice-content h3, 
+  .notice-content h4, .notice-content h5, .notice-content h6 {
+    font-family: 'VT323', monospace;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .notice-content a {
+    text-decoration: underline;
+    transition: all 0.2s;
+  }
+  .notice-content a:hover {
+    text-decoration: none;
+  }
+  
+  .notice-content p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-content ul, .notice-content ol {
+    margin-left: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-content ul {
+    list-style-type: square;
+  }
+  
+  .notice-content pre, .notice-content code {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.3rem;
+  }
+</style>
+
+<h3 id="warning-notice">Warning Notice</h3>
+
+
+<div class="highlight" data-lang="">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-b94419a1bd2e61104b14a48f46bd482d')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language- bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-b94419a1bd2e61104b14a48f46bd482d" class="language- font-mono">{{&lt; notice type=&#34;warning&#34; /&gt;}}
+Warning! This action cannot be undone.
+{{&lt;/ /notice &gt;}}</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            txt
+          </div>
+        </div>
+      </div>
+<h3 id="result-3">Result:</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="notice-572545e10ea1428576c2d727b0accdcf" class="notice-container group my-4 relative rounded-lg overflow-hidden transition-all duration-300">
+  
+  <div class="absolute inset-0 border-l-4 border-yellow-400 text-yellow-300 bg-yellow-900/10 shadow-[0_0_12px_#fff600_inset] rounded-lg pointer-events-none"></div>
+  
+  
+  <div class="relative p-4 bg-gray-800/80 rounded-lg z-10">
+    
+    <div class="flex items-start">
+      
+      <div class="flex-shrink-0 mr-3">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'></path>
+        </svg>
+      </div>
+      
+      
+      <div class="notice-content font-mono w-full">
+        
+        <p class="font-vt323 text-base mb-1 leading-tight">Warning</p>
+        
+        
+Warning! This action cannot be undone.
+
+      </div>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+<style>
+   
+  .notice-content h1, .notice-content h2, .notice-content h3, 
+  .notice-content h4, .notice-content h5, .notice-content h6 {
+    font-family: 'VT323', monospace;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .notice-content a {
+    text-decoration: underline;
+    transition: all 0.2s;
+  }
+  .notice-content a:hover {
+    text-decoration: none;
+  }
+  
+  .notice-content p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-content ul, .notice-content ol {
+    margin-left: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-content ul {
+    list-style-type: square;
+  }
+  
+  .notice-content pre, .notice-content code {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.3rem;
+  }
+</style>
+
+<h3 id="danger-notice">Danger Notice</h3>
+
+
+<div class="highlight" data-lang="">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-7a08cc9f1e1e338609f39b8c31ea22dd')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language- bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-7a08cc9f1e1e338609f39b8c31ea22dd" class="language- font-mono">{{&lt; notice type=&#34;danger&#34; /&gt;}}
+Critical error detected in the mainframe.
+{{&lt;/ /notice &gt;}}</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            txt
+          </div>
+        </div>
+      </div>
+<h3 id="result-4">Result:</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="notice-174bf3709bef8b64000772c61bd15c38" class="notice-container group my-4 relative rounded-lg overflow-hidden transition-all duration-300">
+  
+  <div class="absolute inset-0 border-l-4 border-fuchsia-400 text-fuchsia-300 bg-fuchsia-900/10 shadow-[0_0_12px_#ff00cc_inset] rounded-lg pointer-events-none"></div>
+  
+  
+  <div class="relative p-4 bg-gray-800/80 rounded-lg z-10">
+    
+    <div class="flex items-start">
+      
+      <div class="flex-shrink-0 mr-3">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d='M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+        </svg>
+      </div>
+      
+      
+      <div class="notice-content font-mono w-full">
+        
+        <p class="font-vt323 text-base mb-1 leading-tight">Danger</p>
+        
+        
+Critical error detected in the mainframe.
+
+      </div>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+<style>
+   
+  .notice-content h1, .notice-content h2, .notice-content h3, 
+  .notice-content h4, .notice-content h5, .notice-content h6 {
+    font-family: 'VT323', monospace;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .notice-content a {
+    text-decoration: underline;
+    transition: all 0.2s;
+  }
+  .notice-content a:hover {
+    text-decoration: none;
+  }
+  
+  .notice-content p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-content ul, .notice-content ol {
+    margin-left: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-content ul {
+    list-style-type: square;
+  }
+  
+  .notice-content pre, .notice-content code {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.3rem;
+  }
+</style>
+
+<h3 id="success-notice">Success Notice</h3>
+
+
+<div class="highlight" data-lang="">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-5e0385669dec579b157a7fa1e5993fb5')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language- bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-5e0385669dec579b157a7fa1e5993fb5" class="language- font-mono">{{&lt; notice type=&#34;success&#34; /&gt;}}
+Connection to the neural network established successfully.
+{{&lt;/ /notice &gt;}}</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            txt
+          </div>
+        </div>
+      </div>
+<h3 id="result-5">Result:</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="notice-53f1f178d254c541b187b03997c24ac2" class="notice-container group my-4 relative rounded-lg overflow-hidden transition-all duration-300">
+  
+  <div class="absolute inset-0 border-l-4 border-lime-400 text-lime-300 bg-lime-900/10 shadow-[0_0_12px_#39ff14_inset] rounded-lg pointer-events-none"></div>
+  
+  
+  <div class="relative p-4 bg-gray-800/80 rounded-lg z-10">
+    
+    <div class="flex items-start">
+      
+      <div class="flex-shrink-0 mr-3">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+        </svg>
+      </div>
+      
+      
+      <div class="notice-content font-mono w-full">
+        
+        <p class="font-vt323 text-base mb-1 leading-tight">Success</p>
+        
+        
+Connection to the neural network established successfully.
+
+      </div>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+<style>
+   
+  .notice-content h1, .notice-content h2, .notice-content h3, 
+  .notice-content h4, .notice-content h5, .notice-content h6 {
+    font-family: 'VT323', monospace;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .notice-content a {
+    text-decoration: underline;
+    transition: all 0.2s;
+  }
+  .notice-content a:hover {
+    text-decoration: none;
+  }
+  
+  .notice-content p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-content ul, .notice-content ol {
+    margin-left: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-content ul {
+    list-style-type: square;
+  }
+  
+  .notice-content pre, .notice-content code {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.3rem;
+  }
+</style>
+
+<h2 id="image-shortcode">Image Shortcode</h2>
+<p>The image shortcode displays images with captions and cyberpunk styling.</p>
+<h3 id="basic-image">Basic Image</h3>
+
+
+<div class="highlight" data-lang="">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-e49a83c19e1da497b0b7752c92d2709d')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language- bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-e49a83c19e1da497b0b7752c92d2709d" class="language- font-mono">{{&lt; image src=&#34;https://maxzhirnov.github.io/cyber-hugo/images/cyberpunk-city.jpg&#34; alt=&#34;Neon City&#34; &gt;}}</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            txt
+          </div>
+        </div>
+      </div>
+<h3 id="image-with-caption-and-credit">Image with Caption and Credit</h3>
+
+
+<div class="highlight" data-lang="">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-ea753564a3343852b3a0a8fa9fa20134')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language- bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-ea753564a3343852b3a0a8fa9fa20134" class="language- font-mono">{{&lt; image src=&#34;https://maxzhirnov.github.io/cyber-hugo/images/cyberpunk-city.jpg&#34; alt=&#34;Neon City&#34;
+caption=&#34;Night view of Neo-Tokyo&#34; credit=&#34;Photo by CyberArtist&#34; &gt;}}</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            txt
+          </div>
+        </div>
+      </div>
+<h3 id="result-6">Result:</h3>
+
+
+
+
+
+
+
+
+<figure class="my-8 group">
+  <div class="relative border-2 border-cyan-400 rounded-lg overflow-hidden shadow-[0_0_16px_#00ffe7] hover:shadow-[0_0_24px_#00ffe7] transition-all duration-300">
+    
+    <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-fuchsia-500 z-10"></div>
+    <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-fuchsia-500 z-10"></div>
+    <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-fuchsia-500 z-10"></div>
+    <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-fuchsia-500 z-10"></div>
+    
+    
+    <div class="absolute inset-0 bg-scan-lines opacity-20 mix-blend-overlay pointer-events-none z-20"></div>
+    
+    
+    
+    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
+      <div class="absolute inset-0 glitch-overlay"></div>
+    </div>
+    
+    
+    
+    <div class="font-size-0 leading-none">
+      <img id="img-7da66ce5a6e828a020aa413dcd6dcc82" src="/images/cyberpunk-city.jpg" alt="Neon City" class="w-full h-full object-cover block " style="margin:0; padding:0; display:block; vertical-align:top;">
+    </div>
+    
+    
+    
+    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 to-transparent p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 backdrop-blur-sm">
+      <div class="text-cyan-300 font-vt323 text-lg">Night view of Neo-Tokyo</div>
+      <div class="text-xs text-fuchsia-400 font-mono mt-1">Photo by CyberArtist</div>
+    </div>
+    
+    
+    
+    <a href="/images/cyberpunk-city.jpg" target="_blank" rel="noopener" 
+       class="absolute top-3 right-3 bg-gray-900/70 rounded-full p-1.5 border border-cyan-400 text-cyan-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6"/>
+      </svg>
+    </a>
+  </div>
+  
+  
+  
+</figure>
+
+<style>
+   
+  .bg-scan-lines {
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 255, 231, 0.1),
+      rgba(0, 255, 231, 0.1) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  }
+  
+   
+  .glitch-overlay {
+    animation: glitch 2s infinite;
+    background: linear-gradient(45deg, 
+      rgba(255, 0, 204, 0.2) 0%, 
+      rgba(0, 255, 231, 0.2) 100%
+    );
+    mix-blend-mode: color-dodge;
+  }
+  
+  @keyframes glitch {
+    0% {
+      opacity: 0;
+      transform: translate(0);
+    }
+    20% {
+      opacity: 0.3;
+      transform: translate(-5px, 5px);
+    }
+    40% {
+      opacity: 0;
+      transform: translate(0);
+    }
+    60% {
+      opacity: 0.3;
+      transform: translate(5px, -5px);
+    }
+    80% {
+      opacity: 0;
+      transform: translate(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(0);
+    }
+  }
+</style>
+
+<h2 id="code-shortcode">Code Shortcode</h2>
+<p>The code shortcode provides enhanced code blocks with titles and line numbers.</p>
+<h3 id="basic-code-block">Basic Code Block</h3>
+
+
+<div class="highlight" data-lang="">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-3b063e0b2657dcf6aa45ddb06e9bc7dc')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language- bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-3b063e0b2657dcf6aa45ddb06e9bc7dc" class="language- font-mono">{{&lt; code language=&#34;javascript&#34; /&gt;}}
+function hackTheMatrix() {
+console.log(&#34;Connecting to the mainframe...&#34;);
+return &#34;Access granted&#34;;
+}
+{{&lt;/ /code &gt;}}</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            txt
+          </div>
+        </div>
+      </div>
+<h3 id="result-7">Result:</h3>
+
+
+
+
+
+<div class="my-8 code-block-container group">
+  
+  <div class="flex items-center justify-between px-4 py-2 bg-gray-800/90 border-t-2 border-x-2 border-cyan-400 rounded-t-lg relative overflow-hidden">
+    
+    <div class="flex items-center">
+      <span class="text-cyan-300 font-vt323 tracking-wide">javascript</span>
+      <span class="hidden sm:ml-1 sm:h-4 sm:w-2 sm:bg-cyan-400 sm:animate-pulse sm:block"></span>
+    </div>
+    
+    
+    <div class="flex items-center gap-2">
+      <div class="terminal-dot bg-red-500 shadow-[0_0_8px_#ff0000] hover:animate-pulse"></div>
+      <div class="terminal-dot bg-yellow-500 shadow-[0_0_8px_#fff600] hover:animate-pulse"></div>
+      <div class="terminal-dot bg-green-500 shadow-[0_0_8px_#00ff00] hover:animate-pulse"></div>
+    </div>
+    
+  </div>
+  
+  
+  <div class="card-glow relative rounded-b-lg overflow-hidden">
+    
+    <button
+          onclick="copyCode('code-91d8520803a13fd7262546e7392a5605')"
+          class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+            opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+            
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+
+    </button>
+    
+    
+    <pre class="language-javascript bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-91d8520803a13fd7262546e7392a5605" class="language-javascript font-mono">function hackTheMatrix() {
+  console.log(&#34;Connecting to the mainframe...&#34;);
+  return &#34;Access granted&#34;;
+}</code></pre>
+    
+    
+    <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+      javascript
+    </div>
+  </div>
+</div>
+<h3 id="code-with-title-and-line-numbers">Code with Title and Line Numbers</h3>
+
+
+<div class="highlight" data-lang="">
+    
+    <div class="my-8 code-block-container group">
+        
+        
+        <div class="card-glow relative rounded-b-lg overflow-hidden">
+          
+          <button
+            onclick="copyCode('code-9788fb7d5d7c16be619608ac182b9048')"
+            class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+              opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+              
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+  
+          </button>
+          
+          
+          <pre class="language- bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-9788fb7d5d7c16be619608ac182b9048" class="language- font-mono">{{&lt; code language=&#34;css&#34; title=&#34;Neon Glow Effect&#34; lineNumbers=&#34;true&#34; &gt;}}
+.neon-text {
+color: #00ffe7;
+text-shadow: 0 0 5px #00ffe7,
+0 0 10px #00ffe7,
+0 0 20px #00ffe7;
+animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+0% { opacity: 0.8; }
+50% { opacity: 1; }
+100% { opacity: 0.8; }
+}
+{{&lt; /code &gt;}}</code></pre>
+          
+          
+          <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+            txt
+          </div>
+        </div>
+      </div>
+<h3 id="result-8">Result:</h3>
+
+
+
+
+
+<div class="my-8 code-block-container group">
+  
+  <div class="flex items-center justify-between px-4 py-2 bg-gray-800/90 border-t-2 border-x-2 border-cyan-400 rounded-t-lg relative overflow-hidden">
+    
+    <div class="flex items-center">
+      <span class="text-cyan-300 font-vt323 tracking-wide">Neon Glow Effect</span>
+      <span class="hidden sm:ml-1 sm:h-4 sm:w-2 sm:bg-cyan-400 sm:animate-pulse sm:block"></span>
+    </div>
+    
+    
+    <div class="flex items-center gap-2">
+      <div class="terminal-dot bg-red-500 shadow-[0_0_8px_#ff0000] hover:animate-pulse"></div>
+      <div class="terminal-dot bg-yellow-500 shadow-[0_0_8px_#fff600] hover:animate-pulse"></div>
+      <div class="terminal-dot bg-green-500 shadow-[0_0_8px_#00ff00] hover:animate-pulse"></div>
+    </div>
+    
+  </div>
+  
+  
+  <div class="card-glow relative rounded-b-lg overflow-hidden">
+    
+    <button
+          onclick="copyCode('code-00145f35ea33311a2441e9de11657bda')"
+          class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+            opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+            
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+
+    </button>
+    
+    
+    <pre class="language-css bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-00145f35ea33311a2441e9de11657bda" class="language-css font-mono">.neon-text {
+  color: #00ffe7;
+  text-shadow: 0 0 5px #00ffe7, 
+               0 0 10px #00ffe7, 
+               0 0 20px #00ffe7;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}</code></pre>
+    
+    
+    <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+      css
+    </div>
+  </div>
+</div>
+<h2 id="combining-shortcodes">Combining Shortcodes</h2>
+<p>Shortcodes can be combined for more complex layouts:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="notice-81478409dca1b5fbaf0ed41cb22edc8c" class="notice-container group my-4 relative rounded-lg overflow-hidden transition-all duration-300">
+  
+  <div class="absolute inset-0 border-l-4 border-cyan-400 text-cyan-300 bg-cyan-900/10 shadow-[0_0_12px_#00ffe7_inset] rounded-lg pointer-events-none"></div>
+  
+  
+  <div class="relative p-4 bg-gray-800/80 rounded-lg z-10">
+    
+    <div class="flex items-start">
+      
+      <div class="flex-shrink-0 mr-3">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+        </svg>
+      </div>
+      
+      
+      <div class="notice-content font-mono w-full">
+        
+        <p class="font-vt323 text-base mb-1 leading-tight">Info</p>
+        
+        
+### Neural Interface Connection
+
+To connect to the neural interface, run:
+
+
+
+
+
+
+<div class="my-8 code-block-container group">
+  
+  <div class="flex items-center justify-between px-4 py-2 bg-gray-800/90 border-t-2 border-x-2 border-cyan-400 rounded-t-lg relative overflow-hidden">
+    
+    <div class="flex items-center">
+      <span class="text-cyan-300 font-vt323 tracking-wide">bash</span>
+      <span class="hidden sm:ml-1 sm:h-4 sm:w-2 sm:bg-cyan-400 sm:animate-pulse sm:block"></span>
+    </div>
+    
+    
+    <div class="flex items-center gap-2">
+      <div class="terminal-dot bg-red-500 shadow-[0_0_8px_#ff0000] hover:animate-pulse"></div>
+      <div class="terminal-dot bg-yellow-500 shadow-[0_0_8px_#fff600] hover:animate-pulse"></div>
+      <div class="terminal-dot bg-green-500 shadow-[0_0_8px_#00ff00] hover:animate-pulse"></div>
+    </div>
+    
+  </div>
+  
+  
+  <div class="card-glow relative rounded-b-lg overflow-hidden">
+    
+    <button
+          onclick="copyCode('code-41ec0ed6a63abc876a64aed7da0ab99c')"
+          class="absolute top-3 right-3 p-1.5 rounded-lg bg-gray-800/80 border border-cyan-500 text-cyan-300 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all z-10
+            opacity-100 sm:opacity-0 sm:group-hover:opacity-100 backdrop-blur-sm">
+            
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+
+    </button>
+    
+    
+    <pre class="language-bash bg-gray-900/90 m-0 p-4 overflow-x-auto cyberpunk-scrollbar"><code id="code-41ec0ed6a63abc876a64aed7da0ab99c" class="language-bash font-mono">sudo neural-connect --user=neo --protocol=secure</code></pre>
+    
+    
+    <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-gray-800/80 border border-cyan-500 text-xs text-cyan-300 font-mono">
+      bash
+    </div>
+  </div>
+</div>
+
+Then press 
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="#"
+  class="inline-block font-vt323 mt-2 uppercase tracking-widest rounded-lg bg-gray-900/80 hover:bg-fuchsia-700/40 hover:text-yellow-200 hover:border-fuchsia-500 transition-all border-2 group relative overflow-hidden border-fuchsia-400 text-fuchsia-300 shadow-[0_0_8px_#ff00cc_inset] px-4 py-2">
+
+  
+  <span
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-glitch-overlay mix-blend-overlay"></span>
+
+  
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    
+    <span>Connect</span>
+    
+  </span>
+
+  
+  <span
+    class="absolute top-0 left-0 w-2 h-2 border-t border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute top-0 right-0 w-2 h-2 border-t border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l opacity-50 group-hover:opacity-100 transition-opacity"></span>
+  <span
+    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r opacity-50 group-hover:opacity-100 transition-opacity"></span>
+</a>
+
+<style>
+  .bg-glitch-overlay {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 4px 4px;
+    animation: glitch-move 0.5s linear infinite;
+  }
+  
+  @keyframes glitch-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 4px 4px; }
+  }
+</style>
+ to initiate the handshake.
+
+      </div>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+<style>
+   
+  .notice-content h1, .notice-content h2, .notice-content h3, 
+  .notice-content h4, .notice-content h5, .notice-content h6 {
+    font-family: 'VT323', monospace;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .notice-content a {
+    text-decoration: underline;
+    transition: all 0.2s;
+  }
+  .notice-content a:hover {
+    text-decoration: none;
+  }
+  
+  .notice-content p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-content ul, .notice-content ol {
+    margin-left: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-content ul {
+    list-style-type: square;
+  }
+  
+  .notice-content pre, .notice-content code {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.3rem;
+  }
+</style>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>These shortcodes help maintain a consistent cyberpunk aesthetic throughout your site while extending markdown&rsquo;s capabilities. Use them to create visually appealing and interactive content that matches the theme&rsquo;s design.</p>]]></description>
+    </item>
+    
+  </channel>
+</rss>

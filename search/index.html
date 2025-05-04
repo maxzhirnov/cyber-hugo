@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Search - Cyber Theme
+    </title><meta name="generator" content="Hugo 0.145.0">
+
+    
+  
+    
+    
+      
+        
+          <link rel="stylesheet" href="/cyber-hugo/css/main.1e8aab9c74511f6d7b93e458c3eafdfe037ab6bff29fd0960d55636e11b370d4.css" integrity="sha256-HoqrnHRRH217k&#43;RYw&#43;r9/gN6tr/yn9CWDVVjbhGzcNQ=" crossorigin="anonymous">
+        
+      
+    
+  
+
+</head>
+  <body
+  class="flex flex-col min-h-screen text-cyan-100 font-share-tech antialiased geek-stripes-bg"
+  style="background-color: #0f1021;">
+    <header class="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-8 py-6">
+
+  <nav class="relative z-100 flex items-center justify-between">
+    
+    <a href="https://maxzhirnov.github.io/cyber-hugo/"
+      class="font-vt323 text-2xl sm:text-3xl text-cyan-400 tracking-widest uppercase drop-shadow-[0_0_8px_#00ffe7] hover:text-fuchsia-400 transition-colors duration-150">
+      Cyber Hugo
+    </a>
+  
+    
+      
+      
+      <input id="nav-toggle" type="checkbox" class="peer hidden" />
+      <label for="nav-toggle"
+        class="sm:hidden flex items-center text-cyan-400 hover:text-fuchsia-400 cursor-pointer ml-2 z-20">
+        
+<svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"
+  viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round"
+    d="M4 6h16M4 12h16M4 18h16" />
+</svg>
+
+      </label>
+  
+      
+      <ul
+        class="hidden sm:flex gap-4 px-6 py-2 bg-gray-900/80 border-2 border-cyan-400 rounded-xl shadow-[0_0_20px_#00ffe7_inset] backdrop-blur-md items-center">
+        
+        <li>
+          <a href="https://maxzhirnov.github.io/cyber-hugo/"
+            class="btn-main ">
+            <span class="btn-text">Home</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://maxzhirnov.github.io/cyber-hugo/posts/"
+            class="btn-main ">
+            <span class="btn-text">Blog</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://maxzhirnov.github.io/cyber-hugo/tags/"
+            class="btn-main ">
+            <span class="btn-text">Tags</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://maxzhirnov.github.io/cyber-hugo/about/"
+            class="btn-main ">
+            <span class="btn-text">About</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://maxzhirnov.github.io/cyber-hugo/search/"
+            class="btn-main  !bg-cyan-900/80 !text-lime-300 !border-lime-400">
+            <span class="btn-text">Search</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+      
+<ul id="nav-menu"
+  class="fixed top-0 left-0 w-full h-screen
+           bg-gray-950/95 border-b-2 border-cyan-400 z-50 backdrop-blur-lg
+           flex flex-col items-center gap-6 pt-24 transition-all duration-300
+           -translate-y-full peer-checked:translate-y-0 sm:hidden group/nav-menu">
+
+  
+  <div class="absolute inset-0 pointer-events-none z-0">
+    <div class="w-full h-full opacity-80"
+      style="
+           background:
+             radial-gradient(circle at 20% 40%, #00ffe7cc 0%, transparent 60%),
+             radial-gradient(circle at 80% 70%, #ff00ccbb 0%, transparent 65%);
+           filter: blur(40px);
+         ">
+    </div>
+  </div>
+
+  
+  <button onclick="document.getElementById('nav-toggle').checked=false"
+    class="absolute top-5 right-6 text-cyan-300 hover:text-fuchsia-400 z-10 transition-colors flex items-center gap-2 group cursor-pointer"
+    tabindex="0" aria-label="Close menu">
+    
+<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M6 18L18 6M6 6l12 12" />
+</svg>
+
+    <span class="font-mono text-sm uppercase">Close</span>
+  </button>
+
+  
+  <li class="relative z-10">
+    <a href="https://maxzhirnov.github.io/cyber-hugo/"
+      class="btn-main block text-center w-[13.5rem] text-2xl py-3
+                font-vt323 uppercase tracking-widest
+                border-2 border-cyan-400 rounded-xl bg-gray-900/80 text-cyan-200
+                shadow-[0_0_10px_#00ffe7_inset,0_0_28px_#ff00cc66]
+                transition-all duration-150
+                hover:bg-gradient-to-r hover:from-cyan-900/80 hover:to-fuchsia-900/80
+                hover:text-white hover:border-fuchsia-400 hover:shadow-[0_0_24px_#ff00cc99,0_0_34px_#00ffe7bb]
+                focus:outline-none focus:ring-2 focus:ring-fuchsia-400
+                ">
+      <span class="drop-shadow-[0_2px_8px_#00ffe7]">
+        Home
+      </span>
+    </a>
+  </li>
+  
+  <li class="relative z-10">
+    <a href="https://maxzhirnov.github.io/cyber-hugo/posts/"
+      class="btn-main block text-center w-[13.5rem] text-2xl py-3
+                font-vt323 uppercase tracking-widest
+                border-2 border-cyan-400 rounded-xl bg-gray-900/80 text-cyan-200
+                shadow-[0_0_10px_#00ffe7_inset,0_0_28px_#ff00cc66]
+                transition-all duration-150
+                hover:bg-gradient-to-r hover:from-cyan-900/80 hover:to-fuchsia-900/80
+                hover:text-white hover:border-fuchsia-400 hover:shadow-[0_0_24px_#ff00cc99,0_0_34px_#00ffe7bb]
+                focus:outline-none focus:ring-2 focus:ring-fuchsia-400
+                ">
+      <span class="drop-shadow-[0_2px_8px_#00ffe7]">
+        Blog
+      </span>
+    </a>
+  </li>
+  
+  <li class="relative z-10">
+    <a href="https://maxzhirnov.github.io/cyber-hugo/tags/"
+      class="btn-main block text-center w-[13.5rem] text-2xl py-3
+                font-vt323 uppercase tracking-widest
+                border-2 border-cyan-400 rounded-xl bg-gray-900/80 text-cyan-200
+                shadow-[0_0_10px_#00ffe7_inset,0_0_28px_#ff00cc66]
+                transition-all duration-150
+                hover:bg-gradient-to-r hover:from-cyan-900/80 hover:to-fuchsia-900/80
+                hover:text-white hover:border-fuchsia-400 hover:shadow-[0_0_24px_#ff00cc99,0_0_34px_#00ffe7bb]
+                focus:outline-none focus:ring-2 focus:ring-fuchsia-400
+                ">
+      <span class="drop-shadow-[0_2px_8px_#00ffe7]">
+        Tags
+      </span>
+    </a>
+  </li>
+  
+  <li class="relative z-10">
+    <a href="https://maxzhirnov.github.io/cyber-hugo/about/"
+      class="btn-main block text-center w-[13.5rem] text-2xl py-3
+                font-vt323 uppercase tracking-widest
+                border-2 border-cyan-400 rounded-xl bg-gray-900/80 text-cyan-200
+                shadow-[0_0_10px_#00ffe7_inset,0_0_28px_#ff00cc66]
+                transition-all duration-150
+                hover:bg-gradient-to-r hover:from-cyan-900/80 hover:to-fuchsia-900/80
+                hover:text-white hover:border-fuchsia-400 hover:shadow-[0_0_24px_#ff00cc99,0_0_34px_#00ffe7bb]
+                focus:outline-none focus:ring-2 focus:ring-fuchsia-400
+                ">
+      <span class="drop-shadow-[0_2px_8px_#00ffe7]">
+        About
+      </span>
+    </a>
+  </li>
+  
+  <li class="relative z-10">
+    <a href="https://maxzhirnov.github.io/cyber-hugo/search/"
+      class="btn-main block text-center w-[13.5rem] text-2xl py-3
+                font-vt323 uppercase tracking-widest
+                border-2 border-cyan-400 rounded-xl bg-gray-900/80 text-cyan-200
+                shadow-[0_0_10px_#00ffe7_inset,0_0_28px_#ff00cc66]
+                transition-all duration-150
+                hover:bg-gradient-to-r hover:from-cyan-900/80 hover:to-fuchsia-900/80
+                hover:text-white hover:border-fuchsia-400 hover:shadow-[0_0_24px_#ff00cc99,0_0_34px_#00ffe7bb]
+                focus:outline-none focus:ring-2 focus:ring-fuchsia-400
+                !bg-cyan-900/80 !text-lime-300 !border-lime-400 border-4 !shadow-[0_0_32px_#aaff0033,0_0_64px_#00ffe7]">
+      <span class="drop-shadow-[0_2px_8px_#00ffe7]">
+        Search
+      </span>
+    </a>
+  </li>
+  
+</ul>
+
+
+<style>
+ 
+#nav-menu {
+  will-change: transform, box-shadow;
+}
+ 
+.peer-checked ~ #nav-menu {
+  box-shadow:
+    0 0 88px #00ffe7cc,
+    0 0 32px #ff00cc99;
+}
+
+@media (min-width: 640px) {
+   
+  #nav-menu { display: none !important; }
+}
+</style>
+
+    
+  </nav>
+</header>
+
+    <main
+      class="flex-1 grow mx-auto w-full max-w-5xl px-4 sm:px-8 pt-6 sm:pt-12">
+      
+<section
+  class="relative max-w-4xl mx-auto mt-16 mb-20 px-4 py-10 bg-gray-900/95 border-2 border-cyan-400 rounded-2xl shadow-[0_0_40px_#00ffe7_inset,0_0_80px_#ff00cc44] before:absolute before:inset-0 before:geek-stripes-bg before:rounded-2xl before:pointer-events-none">
+  <div
+    class="absolute -inset-2 rounded-3xl pointer-events-none z-0 shadow-[0_0_32px_#00ffe7,0_0_64px_#ff00cc44]"></div>
+
+  <h1
+    class="font-vt323 text-3xl md:text-4xl text-center uppercase tracking-widest mb-8 text-cyan-300 drop-shadow-[0_0_16px_#00ffe7]">
+    Search
+  </h1>
+
+  
+  <div class="relative z-10 mb-8">
+    <input
+      type="text"
+      id="search-input"
+      placeholder="🔍 Search posts..."
+      class="w-full px-4 py-3 rounded-lg border-2 border-cyan-400 bg-gray-900/80 text-cyan-200 placeholder-cyan-700 focus:outline-none focus:border-fuchsia-500 transition-all font-mono shadow-[0_0_8px_#00ffe7_inset]" />
+  </div>
+
+  
+  <div id="search-results" class="relative z-10 space-y-4"></div>
+</section>
+
+
+<script>
+window.store = {
+    "https:\/\/maxzhirnov.github.io\/cyber-hugo\/posts\/hugo-yaml-cyberpunk-setup\/": {
+      "title": "\"Jacking In Your Cyber-Hugo YAML Setup Guide\"",
+      "content": "\"1. [CORE SETTINGS] :: Identity Matrix theme: cyber-hugo languageCode: en-us baseURL: \\u0026#34;https://maxzhirnov.github.io/cyber-hugo/\\u0026#34; relativeURLs: false canonifyURLs: true title: Cyber Theme pagination: pagerSize: 10 yaml theme: Activates the cyber-hugo neural skin. languageCode: Sets your system language. baseURL: Your site’s root in cyberspace. relativeURLs/canonifyURLs: Clean, canonical URLs for max traceability. title: Terminal title bar. pagerSize: Posts per page—scroll the feed, cyber style. 2. [BUILD OPS] :: Cache, Compile, and Mount build: buildStats: enable: true cachebusters: - source: assets/notwatching/hugo_stats\\\\.json target: css - source: (postcss|tailwind)\\\\.config\\\\.js target: css module: mounts: - source: assets target: assets - disableWatch: true source: hugo_stats.json target: assets/notwatching/hugo_stats.json yaml buildStats: Fires up Hugo’s stats collector, which scans your templates for every Tailwind utility class you use. This lets Tailwind purge unused CSS and generate only what your site actually needs—keeping your stylesheets razor-thin and your load times lightning-fast. No wasted bytes, just pure neon.\\ncachebusters: These rules are your anti-ghost protocol. Whenever you tweak your Tailwind or PostCSS config, or when Hugo’s stats file changes, cachebusters force a CSS rebuild and make browsers fetch the latest version. This guarantees you’ll never see stale or broken styles haunting your site—every deploy is fresh from the grid.\\nmodule.mounts: This is your file system wiring. It tells Hugo where to find and serve your assets (like images, fonts, and CSS) and ensures that the all-important hugo_stats.json (generated by buildStats) is mounted exactly where Tailwind expects to find it. The disableWatch: true flag prevents unnecessary rebuilds, keeping your development workflow smooth and efficient.\\nHeads up:\\nThis setup isn’t optional for Tailwind + Hugo. It’s straight from the official Hugo Tailwind docs, and it’s the backbone that keeps your cyberpunk theme running sharp and responsive. Skip these steps and you risk broken styles, sluggish reloads, and a site that’s more glitch than glow.\\nIn short:\\nThis build and module configuration is your site’s power grid—fueling live-reloading, cache-busting, and asset delivery, all optimized for that slick, cyberpunk experience.\\nPlug it in, and your theme will always look as fresh as a midnight city skyline.\\n3. [MARKUP] :: Neon Syntax \\u0026amp; TOC markup: highlight: codeFences: true guessSyntax: false lineNos: false noClasses: false style: monokai tableOfContents: startLevel: 2 endLevel: 4 ordered: false yaml highlight: Code blocks glow in Monokai—like neon on rain-slick streets. tableOfContents: Auto-generate a TOC for your docs. Only the essentials, operator. 4. [NAVIGATION] :: Mainframe Menus menus: main: - name: Home url: / weight: 1 - name: Blog url: /posts/ weight: 2 - name: Tags url: /tags/ weight: 3 - name: About url: /about/ weight: 4 - name: Search url: /search/ weight: 5 quicklinks: - name: Archive url: /archive/ weight: 1 - name: Contact url: /contact/ weight: 2 - name: About url: /about/ weight: 4 - name: Portfolio url: /portfolio/ - name: FAQ url: /faq/ yaml main: Primary nav—your city grid. quicklinks: Fast access portals for power users. 5. [PARAMS] :: Customization Protocols params: name: Hugo Tailwindcss Starter description: A simple bootstraped theme for Hugo, build with Tailwindcss. showToc: true tocOpen: false mainSections: - posts github_user: maxzhirnov github_repo: https://github.com/dirkolbrich/hugo-tailwindcss-starter-theme github_banner: true favicon: favicon.ico single_heading_color: \\u0026#34;text-cyber-fuchsia\\u0026#34; single_prose_color: \\u0026#34;text-cyber-emerald\\u0026#34; dashboard: title: SYSTEM CONSOLE subtitle: MAIN ACCESS POINT status: cpu: 42 memory: 78 widgets: quick_links: QUICK ACCESS rss_post_footer: \\u0026#34;Read more cyberpunk content at YourSite\\u0026#34; images: - \\u0026#34;/images/site-logo.png\\u0026#34; yaml name/description: Your site’s identity chip. showToc/tocOpen: Table of Contents—on demand. mainSections: Where the action happens (blog posts). GitHub: Banner and repo link—show your code cred. favicon: Your icon in the matrix. single_heading_color/single_prose_color: Custom neon colorways. dashboard: SYSTEM CONSOLE widget—CPU and memory status, just for fun. widgets.quick_links: Label for your quick access menu. rss_post_footer: Custom signature for your RSS syndicate. images: Site logo for feeds and embeds. [MISSION COMPLETE] :: You’re Live in the Neon Grid Your hugo.yaml is now tuned for a cyberpunk terminal experience.\\nMenus glow, code blocks pulse, and your dashboard hums with digital life.\\nOperator Tip:\\nTweak, hack, and remix these settings to make your site your own.\\nEvery change is instant—no waiting for the rain to stop.\\nJack out and deploy. Your city awaits.\\n— The Console\\n\"",
+      "tags": ["\"theme\"", "\"setup\""],
+      "url": "https:\/\/maxzhirnov.github.io\/cyber-hugo\/posts\/hugo-yaml-cyberpunk-setup\/"
+    },
+    "https:\/\/maxzhirnov.github.io\/cyber-hugo\/posts\/theme-showcase\/": {
+      "title": "\"Theme showcase\"",
+      "content": "\"Showcasing Cyber Hugo Theme Features Welcome to the Cyber Hugo theme - a neon-drenched, retro-futuristic experience for your Hugo website. This page demonstrates the key features and capabilities that make this theme stand out.\\nCyberpunk Design Elements The Cyber Hugo theme brings the dystopian future to your content with carefully crafted design elements:\\nNeon Glow Effects Every container, button, and interactive element features authentic neon glow effects that respond to user interaction. Notice how elements subtly pulse and glow when you hover over them, creating an immersive cyberpunk experience.\\nThis container glows with cyberpunk energy html Terminal-Inspired Typography Text elements use the VT323 monospace font for headings and Roboto Mono for body text, creating an authentic terminal aesthetic while maintaining readability.\\nResponsive Dark Mode The theme is built on a dark foundation with carefully chosen contrast ratios to ensure readability while maintaining the cyberpunk aesthetic across all device sizes.\\nContent Presentation Code Blocks with Style Code snippets aren\\u0026rsquo;t just functional - they\\u0026rsquo;re part of the aesthetic. Our theme includes custom-styled code blocks with syntax highlighting, line numbers, and a copy button.\\nfunction connectToMainframe() { console.log(\\u0026#34;Establishing secure connection...\\u0026#34;); return new Promise((resolve) =\\u0026gt; { setTimeout(() =\\u0026gt; { resolve(\\u0026#34;ACCESS GRANTED\\u0026#34;); }, 1000); }); } javascript Neural Interface Connection function connectToMainframe() { console.log(\\u0026#34;Establishing secure connection...\\u0026#34;); return new Promise((resolve) =\\u0026gt; { setTimeout(() =\\u0026gt; { resolve(\\u0026#34;ACCESS GRANTED\\u0026#34;); }, 1000); }); } javascript Notice Boxes Draw attention to important information with styled notice boxes in different variants:\\nInfo\\nThis is an information notice with important details about the system. Warning\\nWarning! This action cannot be undone. Proceed with caution. Danger\\nCritical error detected in the mainframe. Immediate action required. Success\\nConnection to the neural network established successfully. Styled Buttons Create eye-catching call-to-action buttons with various styles:\\nPrimary Action Secondary Action Warning Action Success Action Enhanced Images Images receive the cyberpunk treatment with glowing borders, scan line effects, and optional captions:\\nNight view of Neo-Tokyo Photo by CyberArtist Navigation \\u0026amp; Structure Table of Contents Long-form content automatically generates a collapsible table of contents for easy navigation:\\n--- title: \\u0026#34;Deep Dive into Cyberspace\\u0026#34; showToc: true tocOpen: true --- yaml Pagination Navigate through multi-page content with cyberpunk-styled pagination controls that glow and animate on hover.\\nSearch Functionality The integrated search feature uses Fuse.js for powerful client-side searching with partial word matching, making it easy for users to find content without leaving the cyberpunk experience.\\nCustomization Options Color Schemes While the default cyan and fuchsia color scheme captures the classic cyberpunk aesthetic, you can customize the primary and accent colors:\\nparams: mainColor: \\u0026#34;cyan\\u0026#34; # Options: cyan, fuchsia, yellow, lime accentColor: \\u0026#34;fuchsia\\u0026#34; yaml Content Styling Individual pages can override the default styling:\\n--- title: \\u0026#34;Custom Styled Page\\u0026#34; single_heading_color: \\u0026#34;text-fuchsia-400\\u0026#34; # Override default title color single_prose_color: \\u0026#34;prose-fuchsia\\u0026#34; # Override default content color --- yaml Performance Features Optimized Assets The theme uses Tailwind CSS with optimized builds that only include the classes you actually use, resulting in minimal CSS file sizes.\\nFast Search The client-side search is built with performance in mind, using Lunr.js v2.3.9 for lightning-fast results.\\nGetting Started To use this theme in your own Hugo site:\\nInstall the theme using Hugo modules or by cloning the repository Configure your hugo.yaml with your site information Create content using the provided shortcodes for enhanced styling Customize the colors and features to match your brand Conclusion The Cyber Hugo theme combines striking visuals with practical functionality, creating an immersive cyberpunk experience without sacrificing usability or performance. Whether you\\u0026rsquo;re building a personal blog, portfolio, or documentation site, this theme provides the perfect backdrop for your digital content.\\nDive into the neon-lit future of web design with Cyber Hugo!\\n\"",
+      "tags": ["\"theme\"", "\"demo\"", "\"cyberpunk\""],
+      "url": "https:\/\/maxzhirnov.github.io\/cyber-hugo\/posts\/theme-showcase\/"
+    },
+    "https:\/\/maxzhirnov.github.io\/cyber-hugo\/posts\/shortcode-showcase\/": {
+      "title": "\"Cyberpunk Theme Shortcodes Showcase\"",
+      "content": "\"Welcome to the showcase of custom shortcodes available in the Cyber Hugo theme. These shortcodes extend markdown capabilities and help maintain a consistent cyberpunk aesthetic throughout your site.\\nButton Shortcode The button shortcode creates styled buttons that match the theme\\u0026rsquo;s cyberpunk design.\\nBasic Usage {{\\u0026lt; button href=\\u0026#34;/contact\\u0026#34; text=\\u0026#34;Contact Me\\u0026#34; \\u0026gt;}} txt Result: Contact Me Color Variants {{\\u0026lt; button href=\\u0026#34;#\\u0026#34; text=\\u0026#34;Cyan Button\\u0026#34; color=\\u0026#34;cyan\\u0026#34; \\u0026gt;}} {{\\u0026lt; button href=\\u0026#34;#\\u0026#34; text=\\u0026#34;Fuchsia Button\\u0026#34; color=\\u0026#34;fuchsia\\u0026#34; \\u0026gt;}} {{\\u0026lt; button href=\\u0026#34;#\\u0026#34; text=\\u0026#34;Yellow Button\\u0026#34; color=\\u0026#34;yellow\\u0026#34; \\u0026gt;}} {{\\u0026lt; button href=\\u0026#34;#\\u0026#34; text=\\u0026#34;Lime Button\\u0026#34; color=\\u0026#34;lime\\u0026#34; \\u0026gt;}} {{\\u0026lt; button href=\\u0026#34;#\\u0026#34; text=\\u0026#34;Small Button\\u0026#34; size=\\u0026#34;sm\\u0026#34; \\u0026gt;}} {{\\u0026lt; button href=\\u0026#34;#\\u0026#34; text=\\u0026#34;Regular Button\\u0026#34; \\u0026gt;}} {{\\u0026lt; button href=\\u0026#34;#\\u0026#34; text=\\u0026#34;Large Button\\u0026#34; size=\\u0026#34;lg\\u0026#34; \\u0026gt;}} {{\\u0026lt; button href=\\u0026#34;#\\u0026#34; text=\\u0026#34;Next Page\\u0026#34; icon=\\u0026#34;arrow-right\\u0026#34; \\u0026gt;}} {{\\u0026lt; button href=\\u0026#34;#\\u0026#34; text=\\u0026#34;Download\\u0026#34; icon=\\u0026#34;download\\u0026#34; color=\\u0026#34;fuchsia\\u0026#34; \\u0026gt;}} {{\\u0026lt; button href=\\u0026#34;#\\u0026#34; text=\\u0026#34;External Link\\u0026#34; icon=\\u0026#34;external\\u0026#34; color=\\u0026#34;yellow\\u0026#34; \\u0026gt;}} txt Result: Cyan Button Fuchsia Button Yellow Button Lime Button Small Button Regular Button Large Button Next Page Download External Link Notice Shortcode The notice shortcode displays highlighted information in styled boxes.\\nInfo Notice {{\\u0026lt; notice type=\\u0026#34;info\\u0026#34; /\\u0026gt;}} This is an information notice with important details. {{\\u0026lt;/ /notice \\u0026gt;}} txt Result: Info\\nThis is an information notice with important details. Warning Notice {{\\u0026lt; notice type=\\u0026#34;warning\\u0026#34; /\\u0026gt;}} Warning! This action cannot be undone. {{\\u0026lt;/ /notice \\u0026gt;}} txt Result: Warning\\nWarning! This action cannot be undone. Danger Notice {{\\u0026lt; notice type=\\u0026#34;danger\\u0026#34; /\\u0026gt;}} Critical error detected in the mainframe. {{\\u0026lt;/ /notice \\u0026gt;}} txt Result: Danger\\nCritical error detected in the mainframe. Success Notice {{\\u0026lt; notice type=\\u0026#34;success\\u0026#34; /\\u0026gt;}} Connection to the neural network established successfully. {{\\u0026lt;/ /notice \\u0026gt;}} txt Result: Success\\nConnection to the neural network established successfully. Image Shortcode The image shortcode displays images with captions and cyberpunk styling.\\nBasic Image {{\\u0026lt; image src=\\u0026#34;/images/cyberpunk-city.jpg\\u0026#34; alt=\\u0026#34;Neon City\\u0026#34; \\u0026gt;}} txt Image with Caption and Credit {{\\u0026lt; image src=\\u0026#34;/images/cyberpunk-city.jpg\\u0026#34; alt=\\u0026#34;Neon City\\u0026#34; caption=\\u0026#34;Night view of Neo-Tokyo\\u0026#34; credit=\\u0026#34;Photo by CyberArtist\\u0026#34; \\u0026gt;}} txt Result: Night view of Neo-Tokyo Photo by CyberArtist Code Shortcode The code shortcode provides enhanced code blocks with titles and line numbers.\\nBasic Code Block {{\\u0026lt; code language=\\u0026#34;javascript\\u0026#34; /\\u0026gt;}} function hackTheMatrix() { console.log(\\u0026#34;Connecting to the mainframe...\\u0026#34;); return \\u0026#34;Access granted\\u0026#34;; } {{\\u0026lt;/ /code \\u0026gt;}} txt Result: javascript function hackTheMatrix() { console.log(\\u0026#34;Connecting to the mainframe...\\u0026#34;); return \\u0026#34;Access granted\\u0026#34;; } javascript Code with Title and Line Numbers {{\\u0026lt; code language=\\u0026#34;css\\u0026#34; title=\\u0026#34;Neon Glow Effect\\u0026#34; lineNumbers=\\u0026#34;true\\u0026#34; \\u0026gt;}} .neon-text { color: #00ffe7; text-shadow: 0 0 5px #00ffe7, 0 0 10px #00ffe7, 0 0 20px #00ffe7; animation: pulse 2s infinite; } @keyframes pulse { 0% { opacity: 0.8; } 50% { opacity: 1; } 100% { opacity: 0.8; } } {{\\u0026lt; /code \\u0026gt;}} txt Result: Neon Glow Effect .neon-text { color: #00ffe7; text-shadow: 0 0 5px #00ffe7, 0 0 10px #00ffe7, 0 0 20px #00ffe7; animation: pulse 2s infinite; } @keyframes pulse { 0% { opacity: 0.8; } 50% { opacity: 1; } 100% { opacity: 0.8; } } css Combining Shortcodes Shortcodes can be combined for more complex layouts:\\nInfo\\n### Neural Interface Connection To connect to the neural interface, run: bash sudo neural-connect --user=neo --protocol=secure bash Then press Connect to initiate the handshake. Conclusion These shortcodes help maintain a consistent cyberpunk aesthetic throughout your site while extending markdown\\u0026rsquo;s capabilities. Use them to create visually appealing and interactive content that matches the theme\\u0026rsquo;s design.\\n\"",
+      "tags": ["\"theme\"", "\"shortcodes\"", "\"demo\"", "\"cyberpunk\""],
+      "url": "https:\/\/maxzhirnov.github.io\/cyber-hugo\/posts\/shortcode-showcase\/"
+    },
+    "https:\/\/maxzhirnov.github.io\/cyber-hugo\/posts\/first-post\/": {
+      "title": "\"First Post\"",
+      "content": "\"Yeah, but your scientists were so preoccupied with whether or not they could, they didn\\u0026rsquo;t stop to think if they should. Jaguar shark! So tell me - does it really exist? Remind me to thank John for a lovely weekend. Hey, you know how I\\u0026rsquo;m, like, always trying to save the planet? Here\\u0026rsquo;s my chance.\\nMust go faster\\u0026hellip; go, go, go, go, go! You really think you can fly that thing? You\\u0026rsquo;re a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Hey, you know how I\\u0026rsquo;m, like, always trying to save the planet? Here\\u0026rsquo;s my chance.\\n\"",
+      "tags": ["\"text\"", "\"cool\""],
+      "url": "https:\/\/maxzhirnov.github.io\/cyber-hugo\/posts\/first-post\/"
+    },
+    "https:\/\/maxzhirnov.github.io\/cyber-hugo\/posts\/second-post\/": {
+      "title": "\"A second Post\"",
+      "content": "\"A lot more Wise words. You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don\\u0026rsquo;t know exactly when we turned on each other, but I know that seven of us survived the slide\\u0026hellip; and only five made it out. Now we took an oath, that I\\u0026rsquo;m breaking now. We said we\\u0026rsquo;d say it was the snow that killed the other two, but it wasn\\u0026rsquo;t. Nature is lethal but it doesn\\u0026rsquo;t hold a candle to man.\\nLook, just because I don\\u0026rsquo;t be givin\\u0026rsquo; no man a foot massage don\\u0026rsquo;t make it right for Marsellus to throw Antwone into a glass motherfuckin\\u0026rsquo; house, fuckin\\u0026rsquo; up the way the nigger talks. Motherfucker do that shit to me, he better paralyze my ass, \\u0026lsquo;cause I\\u0026rsquo;ll kill the motherfucker, know what I\\u0026rsquo;m sayin\\u0026rsquo;?\\nNow that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they\\u0026rsquo;re actually proud of that shit.\\n\"",
+      "tags": [],
+      "url": "https:\/\/maxzhirnov.github.io\/cyber-hugo\/posts\/second-post\/"
+    },
+    "https:\/\/maxzhirnov.github.io\/cyber-hugo\/posts\/lorem-markdownum\/": {
+      "title": "\"Lorem Markdownum\"",
+      "content": "\"Amens nitentior vires Lorem markdownum Argo est praebebant Andros erat, tibi parte montibus erunt venis tacita spernimus more. Olim erat Aiax dixi factas potens. Perque natus ipsa potenti; nunc parte precor in mortalis manant bellica, umbrosaque et. Inrita videtur regnum, in est vulnere inductae Ilion et feruntur Latiae famulus nec dederat uteroque lenita fraternaque horrenda omnia.\\nMaris Circe victum suggerit et conscia dixit Habes et undis carinae fundae lilia coniecit Tot nomine ire tot fassusque nobis ad Geminas iugales mille et ingenium magna agitantem Nemo quae sedemque Iunone Theseius abstulit morabar mersis Isto supremo, genitor Phoronidos, honos ibi lacus saepe rogato properus: sum an vetantis. Non Marte praecessit fistula dentibus non; in in quoque passaque. Non tectis ferox. Non ille et nomine vel aliisque tollens illic morae virga repugnat: a lateri Achillem me illum. Acoetes potentior matrique occasu laborum sua letum Inachidas irata cognoscere quae dum prohibent est exilio.\\npackage main import \\u0026#34;fmt\\u0026#34; func main() { fmt.Println(\\u0026#34;Hello, World!\\u0026#34;) } go Haec posuitque altorum Studiosius auctoribus secuta remos partu, non animam aequalique haec tum. Tabellas vidit ventus postquam ab scelus pollue canoro. Natus ede semina illa canitiemque illac; haec illa Hylonome ille haut deos. Pares accepta recipit, visaque litora, lacrimasque fovit, et Aeacus.\\nif (carrierLossyLed.digital.minisite(5, inbox_favicon_primary, javascriptRtfDns( 5))) { ipx_upnp_biometrics(scsi_processor_wan, prom_hashtag_hard); runtime_opacity_wave.symbolic *= iphoneVideo - ajaxVpnP \\u0026#43; wpa_plug; } process_hyperlink_station(horse(png_reciprocal_core.memory_p(gps, flash), url_restore_personal)); storage_mode.optical = 1; text Hiems Athamanta nequeunt ni nunc sanguine; imo sine solutum, virgo gurgitis vernat vaticinatus planxere. Terris nam caeco uti multos imas saepe, Iuno dea tremit viros Iove sub. Incaluere pectora aut sic candore habuit, foliis muta, ait quot nemorum Fames licet, me quam! Iam imitatus modo et saxa protinus praetereo sola Latoidos Aeacus, exitioque poenaededidit caelarat ipse et umida, via. Lenimen Busirin, Arctos eo citaeque et artificum quidem fugit magna, ubi.\\n\"",
+      "tags": [],
+      "url": "https:\/\/maxzhirnov.github.io\/cyber-hugo\/posts\/lorem-markdownum\/"
+    }
+};
+</script>
+ 
+<script src="https://maxzhirnov.github.io/cyber-hugo/js/vendor/lunr.min.7ca2abf9e5dbd9edad598d5fab29bd1380f112de7d6539b62a887f02e9cc1190.js"></script>
+
+
+<script src="https://maxzhirnov.github.io/cyber-hugo/js/search.min.5ac0144bde07206a4c04b75eccdbc04894930a9bcf020b86a752a6f38e5bec4d.js"></script>
+
+    </main>
+    <footer
+  class="relative w-full mt-12 px-4 py-8 bg-gray-900/90 border-t-2 border-cyan-400 shadow-[0_0_32px_#00ffe7_inset]">
+  
+  <div class="absolute inset-0 pointer-events-none opacity-70"></div>
+  <div
+    class="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto">
+    <div class="flex items-center gap-3 mb-4 md:mb-0">
+      <span
+        class="font-vt323 text-lg text-cyan-300 tracking-widest drop-shadow-[0_0_8px_#00ffe7]">©
+        2025 Cyber Theme</span>
+      <span class="hidden md:inline text-cyan-700">|</span>
+      <span class="font-mono text-xs text-cyan-400 opacity-80">All Rights
+        Reserved</span>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="https://gohugo.io" target="_blank" rel="noopener"
+        class="flex items-center gap-1 font-vt323 text-cyan-200 hover:text-fuchsia-400 transition-colors underline underline-offset-2">
+        <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke-width="2" />
+          <path d="M8 12l2 2 4-4" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        Hugo
+      </a>
+      <a href="https://tailwindcss.com" target="_blank" rel="noopener"
+        class="flex items-center gap-1 font-vt323 text-cyan-200 hover:text-fuchsia-400 transition-colors underline underline-offset-2">
+        <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24">
+          <path d="M3 12a9 9 0 0118 0 9 9 0 01-18 0zm9-4v8m0 0l3-3m-3 3l-3-3"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        TailwindCSS
+      </a>
+    </div>
+    <div class="flex items-center gap-2 mt-2 md:mt-0">
+      <span class="font-vt323 text-fuchsia-400 text-sm tracking-wider drop-shadow-[0_0_6px_#ff00cc] uppercase">
+        Theme:
+      </span>
+      <a
+        href="https://github.com/maxzhirnov"
+        target="_blank"
+        rel="noopener"
+        class="font-vt323 text-cyan-300 text-base hover:text-fuchsia-400 transition-colors underline underline-offset-2 drop-shadow-[0_0_6px_#00ffe7]"
+      >
+        handcrafted by mzhirnov
+      </a>
+    </div>
+  </div>
+</footer>
+
+    
+
+
+
+
+
+
+<script src="https://maxzhirnov.github.io/cyber-hugo/js/code-bundle.min.472eae1acd856f23eb2d623baaec2d001829a55e76d50ff45f2b1331606a46ba.js" integrity="sha256-Ry6uGs2FbyPrLWI7quwtABgppV521Q/0XysTMWBqRro=" defer></script>
+
+  </body>
+</html>
